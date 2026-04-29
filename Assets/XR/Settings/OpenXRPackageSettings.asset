@@ -475,18 +475,8 @@ MonoBehaviour:
   features:
   - {fileID: 8736661028334727731}
   - {fileID: 3598254934845347770}
-  - {fileID: 6578573796889603808}
-  - {fileID: -5444012640724855157}
   - {fileID: 1170704673688743257}
-  - {fileID: -3006090947908599895}
-  - {fileID: -3801239204970183139}
-  - {fileID: -2671768710134741414}
   - {fileID: 5153017048313567732}
-  - {fileID: 2661659337064655387}
-  - {fileID: 2729279779863783867}
-  - {fileID: -6188217960244350568}
-  - {fileID: 7978732938747596126}
-  - {fileID: 5151498627344114277}
   - {fileID: 6481653220666705815}
   - {fileID: 7393116930172532905}
   - {fileID: 744375598501864353}
@@ -1086,6 +1076,7 @@ MonoBehaviour:
   - {fileID: -1214223305509136874}
   - {fileID: 7024391430695218602}
   - {fileID: 1857945761630378259}
+  - {fileID: 2097152028374188268}
   - {fileID: 4863518650473298676}
   - {fileID: 804998475771523208}
   - {fileID: -7805550356827586176}
@@ -1395,7 +1386,7 @@ MonoBehaviour:
   nameUi: 'Android XR: AR Anchor'
   version: 0.1.0
   featureIdInternal: com.unity.openxr.feature.arfoundation-androidxr-anchor
-  openxrExtensionStrings: XR_ANDROID_trackables
+  openxrExtensionStrings: XR_ANDROID_trackables XR_ANDROID_device_anchor_persistence
   company: Unity Technologies
   priority: 0
   targetOpenXRApiVersion: 
@@ -1442,6 +1433,28 @@ MonoBehaviour:
   featureIdInternal: com.unity.openxr.feature.input.eyetracking
   openxrExtensionStrings: XR_EXT_eye_gaze_interaction
   company: Unity
+  priority: 0
+  targetOpenXRApiVersion: 
+  required: 0
+  customRuntimeLoaderName: 
+--- !u!114 &2097152028374188268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369c18de2bb8eba458fea38b9c7dc289, type: 3}
+  m_Name: FMODHapticsFeature Android
+  m_EditorClassIdentifier: FMODUnityHaptics::FMODUnityHaptics.FMODHapticsFeature
+  m_enabled: 0
+  nameUi: 'FMOD: Haptics'
+  version: 1.0.0
+  featureIdInternal: com.fmod.feature.haptic
+  openxrExtensionStrings: XR_FB_haptic_pcm
+  company: FMOD
   priority: 0
   targetOpenXRApiVersion: 
   required: 0
@@ -2349,7 +2362,7 @@ MonoBehaviour:
   nameUi: 'Android XR: AR Anchor'
   version: 0.1.0
   featureIdInternal: com.unity.openxr.feature.arfoundation-androidxr-anchor
-  openxrExtensionStrings: XR_ANDROID_trackables
+  openxrExtensionStrings: XR_ANDROID_trackables XR_ANDROID_device_anchor_persistence
   company: Unity Technologies
   priority: 0
   targetOpenXRApiVersion: 
