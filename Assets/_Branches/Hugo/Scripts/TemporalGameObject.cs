@@ -5,7 +5,7 @@ namespace _Branches.Hugo.Scripts
     public abstract class TemporalGameObject : MonoBehaviour
     {
         [Header("===== TEMPORAL =====")]
-        [SerializeField] protected Vector2 _temporalRange = new Vector2(0f, 1f);
+        [SerializeField] protected Vector2 _temporalRange = new(0f, 1f);
         [SerializeField, Range(0f, 1f)] protected float _state;
         
         protected virtual void OnEnable()

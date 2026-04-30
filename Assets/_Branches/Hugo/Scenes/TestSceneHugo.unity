@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 421202296}
+  - component: {fileID: 421202298}
   - component: {fileID: 421202295}
   - component: {fileID: 421202297}
   m_Layer: 0
@@ -210,13 +211,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421202294}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.9396927, y: 0, z: -0.3420201, w: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 40, z: 0}
 --- !u!114 &421202297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +247,22 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &421202298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421202294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f74f95c7d865c741869d735672fdac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.TemporalSunHandler
+  _temporalRange: {x: 0, y: 1}
+  _state: 0
+  _sunStartRotation: {x: 180, y: 40, z: 0}
+  _sunEndRotation: {x: 0, y: 140, z: 0}
 --- !u!1 &500027827
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,9 +308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1198ef0ce29fe984488e45572bc77507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.RotationClamp
-  _rangeX: {x: 0, y: 0}
-  _rangeY: {x: 0, y: 0}
-  _rangeZ: {x: -180, y: 180}
 --- !u!1 &581131712
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,8 +483,6 @@ MonoBehaviour:
   _hourHand: {fileID: 500027828}
   _minuteHand: {fileID: 2044680861}
   _reverseRotation: 0
-  _grabHourHand: 0
-  _grabMinuteHand: 0
 --- !u!1 &1081210251
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +545,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.075, y: 1, z: 0.075}
+  m_LocalScale: {x: 0.05, y: 1, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2044680861}
@@ -831,7 +843,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
+  m_LocalScale: {x: 0.1, y: 0.5, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 500027828}
@@ -959,9 +971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1198ef0ce29fe984488e45572bc77507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.RotationClamp
-  _rangeX: {x: 0, y: 0}
-  _rangeY: {x: 0, y: 0}
-  _rangeZ: {x: -2160, y: 2160}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -969,5 +978,5 @@ SceneRoots:
   - {fileID: 1737054377}
   - {fileID: 421202296}
   - {fileID: 1721592735}
-  - {fileID: 581131716}
   - {fileID: 1039951521}
+  - {fileID: 581131716}
