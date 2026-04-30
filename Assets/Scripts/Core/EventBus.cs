@@ -5,9 +5,12 @@ namespace Core
     public static class EventBus
     {
         // ===== GAME =====
-        public static Action GameStart;
-        public static Action GamePause;
-        public static Action GameResume;
-        public static Action GameEnd;
+        public static Action OnGameStart;
+        public static Action OnGamePause;
+        public static Action OnGameResume;
+        public static Action OnGameEnd;
+        
+        // ===== CLOCK =====
+        public static Action OnClockTimeChanged;
     }
 }

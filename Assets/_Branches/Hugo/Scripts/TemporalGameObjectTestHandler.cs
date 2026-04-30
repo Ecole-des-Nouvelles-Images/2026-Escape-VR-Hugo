@@ -6,7 +6,7 @@ namespace _Branches.Hugo.Scripts
     {
         protected override void TimeBehavior()
         {
-            float yPos = Mathf.Lerp(10f, 0f, _state);
+            float yPos = Mathf.Lerp(1f, 0f, _state);
             transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
         }
     }

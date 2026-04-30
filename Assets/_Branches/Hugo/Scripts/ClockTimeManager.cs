@@ -10,24 +10,28 @@ namespace _Branches.Hugo.Scripts
 
         [Header("===== CONFIG =====")]
         [SerializeField] private float _timeSpeedMultiplier = 1f;
-        [SerializeField] private float _minTimeMinutes = 6f * 60f; // 360
-        [SerializeField] private float _maxTimeMinutes = 18f * 60f; // 1080
+        [SerializeField] private float _minTimeMinutes = 6f * 60f;
+        [SerializeField] private float _maxTimeMinutes = 18f * 60f;
+        [SerializeField] private float _timeUpdateThreshold = 0.0001f;
 
         [Header("===== DEBUG =====")]
-        [SerializeField] private float _totalMinutes;
+        public float TotalMinutes;
 
         private float _lastNotifiedTime = -1f;
 
-        private void Awake() => _totalMinutes = _minTimeMinutes;
+        private void Awake()
+        {
+            TotalMinutes = _minTimeMinutes;
+        }
 
         private void Update()
         {
-            _totalMinutes += Time.deltaTime * _timeSpeedMultiplier;
-            _totalMinutes = Mathf.Clamp(_totalMinutes, _minTimeMinutes, _maxTimeMinutes);
+            TotalMinutes += Time.deltaTime * _timeSpeedMultiplier;
+            TotalMinutes = Mathf.Clamp(TotalMinutes, _minTimeMinutes, _maxTimeMinutes);
 
-            float currentNormalized = Mathf.InverseLerp(_minTimeMinutes, _maxTimeMinutes, _totalMinutes);
+            float currentNormalized = Mathf.InverseLerp(_minTimeMinutes, _maxTimeMinutes, TotalMinutes);
             
-            if (Mathf.Abs(currentNormalized - _lastNotifiedTime) > 0.0001f)
+            if (Mathf.Abs(currentNormalized - _lastNotifiedTime) > _timeUpdateThreshold)
             {
                 _lastNotifiedTime = currentNormalized;
                 OnTimeChanged?.Invoke(currentNormalized);
@@ -36,7 +40,7 @@ namespace _Branches.Hugo.Scripts
 
         public void SetTimeManually(float totalMinutes)
         {
-            _totalMinutes = Mathf.Clamp(totalMinutes, _minTimeMinutes, _maxTimeMinutes);
+            TotalMinutes = Mathf.Clamp(totalMinutes, _minTimeMinutes, _maxTimeMinutes);
         }
     }
 }
