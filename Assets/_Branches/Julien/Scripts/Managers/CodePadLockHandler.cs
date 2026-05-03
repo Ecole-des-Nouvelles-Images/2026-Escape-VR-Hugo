@@ -63,7 +63,6 @@ public class CodePadLockHandler : PadLock
 
     #region RegionModifyCode
 
-    [ContextMenu("Add 1")]
     public void AddNumberOne()
     {
         NumberOne++;
@@ -72,7 +71,6 @@ public class CodePadLockHandler : PadLock
         SetCode();
         RotateGear(_gearOne, 36);
     }
-    [ContextMenu("Remove 1")]
     public void RemoveNumberOne()
     {
         NumberOne--; 
@@ -82,7 +80,6 @@ public class CodePadLockHandler : PadLock
         RotateGear(_gearOne, -36);
     }
     
-    [ContextMenu("Add 2")]
     public void AddNumberTwo()
     {
         NumberTwo++;
@@ -91,7 +88,6 @@ public class CodePadLockHandler : PadLock
         SetCode();
         RotateGear(_gearTwo, 36);
     }
-    [ContextMenu("Remove 2")]
     public void RemoveNumberTwo()
     {
         NumberTwo--;
@@ -101,7 +97,6 @@ public class CodePadLockHandler : PadLock
         RotateGear(_gearTwo, -36);
     }
 
-    [ContextMenu("Add 3")]
     public void AddNumberThree()
     {
         NumberThree++;
@@ -110,7 +105,6 @@ public class CodePadLockHandler : PadLock
         SetCode();
         RotateGear(_gearThree, 36);
     }
-    [ContextMenu("Remove 3")]
     public void RemoveNumberThree()
     {
         NumberThree--;
@@ -128,7 +122,6 @@ public class CodePadLockHandler : PadLock
         VerifyIfCodeIsRight();
     }
     
-    [ContextMenu("VerifyCode")]
     private void VerifyIfCodeIsRight()
     {
         if (RightCode == CurrentCode)

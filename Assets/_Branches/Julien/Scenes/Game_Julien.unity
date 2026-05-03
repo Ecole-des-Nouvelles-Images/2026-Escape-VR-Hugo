@@ -1350,7 +1350,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 2f16f8c46c358ce4fa5d3863a7decae9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1690,6 +1690,18 @@ PrefabInstance:
       propertyPath: _keyObject
       value: 
       objectReference: {fileID: 1961435899}
+    - target: {fileID: 5356570713157397830, guid: 68262112011df4f479944a672ce136c7, type: 3}
+      propertyPath: OffSetPositionOnKey.y
+      value: -0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356570713157397830, guid: 68262112011df4f479944a672ce136c7, type: 3}
+      propertyPath: OffSetPositionOnKey.z
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356570713157397830, guid: 68262112011df4f479944a672ce136c7, type: 3}
+      propertyPath: OffSetRotationOnKey.x
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
