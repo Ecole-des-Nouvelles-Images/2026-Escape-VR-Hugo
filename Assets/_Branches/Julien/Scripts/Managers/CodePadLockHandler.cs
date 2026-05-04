@@ -46,7 +46,7 @@ public class CodePadLockHandler : PadLock
     {
         if (_bigPadLockSpawned)
         {
-            if (Vector3.Distance(_player.transform.position, CodePadLock.transform.position) > 4)
+            if (Vector3.Distance(Camera.main.gameObject.transform.position, CodePadLock.transform.position) > 2.5f)
             {
                 DespawnBigPadLock();
             }
