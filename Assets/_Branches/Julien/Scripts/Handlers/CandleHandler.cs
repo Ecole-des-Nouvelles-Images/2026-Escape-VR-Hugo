@@ -1,6 +1,7 @@
 using System;
 using _Branches.Hugo.Scripts;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class CandleHandler : TemporalGameObject
 {
@@ -58,7 +59,8 @@ public class CandleHandler : TemporalGameObject
     
     private void DropObjectInCandle()
     {
-        // Rendre l'objec dans la bougie interactible
+        _objectToDrop.GetComponent<XRGrabInteractable>().enabled = true;
+        _objectToDrop.GetComponent<Rigidbody>().isKinematic = false;
         _dropedHisObject = true;
         Debug.Log("Dropped object in candle");
     }
