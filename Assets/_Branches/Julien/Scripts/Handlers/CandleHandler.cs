@@ -59,6 +59,8 @@ public class CandleHandler : TemporalGameObject
     
     private void DropObjectInCandle()
     {
+        if (_objectToDrop == null) return;
+        _objectToDrop.transform.parent = null;
         _objectToDrop.GetComponent<XRGrabInteractable>().enabled = true;
         _objectToDrop.GetComponent<Rigidbody>().isKinematic = false;
         _dropedHisObject = true;
