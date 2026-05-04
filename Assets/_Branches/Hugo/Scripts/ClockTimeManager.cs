@@ -17,8 +17,15 @@ namespace _Branches.Hugo.Scripts
 
         [Header("===== DEBUG =====")]
         public float TotalMinutes;
+        public bool IsPaused;
 
         private float _lastNotifiedTime = -1f;
+        
+        public void SetTimeManually(float totalMinutes)
+        {
+            TotalMinutes = Mathf.Clamp(totalMinutes, _minTimeMinutes, _maxTimeMinutes);
+            UpdateNormalizedTime();
+        }
 
         private void Awake()
         {
@@ -27,9 +34,16 @@ namespace _Branches.Hugo.Scripts
 
         private void Update()
         {
+            if (IsPaused) return;
+            
             TotalMinutes += Time.deltaTime * _timeSpeedMultiplier;
             TotalMinutes = Mathf.Clamp(TotalMinutes, _minTimeMinutes, _maxTimeMinutes);
+            
+            UpdateNormalizedTime();
+        }
 
+        private void UpdateNormalizedTime()
+        {
             NormalizedCurrentTime = Mathf.InverseLerp(_minTimeMinutes, _maxTimeMinutes, TotalMinutes);
             
             if (Mathf.Abs(NormalizedCurrentTime - _lastNotifiedTime) > _timeUpdateThreshold)
@@ -37,11 +51,6 @@ namespace _Branches.Hugo.Scripts
                 _lastNotifiedTime = NormalizedCurrentTime;
                 OnTimeChanged?.Invoke(NormalizedCurrentTime);
             }
-        }
-
-        public void SetTimeManually(float totalMinutes)
-        {
-            TotalMinutes = Mathf.Clamp(totalMinutes, _minTimeMinutes, _maxTimeMinutes);
         }
     }
 }
