@@ -6,6 +6,9 @@ using UnityEngine;
 public class StaticStatueHandler : TemporalGameObject
 {
     [SerializeField] private LineRenderer _lineRenderer;
+    
+    //TODO Call raycast and linerenderer outside TimeBehaviour()
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,12 +24,13 @@ public class StaticStatueHandler : TemporalGameObject
 
     protected override void TimeBehavior()
     {
-        // if state > 0
         if (_state > 0)
         {
             // Active RayCast and line renderer
             Vector3 rayOrigin = transform.position;
             Vector3 rayDirection = transform.forward;
+            
+            Debug.DrawRay(rayOrigin, rayDirection, Color.green);
 
             if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit))
             {
@@ -34,8 +38,15 @@ public class StaticStatueHandler : TemporalGameObject
                 {
                     lightReactive.IsLit();
                 }
-               // UpdateLineRenderer(rayOrigin, hit.point);
+                UpdateLineRenderer(rayOrigin, hit.point);
             }
         }
+    }
+
+    private void UpdateLineRenderer(Vector3 start, Vector3 end)
+    {
+        _lineRenderer.positionCount = 2;
+        _lineRenderer.SetPosition(0, start);
+        _lineRenderer.SetPosition(1, end);
     }
 }

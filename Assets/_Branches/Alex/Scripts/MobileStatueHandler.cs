@@ -5,6 +5,10 @@ using UnityEngine;
 public class MobileStatueHandler : MonoBehaviour, ILightReactive
 {
     [SerializeField] private LineRenderer _lineRenderer;
+    [SerializeField, Tooltip("Time in seconds for the statue to stay lit after being hit by a raycast.")] private float _litDuration = 0.08f;
+    
+    private float _lastLitTime = -Mathf.Infinity;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,23 +18,40 @@ public class MobileStatueHandler : MonoBehaviour, ILightReactive
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        if (Time.time - _lastLitTime > _litDuration)
+        {
+            _lineRenderer.positionCount = 0;
+        }
         
     }
 
     public void IsLit()
     {
+        _lastLitTime = Time.time;
+        
         Vector3 origin = transform.position;
         Vector3 direction = transform.forward;
 
         if (Physics.Raycast(origin, direction, out var hit))
         {
-            if (hit.collider.TryGetComponent<ILightReactive>(out var lightReactive))
+            if (hit.collider.TryGetComponent<ILightReactive>(out var lightReactive) && lightReactive != this)
             {
                 lightReactive.IsLit();
             }
-           // UpdateLineRenderer()
+            UpdateLineRenderer(origin, hit.point);
         }
+        else
+        {
+            _lineRenderer.positionCount = 0;
+        }
+    }
+
+    private void UpdateLineRenderer(Vector3 start, Vector3 end)
+    {
+        _lineRenderer.positionCount = 2;
+        _lineRenderer.SetPosition(0, start);
+        _lineRenderer.SetPosition(1, end);
     }
 }
