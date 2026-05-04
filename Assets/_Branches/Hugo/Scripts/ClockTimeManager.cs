@@ -7,6 +7,7 @@ namespace _Branches.Hugo.Scripts
     public class ClockTimeManager : MonoBehaviourSingleton<ClockTimeManager>
     {
         public event Action<float> OnTimeChanged;
+        public float NormalizedCurrentTime { get; private set; }
 
         [Header("===== CONFIG =====")]
         [SerializeField] private float _timeSpeedMultiplier = 1f;
@@ -29,12 +30,12 @@ namespace _Branches.Hugo.Scripts
             TotalMinutes += Time.deltaTime * _timeSpeedMultiplier;
             TotalMinutes = Mathf.Clamp(TotalMinutes, _minTimeMinutes, _maxTimeMinutes);
 
-            float currentNormalized = Mathf.InverseLerp(_minTimeMinutes, _maxTimeMinutes, TotalMinutes);
+            NormalizedCurrentTime = Mathf.InverseLerp(_minTimeMinutes, _maxTimeMinutes, TotalMinutes);
             
-            if (Mathf.Abs(currentNormalized - _lastNotifiedTime) > _timeUpdateThreshold)
+            if (Mathf.Abs(NormalizedCurrentTime - _lastNotifiedTime) > _timeUpdateThreshold)
             {
-                _lastNotifiedTime = currentNormalized;
-                OnTimeChanged?.Invoke(currentNormalized);
+                _lastNotifiedTime = NormalizedCurrentTime;
+                OnTimeChanged?.Invoke(NormalizedCurrentTime);
             }
         }
 
