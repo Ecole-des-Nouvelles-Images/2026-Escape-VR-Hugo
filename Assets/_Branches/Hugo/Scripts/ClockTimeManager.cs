@@ -7,6 +7,7 @@ namespace _Branches.Hugo.Scripts
     public class ClockTimeManager : MonoBehaviourSingleton<ClockTimeManager>
     {
         public event Action<float> OnTimeChanged;
+        public float NormalizedCurrentTime { get; private set; }
 
         [Header("===== CONFIG =====")]
         [SerializeField] private float _timeSpeedMultiplier = 1f;
@@ -16,8 +17,15 @@ namespace _Branches.Hugo.Scripts
 
         [Header("===== DEBUG =====")]
         public float TotalMinutes;
+        public bool IsPaused;
 
         private float _lastNotifiedTime = -1f;
+        
+        public void SetTimeManually(float totalMinutes)
+        {
+            TotalMinutes = Mathf.Clamp(totalMinutes, _minTimeMinutes, _maxTimeMinutes);
+            UpdateNormalizedTime();
+        }
 
         private void Awake()
         {
@@ -26,21 +34,23 @@ namespace _Branches.Hugo.Scripts
 
         private void Update()
         {
+            if (IsPaused) return;
+            
             TotalMinutes += Time.deltaTime * _timeSpeedMultiplier;
             TotalMinutes = Mathf.Clamp(TotalMinutes, _minTimeMinutes, _maxTimeMinutes);
-
-            float currentNormalized = Mathf.InverseLerp(_minTimeMinutes, _maxTimeMinutes, TotalMinutes);
             
-            if (Mathf.Abs(currentNormalized - _lastNotifiedTime) > _timeUpdateThreshold)
-            {
-                _lastNotifiedTime = currentNormalized;
-                OnTimeChanged?.Invoke(currentNormalized);
-            }
+            UpdateNormalizedTime();
         }
 
-        public void SetTimeManually(float totalMinutes)
+        private void UpdateNormalizedTime()
         {
-            TotalMinutes = Mathf.Clamp(totalMinutes, _minTimeMinutes, _maxTimeMinutes);
+            NormalizedCurrentTime = Mathf.InverseLerp(_minTimeMinutes, _maxTimeMinutes, TotalMinutes);
+            
+            if (Mathf.Abs(NormalizedCurrentTime - _lastNotifiedTime) > _timeUpdateThreshold)
+            {
+                _lastNotifiedTime = NormalizedCurrentTime;
+                OnTimeChanged?.Invoke(NormalizedCurrentTime);
+            }
         }
     }
 }
