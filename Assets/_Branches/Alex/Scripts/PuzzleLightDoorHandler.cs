@@ -2,8 +2,13 @@ using System;
 using Core.Interfaces;
 using UnityEngine;
 
-public class PuzzleLightDoorHandler : MonoBehaviour, ILightReactive
+public class PuzzleLightDoorHandler : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private LightReceiver _lightReceiver;
+    [SerializeField] private Transform _doorTransform;
+    
+    [Header("Settings")]
     [SerializeField] private float _openAngle = 110f;
     [SerializeField] private float _openSpeed = 2f;
 
@@ -11,28 +16,34 @@ public class PuzzleLightDoorHandler : MonoBehaviour, ILightReactive
 
     private Quaternion _closedRotation;
     private Quaternion _targetRotation;
-    private bool _isOpening = false;
+    private bool _isOpened = false;
 
-    
-    //TODO Separate Door and Light Collider
-    private void Awake()
+    private void Start()
     {
-        _closedRotation = transform.localRotation;
+        _closedRotation = _doorTransform.localRotation;
         _targetRotation = _closedRotation;
+
+        if (_lightReceiver != null)
+            _lightReceiver.OnLit += OpenDoor;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, _targetRotation, Time.deltaTime * _openSpeed);
+        _doorTransform.localRotation = Quaternion.Slerp(_doorTransform.localRotation, _targetRotation, Time.deltaTime * _openSpeed);
     }
 
-    public void IsLit()
+
+    private void OpenDoor()
     {
-        if (!_isOpening)
-        {
-            _isOpening = true;
-            _targetRotation = _closedRotation * Quaternion.Euler(_pivotAxis * _openAngle);
-        }
+        if (_isOpened) return;
+        _isOpened = true;
+        _targetRotation = _closedRotation * Quaternion.Euler(_pivotAxis * _openAngle);
+    }
+
+    private void OnDestroy()
+    {
+        if (_lightReceiver != null)
+            _lightReceiver.OnLit -= OpenDoor;
     }
 }

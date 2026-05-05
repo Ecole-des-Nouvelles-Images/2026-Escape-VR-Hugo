@@ -7,7 +7,9 @@ public class StaticStatueHandler : TemporalGameObject
 {
     [SerializeField] private LineRenderer _lineRenderer;
     
-    //TODO Call raycast and linerenderer outside TimeBehaviour()
+    private bool _isBeamActive = false;
+    
+    //TODO avoid raycast stopping on socket collider
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,28 +21,41 @@ public class StaticStatueHandler : TemporalGameObject
     // Update is called once per frame
     void Update()
     {
-        
+        if (_isBeamActive)
+        {
+            ExecuteBeam();
+        }
+        else
+        {
+            StopBeam();
+        }
     }
 
     protected override void TimeBehavior()
     {
-        if (_state > 0)
-        {
-            // Active RayCast and line renderer
-            Vector3 rayOrigin = transform.position;
-            Vector3 rayDirection = transform.forward;
-            
-            Debug.DrawRay(rayOrigin, rayDirection, Color.green);
+        _isBeamActive = _state > 0; 
+    }
 
-            if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit))
+    private void ExecuteBeam()
+    {
+        // Active RayCast and line renderer
+        Vector3 rayOrigin = transform.position;
+        Vector3 rayDirection = transform.forward;
+        
+        if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit))
+        {
+            if (hit.collider.TryGetComponent<ILightReactive>(out var lightReactive))
             {
-                if (hit.collider.TryGetComponent<ILightReactive>(out var lightReactive))
-                {
-                    lightReactive.IsLit();
-                }
-                UpdateLineRenderer(rayOrigin, hit.point);
+                lightReactive.IsLit();
             }
+            UpdateLineRenderer(rayOrigin, hit.point);
         }
+    }
+
+    private void StopBeam()
+    {
+        if (_lineRenderer.positionCount != 0)
+            _lineRenderer.positionCount = 0;
     }
 
     private void UpdateLineRenderer(Vector3 start, Vector3 end)
