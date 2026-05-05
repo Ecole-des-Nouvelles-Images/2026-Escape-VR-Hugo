@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Branches.Hugo.Scripts
+namespace _Branches.Hugo.Scripts.Temporal
 {
     public class TemporalSunHandler : TemporalGameObject
     {

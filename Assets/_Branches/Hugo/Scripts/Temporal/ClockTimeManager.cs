@@ -2,7 +2,7 @@ using System;
 using Core.Singletons;
 using UnityEngine;
 
-namespace _Branches.Hugo.Scripts
+namespace _Branches.Hugo.Scripts.Temporal
 {
     public class ClockTimeManager : MonoBehaviourSingleton<ClockTimeManager>
     {
@@ -25,11 +25,6 @@ namespace _Branches.Hugo.Scripts
         {
             TotalMinutes = Mathf.Clamp(totalMinutes, _minTimeMinutes, _maxTimeMinutes);
             UpdateNormalizedTime();
-        }
-
-        private void Awake()
-        {
-            TotalMinutes = _minTimeMinutes;
         }
 
         private void Update()

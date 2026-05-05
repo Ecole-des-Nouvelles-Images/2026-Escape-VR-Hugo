@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-namespace _Branches.Hugo.Scripts
+namespace _Branches.Hugo.Scripts.Temporal
 {
     public class MainClockHandler : MonoBehaviour
     {
