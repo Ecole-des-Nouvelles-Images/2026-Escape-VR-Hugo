@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class SlotPadLockHandler : PadLock
 {
@@ -10,15 +11,16 @@ public class SlotPadLockHandler : PadLock
    
    private void OnTriggerEnter(Collider other)
    {
-      if (other.gameObject == _keyObject)
-      {
-         if(IsLock) UnlockPadLock();
-      }
+      // if (other.gameObject == _keyObject)
+      // {
+      //    if(IsLock) UnlockPadLock();
+      // }
    }
 
-   protected override void UnlockPadLock()
+   public void UnlockPadLock(SelectEnterEventArgs args)
    {
       base.UnlockPadLock();
+      _keyObject.GetComponent<BoxCollider>().enabled = false;
       transform.parent = _keyObject.transform;
       transform.localPosition = Vector3.zero +  OffSetPositionOnKey;
       transform.localRotation = new Quaternion(OffSetRotationOnKey.x, OffSetRotationOnKey.y, OffSetRotationOnKey.z, Quaternion.identity.w);

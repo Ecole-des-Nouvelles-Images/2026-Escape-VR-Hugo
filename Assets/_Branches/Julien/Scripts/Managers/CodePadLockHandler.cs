@@ -30,12 +30,7 @@ public class CodePadLockHandler : PadLock
     
     private bool _bigPadLockSpawned;
     private GameObject _player;
-    private List<Button> _allButtons;
-
-    private void Awake()
-    {
-        _allButtons = GetComponentsInChildren<Button>(true).ToList();
-    }
+    private bool _canRotateGear = true;
 
     private void Start()
     {
@@ -65,6 +60,7 @@ public class CodePadLockHandler : PadLock
 
     public void AddNumberOne()
     {
+        if (!_canRotateGear) return;
         NumberOne++;
         if (NumberOne < 0) NumberOne = 9;
         if (NumberOne > 9) NumberOne = 0;
@@ -73,6 +69,7 @@ public class CodePadLockHandler : PadLock
     }
     public void RemoveNumberOne()
     {
+        if (!_canRotateGear) return;
         NumberOne--; 
         if (NumberOne < 0) NumberOne = 9;
         if (NumberOne > 9) NumberOne = 0;
@@ -82,6 +79,7 @@ public class CodePadLockHandler : PadLock
     
     public void AddNumberTwo()
     {
+        if (!_canRotateGear) return;
         NumberTwo++;
         if (NumberTwo < 0) NumberTwo = 9;
         if (NumberTwo > 9) NumberTwo = 0;
@@ -90,6 +88,7 @@ public class CodePadLockHandler : PadLock
     }
     public void RemoveNumberTwo()
     {
+        if (!_canRotateGear) return;
         NumberTwo--;
         if (NumberTwo < 0) NumberTwo = 9;
         if (NumberTwo > 9) NumberTwo = 0;
@@ -99,6 +98,7 @@ public class CodePadLockHandler : PadLock
 
     public void AddNumberThree()
     {
+        if (!_canRotateGear) return;
         NumberThree++;
         if (NumberThree < 0) NumberThree = 9;
         if (NumberThree > 9) NumberThree = 0;
@@ -107,6 +107,7 @@ public class CodePadLockHandler : PadLock
     }
     public void RemoveNumberThree()
     {
+        if (!_canRotateGear) return;
         NumberThree--;
         if (NumberThree < 0) NumberThree = 9;
         if (NumberThree > 9) NumberThree = 0;
@@ -158,10 +159,10 @@ public class CodePadLockHandler : PadLock
     {
         Vector3 rotation =  gearTarget.transform.rotation.eulerAngles;
         Vector3 newRotation = new Vector3(rotation.x ,rotation.y + rotateValue, rotation.z);
-        foreach (Button button in _allButtons) button.interactable = false;
+        _canRotateGear = false;
         gearTarget.transform.DORotate(newRotation, 0.3f).OnComplete(() =>
         {
-            foreach (Button button in _allButtons) button.interactable = true;
+            _canRotateGear = true;
         });
     }
 

@@ -44,6 +44,7 @@ namespace _Branches.Hugo.Scripts.PuzzleFlower
 
             XRGrabInteractable grab = go.GetComponent<XRGrabInteractable>();
             Rigidbody rb = go.GetComponent<Rigidbody>();
+            Collider coll = go.GetComponentInChildren<Collider>();
 
             if (grab) grab.enabled = false;
             
@@ -53,6 +54,8 @@ namespace _Branches.Hugo.Scripts.PuzzleFlower
                 rb.useGravity = false;
                 rb.linearVelocity = Vector3.zero;
             }
+
+            if (coll) coll.isTrigger = true;
 
             go.SetParent(socket.transform);
             go.localPosition = Vector3.zero;
