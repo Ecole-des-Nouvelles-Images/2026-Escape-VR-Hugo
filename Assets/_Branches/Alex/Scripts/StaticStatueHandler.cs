@@ -6,6 +6,7 @@ using UnityEngine;
 public class StaticStatueHandler : TemporalGameObject
 {
     [SerializeField] private LineRenderer _lineRenderer;
+    [SerializeField] private LayerMask _layersToHit;
     
     private bool _isBeamActive = false;
     
@@ -42,7 +43,7 @@ public class StaticStatueHandler : TemporalGameObject
         Vector3 rayOrigin = transform.position;
         Vector3 rayDirection = transform.forward;
         
-        if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit))
+        if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, _layersToHit))
         {
             if (hit.collider.TryGetComponent<ILightReactive>(out var lightReactive))
             {

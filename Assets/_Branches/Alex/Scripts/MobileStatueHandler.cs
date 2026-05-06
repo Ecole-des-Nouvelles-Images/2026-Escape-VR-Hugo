@@ -5,6 +5,7 @@ using UnityEngine;
 public class MobileStatueHandler : MonoBehaviour, ILightReactive
 {
     [SerializeField] private LineRenderer _lineRenderer;
+    [SerializeField] private LayerMask _layersToHit;
     [SerializeField, Tooltip("Time in seconds for the statue to stay lit after being hit by a raycast.")] private float _litDuration = 0.08f;
     
     private float _lastLitTime = -Mathf.Infinity;
@@ -34,11 +35,12 @@ public class MobileStatueHandler : MonoBehaviour, ILightReactive
         Vector3 origin = transform.position;
         Vector3 direction = transform.forward;
 
-        if (Physics.Raycast(origin, direction, out var hit))
+        if (Physics.Raycast(origin, direction, out var hit, Mathf.Infinity, _layersToHit))
         {
-            if (hit.collider.TryGetComponent<ILightReactive>(out var lightReactive) && lightReactive != this)
+            if (hit.collider.TryGetComponent<ILightReactive>(out var lightReactive))
             {
-                lightReactive.IsLit();
+                if (hit.transform != transform)
+                    lightReactive.IsLit();
             }
             UpdateLineRenderer(origin, hit.point);
         }
