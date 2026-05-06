@@ -453,6 +453,117 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2075684355
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 189545808274135980, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189545808274135980, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189545808274135980, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189545808274135980, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 189545808274135980, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189545808274135980, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189545808274135980, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189545808274135980, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189545808274135980, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 189545808274135980, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057135026864616565, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: m_Name
+      value: Coquelicot_Essai
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998498863603672957, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998498863603672957, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[1]'
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2057135026864616565, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2075684358}
+    - targetCorrespondingSourceObject: {fileID: 2057135026864616565, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2075684357}
+  m_SourcePrefab: {fileID: 100100000, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+--- !u!1 &2075684356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2057135026864616565, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+  m_PrefabInstance: {fileID: 2075684355}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2075684357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075684356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d006fce12a4151972d1dc65743271e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.PuzzleFlower.PetalsBouquetHandler
+  _temporalRange: {x: 0.1, y: 0.101}
+  _state: 0
+  _skinnedMeshRenderer: {fileID: 2075684359}
+--- !u!114 &2075684358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075684356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b285e39cc61a4f1ab0263123203a9301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.PuzzleFlower.StemBouquetHandler
+  _temporalRange: {x: 0, y: 0.1}
+  _state: 0
+  _skinnedMeshRenderer: {fileID: 2075684359}
+--- !u!137 &2075684359 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4998498863603672957, guid: 2147c13a27378664ab0831af876b96da, type: 3}
+  m_PrefabInstance: {fileID: 2075684355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &445894935953475159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -461,9 +572,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1151009031916710050, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4622113530759711326, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
       propertyPath: m_Name
       value: ===== PUZZLE FLOWER =====
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840810887092380673, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8059803717006203605, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -503,6 +622,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8059803717006203605, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164199171807187901, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -695,3 +818,4 @@ SceneRoots:
   - {fileID: 816766100766476956}
   - {fileID: 581131716}
   - {fileID: 445894935953475159}
+  - {fileID: 2075684355}
