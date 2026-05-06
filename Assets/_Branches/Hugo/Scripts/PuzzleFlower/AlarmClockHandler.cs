@@ -1,3 +1,4 @@
+using System.Collections;
 using Core;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -14,45 +15,50 @@ namespace _Branches.Hugo.Scripts.PuzzleFlower
         
         [Header("===== DEBUG =====")]
         [SerializeField] private bool _isCompleted;
+        [SerializeField] private int _advancement;
 
-        private void Awake()
+        public float GetAdvancement()
         {
-            _alarmMechanismSockets.enabled = true;
-            _alarmFaceSockets.enabled = false;
+            return _advancement;
         }
 
         public void OnMechanismPlaced(SelectEnterEventArgs args)
         {
-            _alarmFaceSockets.enabled = true;
+            _advancement++;
             
-            Transform go = args.interactableObject.transform;
-            
-            XRGrabInteractable goGrab = go.GetComponent<XRGrabInteractable>();
-            goGrab.enabled = false;
-            
-            _alarmMechanismSockets.enabled = false;
-            SetParent(_alarmMechanismSockets.transform, go);
+            StartCoroutine(LockObjectInSocket(args.interactableObject.transform, _alarmMechanismSockets));
         }
         
         public void OnFacePlaced(SelectEnterEventArgs args)
         {
+            _advancement++;
             _isCompleted = true;
             EventBus.OnAlarmRepaired?.Invoke();
             
-            Transform go = args.interactableObject.transform;
-            
-            XRGrabInteractable goGrab = go.GetComponent<XRGrabInteractable>();
-            goGrab.enabled = false;
-            
-            _alarmFaceSockets.enabled = false;
-            SetParent(_alarmFaceSockets.transform, go);
+            StartCoroutine(LockObjectInSocket(args.interactableObject.transform, _alarmFaceSockets));
         }
 
-        private void SetParent(Transform parent, Transform child)
+        private IEnumerator LockObjectInSocket(Transform go, XRSocketInteractor socket)
         {
-            child.transform.SetParent(parent);
-            child.transform.localPosition = Vector3.zero;
-            child.transform.localRotation = Quaternion.identity;
+            yield return new WaitForEndOfFrame();
+
+            XRGrabInteractable grab = go.GetComponent<XRGrabInteractable>();
+            Rigidbody rb = go.GetComponent<Rigidbody>();
+
+            if (grab) grab.enabled = false;
+            
+            if (rb)
+            {
+                rb.isKinematic = true;
+                rb.useGravity = false;
+                rb.linearVelocity = Vector3.zero;
+            }
+
+            go.SetParent(socket.transform);
+            go.localPosition = Vector3.zero;
+            go.localRotation = Quaternion.identity;
+
+            socket.enabled = false;
         }
     }
 }

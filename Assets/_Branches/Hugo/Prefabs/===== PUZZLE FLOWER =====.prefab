@@ -621,6 +621,7 @@ GameObject:
   - component: {fileID: 3787640263374299627}
   - component: {fileID: 9151598083468874673}
   - component: {fileID: 819396329722894119}
+  - component: {fileID: 1517615121266902519}
   m_Layer: 0
   m_Name: AlarmClockFace
   m_TagString: AlarmFace
@@ -719,10 +720,36 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1517615121266902519}
+        m_TargetAssemblyTypeName: _Branches.Hugo.Scripts.AlarmFaceSocketHandler,
+          Assembly-CSharp
+        m_MethodName: OnSelectedEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1517615121266902519}
+        m_TargetAssemblyTypeName: _Branches.Hugo.Scripts.AlarmFaceSocketHandler,
+          Assembly-CSharp
+        m_MethodName: OnSelectedExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -801,6 +828,21 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &1517615121266902519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896797713358852472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea13513ffe0649d6a1341ed584b390b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.AlarmFaceSocketHandler
+  _conectedSocket: {fileID: 6598144860078874}
+  _disableDelay: 0.1
+  _alarmClockHandler: {fileID: 6141786827992451027}
 --- !u!1 &2100671801754460314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +1978,7 @@ GameObject:
   - component: {fileID: 7312079531622277425}
   - component: {fileID: 6746463401216058161}
   - component: {fileID: 4554710781689000492}
+  - component: {fileID: 8160732279410198230}
   m_Layer: 0
   m_Name: AlarmClockMechanism
   m_TagString: AlarmMechanism
@@ -2034,10 +2077,36 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8160732279410198230}
+        m_TargetAssemblyTypeName: _Branches.Hugo.Scripts.AlarmMechanismSocketHandler,
+          Assembly-CSharp
+        m_MethodName: OnSelectedEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8160732279410198230}
+        m_TargetAssemblyTypeName: _Branches.Hugo.Scripts.AlarmMechanismSocketHandler,
+          Assembly-CSharp
+        m_MethodName: OnSelectedExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -2116,6 +2185,20 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &8160732279410198230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415065301277905431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f81afe16684f4d379fa105c18d9c1d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.AlarmMechanismSocketHandler
+  _conectedSocket: {fileID: 1297658564593911069}
+  _disableDelay: 0.1
 --- !u!1 &4622113530759711326
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,6 +3566,7 @@ MonoBehaviour:
   _alarmMechanismSockets: {fileID: 1297658564593911069}
   _alarmFaceSockets: {fileID: 6598144860078874}
   _isCompleted: 0
+  _advancement: 0
 --- !u!54 &7921975491044904956
 Rigidbody:
   m_ObjectHideFlags: 0
