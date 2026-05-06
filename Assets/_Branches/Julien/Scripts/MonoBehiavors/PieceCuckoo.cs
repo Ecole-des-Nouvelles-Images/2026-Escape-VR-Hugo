@@ -23,12 +23,12 @@ public class PieceCuckoo : MonoBehaviour
     public void AttachToSlot()
     {
         if (!_slotCuckoo) return;
-        _slotCuckoo.GetComponent<SlotCuckoo>().AttachPiece(gameObject);
+        //_slotCuckoo.GetComponent<SlotCuckoo>().AttachPiece(gameObject);
     }
 
     public void UnAttachToSlot()
     {
         if (!_slotCuckoo) return;
-        _slotCuckoo.GetComponent<SlotCuckoo>().UnAttachPiece(gameObject);
+        //_slotCuckoo.GetComponent<SlotCuckoo>().UnAttachPiece(gameObject);
     }
 }

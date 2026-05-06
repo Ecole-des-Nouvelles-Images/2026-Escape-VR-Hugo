@@ -1,6 +1,7 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class SlotCuckoo : MonoBehaviour
@@ -17,27 +18,31 @@ public class SlotCuckoo : MonoBehaviour
     }
     
 
-    public void AttachPiece(GameObject piece)
+    public void AttachPiece(SelectEnterEventArgs arg)
     {
+        GameObject piece = arg.interactableObject.transform.gameObject;
+        
         if(_slotOccuped) return;
+        Debug.Log(piece.name);
         if (piece == _rightPiece)
         {
+            Debug.Log("AttachPiece2");
             ValidPiece(); 
             return;
         }
+        Debug.Log("AttachPiece3");
         
-        Debug.Log("AttachPiece");
         piece.GetComponent<Rigidbody>().isKinematic = true;
-        
-        piece.transform.position = transform.position;
-        piece.transform.localRotation = new Quaternion(0,0,0,0);
         
         _slotOccuped = true;
         IsValid = false;
     }
 
-    public void UnAttachPiece(GameObject piece)
+    public void UnAttachPiece(SelectExitEventArgs arg)
     {
+        if (arg == null) return;
+        GameObject piece = arg.interactableObject.transform.gameObject;
+        
         Debug.Log("UnAttachPiece");
         _slotOccuped = false;
         IsValid = false;
@@ -58,6 +63,8 @@ public class SlotCuckoo : MonoBehaviour
         
         _slotOccuped = true;
         IsValid = true;
+        
+        Debug.Log("Slot valided");
     }
 
     

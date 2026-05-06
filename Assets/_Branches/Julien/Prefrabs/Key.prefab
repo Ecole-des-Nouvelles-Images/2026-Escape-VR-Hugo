@@ -40,13 +40,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8257337613030333538}
-  - component: {fileID: 405503478785687586}
   - component: {fileID: 3839426880393035424}
-  - component: {fileID: 5932266577422998205}
   - component: {fileID: 230269432892133725}
+  - component: {fileID: 5932266577422998205}
   m_Layer: 0
   m_Name: Key
-  m_TagString: PieceCuckoo
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,25 +60,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.43843368, y: 0.5547744, z: -0.4384347, w: 0.55477583}
   m_LocalPosition: {x: 0.424, y: -0.921, z: 0.011}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.34576, y: 0.61255, z: 0.37988}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3036003812897802026}
   - {fileID: 1801735621358038470}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 76.638, y: 89.999, z: -0.001}
---- !u!114 &405503478785687586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6774145822301876959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de098d1f1107ee40933f84c78e9a1e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PieceCuckoo
 --- !u!54 &3839426880393035424
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -107,6 +94,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &230269432892133725
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6774145822301876959}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.058588333, y: 0.15552445, z: 0.052043367}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5932266577422998205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +131,7 @@ MonoBehaviour:
   m_Colliders:
   - {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 536870913
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -156,7 +164,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 405503478785687586}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PieceCuckoo, Assembly-CSharp
         m_MethodName: UnAttachToSlot
         m_Mode: 1
@@ -171,7 +179,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 405503478785687586}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PieceCuckoo, Assembly-CSharp
         m_MethodName: AttachToSlot
         m_Mode: 1
@@ -261,27 +269,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!65 &230269432892133725
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6774145822301876959}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.058588333, y: 0.15552445, z: 0.052043367}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8833047641925805899
 GameObject:
   m_ObjectHideFlags: 0

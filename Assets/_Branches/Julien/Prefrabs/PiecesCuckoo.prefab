@@ -130,7 +130,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 128004340077586457}
-  - component: {fileID: 1231765816862769862}
   - component: {fileID: 643952125251195630}
   - component: {fileID: 117600501190545641}
   - component: {fileID: 9146234458364767021}
@@ -158,18 +157,6 @@ Transform:
   - {fileID: 8257595287870338296}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1231765816862769862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5884283661457269650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de098d1f1107ee40933f84c78e9a1e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PieceCuckoo
 --- !u!54 &643952125251195630
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -246,7 +233,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1231765816862769862}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PieceCuckoo, Assembly-CSharp
         m_MethodName: UnAttachToSlot
         m_Mode: 1
@@ -261,7 +248,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1231765816862769862}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PieceCuckoo, Assembly-CSharp
         m_MethodName: AttachToSlot
         m_Mode: 1

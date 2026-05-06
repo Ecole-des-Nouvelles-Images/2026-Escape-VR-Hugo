@@ -9,13 +9,14 @@ public class CuckooHandler : MonoBehaviour
     [SerializeField] private int _SlotValid;
     [SerializeField] private GameObject _bird;
     
-    private List<GameObject> _piecesValid = new List<GameObject>();
+    [SerializeField] private List<GameObject> _piecesValid = new List<GameObject>();
     
     public void ValidSlot(GameObject piece)
     {
         Debug.Log("validSlot");
         _SlotValid++;
         _piecesValid.Add(piece);
+        Debug.Log(_SlotValid);
         if (_SlotValid == 4)
         {
             InsertAllPieces();
@@ -33,27 +34,26 @@ public class CuckooHandler : MonoBehaviour
     
     private void InsertAllPieces()
     {
-        
-        foreach (GameObject piece in _piecesValid)
-        {
-            piece.GetComponent<XRGrabInteractable>().enabled = false;
-            piece.GetComponent<Rigidbody>().isKinematic = true;
-            
-            piece.transform.DOMoveY(piece.transform.position.y + 0.2f, 0.9f);
-        }
-
+        Debug.Log("Insert all pieces");
         StartCoroutine("Timer");
     }
 
     private IEnumerator Timer()
     {
         yield return new WaitForSeconds(1f);
-        CoucouAnimation();
-    }
-
-    [ContextMenu("COUCOU")]
-    private void CoucouAnimation()
-    {
+        
+        List<GameObject> piecesCopy = new List<GameObject>(_piecesValid);
+        
+        foreach (GameObject piece in piecesCopy)
+        {
+            piece.GetComponent<XRGrabInteractable>().enabled = false;
+            piece.GetComponent<Rigidbody>().isKinematic = true;
+            piece.transform.DOMoveY(piece.transform.position.y + 0.05f, 0.5f);
+        }
+        
+        yield return new WaitForSeconds(1.5f);
+        
         _bird.SetActive(true);
+        
     }
 }
