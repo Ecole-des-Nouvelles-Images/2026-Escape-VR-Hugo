@@ -33,13 +33,13 @@ namespace _Branches.Hugo.Scripts.Temporal
         {
             ClockTimeManager.Instance.OnTimeChanged += InstanceOnOnTimeChanged;
 
-            if (_hourGrab) 
+            if (_hourGrab)
             {
                 _hourGrab.selectEntered.AddListener(x => OnGrabHand(true, true));
                 _hourGrab.selectExited.AddListener(x => OnGrabHand(true, false));
             }
             
-            if (_minuteGrab) 
+            if (_minuteGrab)
             {
                 _minuteGrab.selectEntered.AddListener(x => OnGrabHand(false, true));
                 _minuteGrab.selectExited.AddListener(x => OnGrabHand(false, false));
