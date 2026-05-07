@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Core.Singletons;
 using DG.Tweening;
@@ -11,9 +10,15 @@ public class SceneLoaderManager : MonoBehaviourSingleton<SceneLoaderManager>
     [Range(0,1)] public float _valueBlackEffect = 1;
     [Range(0,1)] public float _valueSmoothEffect = 0.8f;
     [SerializeField] public Material _blackScreenGm;
+    [SerializeField] private bool _sceneLoaded = false;
     
     private string _sceneName;
-
+    
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+    
     public void LoadScene(string sceneName)
     {
         Debug.Log("LoadedScene");
@@ -50,8 +55,9 @@ public class SceneLoaderManager : MonoBehaviourSingleton<SceneLoaderManager>
 
     private IEnumerator TimeToLoad()
     {
-        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(_sceneName);
+        yield return new WaitForSeconds(1f);
+        DisableBlackScreen();   
     }
     
 }
