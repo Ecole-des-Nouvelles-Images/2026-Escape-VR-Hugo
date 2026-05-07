@@ -513,6 +513,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1672450252966321640, guid: 958ee654048dc1245856b21dacdb2506, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590503018553574973, guid: 958ee654048dc1245856b21dacdb2506, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590503018553574973, guid: 958ee654048dc1245856b21dacdb2506, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590503018553574973, guid: 958ee654048dc1245856b21dacdb2506, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590503018553574973, guid: 958ee654048dc1245856b21dacdb2506, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 8472457830129308464, guid: 958ee654048dc1245856b21dacdb2506, type: 3}
       propertyPath: m_Name
       value: SceneTestV7
