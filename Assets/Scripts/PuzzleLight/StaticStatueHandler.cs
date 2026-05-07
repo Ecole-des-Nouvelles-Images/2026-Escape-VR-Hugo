@@ -1,22 +1,25 @@
 using _Branches.Hugo.Scripts.Temporal;
 using Core.Interfaces;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Splines;
 
 namespace PuzzleLight
 {
-    [RequireComponent(typeof(LineRenderer))]
     public class StaticStatueHandler : TemporalGameObject
     {
         [Header("===== SETTINGS =====")]
-        [SerializeField] private LineRenderer _lineRenderer;
         [SerializeField] private LayerMask _layersToHit;
+        [SerializeField] private SplineContainer _splineContainer;
+        [SerializeField] private GameObject _splineExtrude;
     
+        private Spline _spline;
         private bool _isBeamActive = false;
         
         void Start()
         {
-            if (_lineRenderer == null)
-                _lineRenderer = GetComponent<LineRenderer>();
+            if (_splineContainer) _spline = _splineContainer.Spline;
+            if (_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
         }
 
         void Update()
@@ -53,15 +56,18 @@ namespace PuzzleLight
 
         private void StopBeam()
         {
-            if (_lineRenderer.positionCount != 0)
-                _lineRenderer.positionCount = 0;
+            if (_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
         }
 
         private void UpdateLineRenderer(Vector3 start, Vector3 end)
         {
-            _lineRenderer.positionCount = 2;
-            _lineRenderer.SetPosition(0, start);
-            _lineRenderer.SetPosition(1, end);
+            if (!_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(true);
+
+            float3 localStart = transform.InverseTransformPoint(start);
+            float3 localEnd = transform.InverseTransformPoint(end);
+
+            _spline.SetKnot(0, new BezierKnot(localStart));
+            _spline.SetKnot(1, new BezierKnot(localEnd));
         }
     }
 }
