@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace _Branches.Hugo.Scripts
 {
-    public class LockGameObject : MonoBehaviour
+    public class LockedGameObject : MonoBehaviour
     {
         private struct LockedObjectCache
         {
@@ -12,14 +13,15 @@ namespace _Branches.Hugo.Scripts
             public Rigidbody Rb;
         }
 
+        [FormerlySerializedAs("_lockGameObjects")]
         [Header("===== REFERENCES =====")]
-        [SerializeField] private List<GameObject> _lockGameObjects = new();
+        [SerializeField] private List<GameObject> _lockedGameObjects = new();
 
         private List<LockedObjectCache> _cachedObjects = new();
 
         private void Start()
         {
-            foreach (var obj in _lockGameObjects)
+            foreach (var obj in _lockedGameObjects)
             {
                 if (obj == null) continue;
 
