@@ -420,7 +420,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5538058461923485523}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnObjectGrabbed
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CandleHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 128004340077586457, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1149,6 +1173,17 @@ PrefabInstance:
       addedObject: {fileID: 215008225218885634}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
+--- !u!114 &5538058461923485523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6850687643429880431, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
+  m_PrefabInstance: {fileID: 1425858538202228028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315e26bcfacb43d4b9eafb80a66efd9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CandleHandler
 --- !u!4 &6395551661491008000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5406635746705856316, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
@@ -1258,7 +1293,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4126298106606702285}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnObjectGrabbed
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CandleHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 128004340077586457, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1350,6 +1409,50 @@ PrefabInstance:
     - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
       propertyPath: m_InteractionLayers.m_Bits
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3511202966104610659}
+    - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnObjectGrabbed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UnAttachToSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CandleHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PieceCuckoo, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932266577422998205, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6774145822301876959, guid: 63d3e07c7eeaa1b458998d31a9467d31, type: 3}
       propertyPath: m_Name
@@ -1488,6 +1591,17 @@ PrefabInstance:
       addedObject: {fileID: 7803638647347328937}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
+--- !u!114 &7053179881928698537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6850687643429880431, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
+  m_PrefabInstance: {fileID: 4536081016728676550}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315e26bcfacb43d4b9eafb80a66efd9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CandleHandler
 --- !u!4 &8501493407709249530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5406635746705856316, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
@@ -1511,7 +1625,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 690011753416036417}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnObjectGrabbed
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CandleHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 128004340077586457, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1649,6 +1787,17 @@ PrefabInstance:
       addedObject: {fileID: 5370301652338156288}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
+--- !u!114 &690011753416036417 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6850687643429880431, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
+  m_PrefabInstance: {fileID: 6233511942586028590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315e26bcfacb43d4b9eafb80a66efd9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CandleHandler
 --- !u!4 &2128470365602186514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5406635746705856316, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
@@ -1809,6 +1958,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5406635746705856316, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
   m_PrefabInstance: {fileID: 7372681046122499234}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4126298106606702285 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6850687643429880431, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
+  m_PrefabInstance: {fileID: 7372681046122499234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315e26bcfacb43d4b9eafb80a66efd9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CandleHandler
 --- !u!1001 &7893362390592249776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1827,7 +1987,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7053179881928698537}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnObjectGrabbed
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CandleHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 117600501190545641, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 128004340077586457, guid: 432c4feae3cf95c49b65bde4f69396ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1995,3 +2179,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5406635746705856316, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
   m_PrefabInstance: {fileID: 8045896667624199436}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3511202966104610659 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6850687643429880431, guid: b695311c6d227a1409ead7d7872f3232, type: 3}
+  m_PrefabInstance: {fileID: 8045896667624199436}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315e26bcfacb43d4b9eafb80a66efd9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CandleHandler
