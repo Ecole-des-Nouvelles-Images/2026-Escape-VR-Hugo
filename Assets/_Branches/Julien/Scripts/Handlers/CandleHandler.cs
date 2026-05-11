@@ -79,6 +79,5 @@ public class CandleHandler : TemporalGameObject
         _objectToDrop.GetComponent<BoxCollider>().isTrigger = false;
         _objectToDrop.GetComponent<Rigidbody>().isKinematic = false;
         _dropedHisObject = true;
-        Debug.Log("Dropped object in candle");
     }
 }
