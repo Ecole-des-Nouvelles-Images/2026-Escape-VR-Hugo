@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private float _maxTime;
     [SerializeField] private float _currentTime;
     [SerializeField] private bool _isOnSocle;
+
+    [SerializeField] private UnityEvent EventWhenLoad;
     
     private bool _isLoading = false;
     
@@ -42,9 +45,10 @@ public class SceneLoader : MonoBehaviour
         if (_currentTime >= _maxTime)
         {
             _isLoading = true;
-
+            EventWhenLoad?.Invoke();
+            
             Debug.Log("Load Scene : " + SceneName);
-
+            
             SceneLoaderManager.Instance.LoadScene(SceneName);
         }
     }
