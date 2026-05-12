@@ -549,7 +549,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4861629580353477286}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2003,7 +2003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54650ea7f87e9274eb58f71249ab62de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
-  _sceneNameToLoad: GameScene
+  _sceneNameToLoad: Game_Julien
   _optionPanel: {fileID: 8015847757138344450}
   _creditsPanel: {fileID: 59183258555362093}
   _exitPanel: {fileID: 6895614062421215499}
