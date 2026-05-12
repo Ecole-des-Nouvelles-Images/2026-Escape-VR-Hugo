@@ -597,6 +597,7 @@ MonoBehaviour:
   _maxTimeMinutes: 1080
   _timeUpdateThreshold: 0.0001
   TotalMinutes: 900
+  IsPaused: 0
 --- !u!4 &513045605
 Transform:
   m_ObjectHideFlags: 0
@@ -738,7 +739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7098485831129003190, guid: bd27c0d0992aa644681e7ec1aa0e4e2a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7816162126836926622, guid: bd27c0d0992aa644681e7ec1aa0e4e2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1106,6 +1107,14 @@ PrefabInstance:
     - target: {fileID: 3000174835303426347, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
       propertyPath: m_Name
       value: ==== PUZZLE LIGHT ====
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646237437492117570, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679303849570193330, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5308023422842251930, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
       propertyPath: m_LocalPosition.x
