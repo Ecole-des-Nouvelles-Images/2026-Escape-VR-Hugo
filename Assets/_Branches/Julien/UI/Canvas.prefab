@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6858b109b7d63a2499792d016e21c46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimationPanel
+  AnimationType: 0
 --- !u!222 &1910187160650662312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -450,18 +451,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046297347688585512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000045776367}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3629818840420919992}
   m_Father: {fileID: 4701897861286944136}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.11}
-  m_AnchorMax: {x: 0.4, y: 0.33}
-  m_AnchoredPosition: {x: 0, y: -3.612793}
-  m_SizeDelta: {x: 0, y: 7.2256856}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_SizeDelta: {x: 440, y: 444.6077}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &8215237501829432714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3148,6 +3149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8363097229313789463}
+  - component: {fileID: 6457508820137321752}
   - component: {fileID: 7668577683003704425}
   - component: {fileID: 6664682773031116407}
   m_Layer: 5
@@ -3177,6 +3179,19 @@ RectTransform:
   m_AnchoredPosition: {x: 1208, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6457508820137321752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6895614062421215499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6858b109b7d63a2499792d016e21c46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationPanel
+  AnimationType: 1
 --- !u!222 &7668577683003704425
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3574,8 +3589,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 141770006793330318}
-  - component: {fileID: 5264998033123687570}
   - component: {fileID: 553294110895868285}
+  - component: {fileID: 5264998033123687570}
   - component: {fileID: 1961565306915737584}
   m_Layer: 5
   m_Name: OptionPanel
@@ -3606,14 +3621,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1208, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5264998033123687570
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8015847757138344450}
-  m_CullTransparentMesh: 1
 --- !u!114 &553294110895868285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3626,6 +3633,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6858b109b7d63a2499792d016e21c46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimationPanel
+  AnimationType: 0
+--- !u!222 &5264998033123687570
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015847757138344450}
+  m_CullTransparentMesh: 1
 --- !u!114 &1961565306915737584
 MonoBehaviour:
   m_ObjectHideFlags: 0
