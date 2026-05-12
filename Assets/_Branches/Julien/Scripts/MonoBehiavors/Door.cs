@@ -1,3 +1,4 @@
+using Core;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
@@ -8,6 +9,7 @@ public class Door : MonoBehaviour
     public void Open()
     {
         _grabInteractable.enabled = true;
+        EventBus.OnBriefcaseOpened?.Invoke();
     }
 
     public void Close()
