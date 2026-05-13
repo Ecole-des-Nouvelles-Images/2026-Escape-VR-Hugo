@@ -17,7 +17,6 @@ public class MainMenu : MonoBehaviour
 
     public void Options()
     {
-        Debug.Log("Option");
         _optionPanel.SetActive(true);
         _creditsPanel.SetActive(false);
         _exitPanel.SetActive(false);
@@ -25,7 +24,6 @@ public class MainMenu : MonoBehaviour
 
     public void Credits()
     {
-        Debug.Log("Credits");
         _creditsPanel.SetActive(true);
         _optionPanel.SetActive(false);
         _exitPanel.SetActive(false);
@@ -33,9 +31,13 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
-        Debug.Log("Quit");
         _exitPanel.SetActive(true);
         _optionPanel.SetActive(false);
         _creditsPanel.SetActive(false);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
