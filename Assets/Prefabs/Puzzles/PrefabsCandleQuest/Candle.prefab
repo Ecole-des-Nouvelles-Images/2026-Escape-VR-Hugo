@@ -434,6 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5406635746705856316}
   - component: {fileID: 6850687643429880431}
+  - component: {fileID: 1352494662964746166}
   - component: {fileID: 4356252512298514747}
   - component: {fileID: 1911913064500900525}
   m_Layer: 0
@@ -475,15 +476,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CandleHandler
   _temporalRange: {x: 0, y: 0}
   _state: 0
-  _setValueInStart: 0
-  _fireStarteTime: {x: 0, y: 0}
   _candleVisual: {fileID: 8583205564626927380}
+  _fireInStart: 0
   _flameGameObject: {fileID: 5405486424617694696}
   _isFire: 0
   _firePoint: {fileID: 2620404557029971447}
   _valueDrop: 0.6
   _objectToDrop: {fileID: 0}
   _dropedHisObject: 0
+  _dropedObjectWasInteracted: 0
+--- !u!114 &1352494662964746166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660106522597190186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Respawn
+  _startPos: {x: 0, y: 0, z: 0}
 --- !u!54 &4356252512298514747
 Rigidbody:
   m_ObjectHideFlags: 0

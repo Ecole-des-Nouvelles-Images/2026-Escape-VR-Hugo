@@ -1,5 +1,6 @@
 using System.Numerics;
 using _Branches.Hugo.Scripts.Temporal;
+using Core;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using Vector2 = UnityEngine.Vector2;
@@ -120,5 +121,6 @@ public class CandleHandler : TemporalGameObject
     public void OnObjectGrabbed()
     {
         _dropedObjectWasInteracted = true;
+        if (_objectToDrop.CompareTag("Key")) EventBus.OnFirstKeyUnlocked?.Invoke();
     }
 }
