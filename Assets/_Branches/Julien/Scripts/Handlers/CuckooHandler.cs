@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Core;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -50,10 +51,12 @@ public class CuckooHandler : MonoBehaviour
             piece.GetComponent<Rigidbody>().isKinematic = true;
             piece.transform.DOMoveY(piece.transform.position.y + 0.05f, 0.5f);
         }
+        EventBus.OnCuckooClockRepaired?.Invoke();
         
         yield return new WaitForSeconds(1.5f);
         
         _bird.SetActive(true);
+        EventBus.OnCandleKeyUnlocked?.Invoke();
         
     }
 }
