@@ -615,6 +615,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4228085649884217466, guid: ab7edfd7e1748134e9cf9f3aacdf3a76, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f24e58eb4b5b77142920a39a89d30d7a, type: 2}
     - target: {fileID: 6111309036026967636, guid: ab7edfd7e1748134e9cf9f3aacdf3a76, type: 3}
       propertyPath: m_Name
       value: M_Desk
@@ -803,6 +807,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1552250404869801950, guid: 36b27ace732e2354e96b2c64a8557309, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b5185006b0a610419541a64f74f10ba, type: 2}
     - target: {fileID: 2354735690272536230, guid: 36b27ace732e2354e96b2c64a8557309, type: 3}
       propertyPath: m_Name
       value: M_Chair_Prefab
