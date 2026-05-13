@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 3181525269631628244}
   - component: {fileID: 767833574940616145}
   - component: {fileID: 7467246337953922989}
+  - component: {fileID: 5580519111932518892}
   - component: {fileID: 2649297196063603292}
   m_Layer: 0
   m_Name: PlayerVR
@@ -547,6 +548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb22ffebf7afa84a8198f8b3fa63ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  _interactorRayLeft: {fileID: 6780130577378090259}
+  _interactorRayRight: {fileID: 7665473352204490890}
 --- !u!114 &7467246337953922989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,6 +567,20 @@ MonoBehaviour:
   m_CameraFloorOffsetObject: {fileID: 245540712191540013}
   m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.1176
+--- !u!114 &5580519111932518892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2675925849336777822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7091b5836e338b4b8fbb993799311b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VrRecenter
+  xrOrigin: {fileID: 7467246337953922989}
+  targetHeading: {fileID: 0}
 --- !u!114 &2649297196063603292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2083,6 +2100,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5888765399538998960, guid: ad818c36731146e994540a1896ad8f24, type: 3}
   m_PrefabInstance: {fileID: 5105448417962958690}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6780130577378090259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1787346994484839025, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+  m_PrefabInstance: {fileID: 5105448417962958690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8263214684593625851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2263,5 +2285,10 @@ PrefabInstance:
 --- !u!4 &2528152268346000459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5888765399538998960, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+  m_PrefabInstance: {fileID: 8263214684593625851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7665473352204490890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1787346994484839025, guid: ad818c36731146e994540a1896ad8f24, type: 3}
   m_PrefabInstance: {fileID: 8263214684593625851}
   m_PrefabAsset: {fileID: 0}
