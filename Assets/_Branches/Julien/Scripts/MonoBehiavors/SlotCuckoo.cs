@@ -17,7 +17,6 @@ public class SlotCuckoo : MonoBehaviour
         _cuckoo = GetComponentInParent<CuckooHandler>();
     }
     
-
     public void AttachPiece(SelectEnterEventArgs arg)
     {
         GameObject piece = arg.interactableObject.transform.gameObject;
