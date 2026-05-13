@@ -57,6 +57,5 @@ public class CuckooHandler : MonoBehaviour
         
         _bird.SetActive(true);
         EventBus.OnCandleKeyUnlocked?.Invoke();
-        
     }
 }
