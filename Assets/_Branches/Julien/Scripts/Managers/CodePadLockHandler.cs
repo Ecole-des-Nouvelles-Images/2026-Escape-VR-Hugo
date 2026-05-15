@@ -13,7 +13,6 @@ public class CodePadLockHandler : PadLock
 
     [SerializeField] private int NumberOne;
     [SerializeField] private int NumberTwo;
-    [SerializeField] private int NumberThree;
     
     [SerializeField] private GameObject CodePadLock;
 
@@ -25,7 +24,6 @@ public class CodePadLockHandler : PadLock
 
     [FormerlySerializedAs("GearOne")] [SerializeField] private GameObject _gearOne;
     [FormerlySerializedAs("GearTwo")] [SerializeField] private GameObject _gearTwo;
-    [FormerlySerializedAs("GearThree")] [SerializeField] private GameObject _gearThree;
     [FormerlySerializedAs("Lock")] [SerializeField] private GameObject _lock;
     
     private bool _bigPadLockSpawned;
@@ -95,31 +93,12 @@ public class CodePadLockHandler : PadLock
         SetCode();
         RotateGear(_gearTwo, -36);
     }
-
-    public void AddNumberThree()
-    {
-        if (!_canRotateGear) return;
-        NumberThree++;
-        if (NumberThree < 0) NumberThree = 9;
-        if (NumberThree > 9) NumberThree = 0;
-        SetCode();
-        RotateGear(_gearThree, 36);
-    }
-    public void RemoveNumberThree()
-    {
-        if (!_canRotateGear) return;
-        NumberThree--;
-        if (NumberThree < 0) NumberThree = 9;
-        if (NumberThree > 9) NumberThree = 0;
-        SetCode();
-        RotateGear(_gearThree, -36);
-    }
-
+    
     #endregion
 
     private void SetCode()
     {
-        CurrentCode = new string(NumberOne + "" + NumberTwo + "" + NumberThree);
+        CurrentCode = new string(NumberOne + "" + NumberTwo);
         VerifyIfCodeIsRight();
     }
     
@@ -170,7 +149,7 @@ public class CodePadLockHandler : PadLock
     private void AnimationUnlock()
     {
         Vector3 rotation =  _lock.transform.rotation.eulerAngles;
-        Vector3 newRotation = new Vector3(rotation.x ,rotation.y, rotation.z + 90);
+        Vector3 newRotation = new Vector3(rotation.x ,rotation.y, rotation.z + -30);
         _lock.transform.DORotate(newRotation ,1).OnComplete(() =>
         {
             CodePadLock.transform.DOScale(new Vector3(0, 0, 0), 0.5f).OnComplete(() =>
@@ -184,7 +163,7 @@ public class CodePadLockHandler : PadLock
     private void AnimateReelPadLock()
     {
         Vector3 rotation =  _lockSmall.transform.rotation.eulerAngles;
-        Vector3 newRotation = new Vector3(rotation.x ,rotation.y, rotation.z + 90);
+        Vector3 newRotation = new Vector3(rotation.x ,rotation.y, rotation.z + -30);
         _lockSmall.transform.DORotate(newRotation, 1).OnComplete(() =>
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
