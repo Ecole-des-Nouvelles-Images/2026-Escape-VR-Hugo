@@ -1,4 +1,4 @@
-﻿namespace _Branches.Hugo.Scripts
+﻿namespace _Branches.Hugo.Scripts.PuzzleFlower
 {
     public class AlarmMechanismSocketHandler : SocketHandler
     {

@@ -1,7 +1,6 @@
-﻿using _Branches.Hugo.Scripts.PuzzleFlower;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace _Branches.Hugo.Scripts
+namespace _Branches.Hugo.Scripts.PuzzleFlower
 {
     public class AlarmFaceSocketHandler : SocketHandler
     {
