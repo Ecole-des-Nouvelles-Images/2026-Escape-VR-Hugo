@@ -10,21 +10,18 @@ public class PauseMenu : MonoBehaviourSingleton<PauseMenu>
     [SerializeField] private GameObject _exitPanel;
 
     public bool GameInPause;
-
-    public void CallPause()
-    {
-        
-    }
     
     public void PauseGame()
     {
         _menu.SetActive(true);
+        GameInPause = true;
         //Time.timeScale = 0f;
     }
 
     public void Resume()
     {
         _menu.SetActive(false);
+        GameInPause = false;
         //Time.timeScale = 1f;
     }
     

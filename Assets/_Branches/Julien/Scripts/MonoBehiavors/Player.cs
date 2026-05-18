@@ -20,13 +20,6 @@ public class Player : MonoBehaviourSingletonDontDestroyOnLoad<Player>
         InputOpenMenu.action.started -= OnClickPause;
     }
 
-
-    private void Update()
-    {
-        float valueInputMenu = InputOpenMenu.action.ReadValue<float>();
-        if (valueInputMenu >= 1) OpenPauseMenu();
-    }
-
     public void DisableUiRay()
     {
         _interactorRayLeft.SetActive(false);
@@ -42,18 +35,30 @@ public class Player : MonoBehaviourSingletonDontDestroyOnLoad<Player>
     [ContextMenu("Pause")]
     private void OnClickPause(InputAction.CallbackContext obj)
     {
-        if (!PauseMenu.Instance.GameInPause) OpenPauseMenu(); else DisablePauseMenu();
+        if (!PauseMenu.Instance.GameInPause)
+        {
+            PauseMenu.Instance.PauseGame();
+            EnableUiRay();
+        }
+        else
+        {
+            PauseMenu.Instance.Resume();
+            DisableUiRay();
+        }
     }
     
-    public void OpenPauseMenu()
+    [ContextMenu("Pause")]
+    private void DebugClickPauseMenu()
     {
-        PauseMenu.Instance.PauseGame();
-        EnableUiRay();
-    }
-
-    public void DisablePauseMenu()
-    {
-        PauseMenu.Instance.Resume();
-        DisableUiRay();
+        if (!PauseMenu.Instance.GameInPause)
+        {
+            PauseMenu.Instance.PauseGame();
+            EnableUiRay();
+        }
+        else
+        {
+            PauseMenu.Instance.Resume();
+            DisableUiRay();
+        }
     }
 }
