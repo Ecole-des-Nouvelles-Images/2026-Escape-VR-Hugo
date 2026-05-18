@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoaderManager : MonoBehaviourSingleton<SceneLoaderManager>
+public class SceneLoaderManager : MonoBehaviourSingletonDontDestroyOnLoad<SceneLoaderManager>
 {
     // _ApertureSize
     [Range(0, 1)] public float _valueBlackEffect;
@@ -13,22 +13,6 @@ public class SceneLoaderManager : MonoBehaviourSingleton<SceneLoaderManager>
     [SerializeField] private bool _sceneLoaded = false;
     
     private string _sceneName;
-    
-    public static SceneLoaderManager instance;
-    
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
     
     public void LoadScene(string sceneName)
     {

@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -16,7 +14,7 @@ public class SceneLoader : MonoBehaviour
 
     private void Start()
     {
-        _player = Player.instance.GetComponent<Player>();
+        _player = Player.Instance.GetComponent<Player>();
     }
 
     private void OnTriggerEnter(Collider other)

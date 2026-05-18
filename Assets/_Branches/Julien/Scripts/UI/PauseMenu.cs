@@ -9,14 +9,23 @@ public class PauseMenu : MonoBehaviourSingleton<PauseMenu>
     [SerializeField] private GameObject _optionPanel;
     [SerializeField] private GameObject _exitPanel;
 
+    public bool GameInPause;
+
+    public void CallPause()
+    {
+        
+    }
+    
     public void PauseGame()
     {
         _menu.SetActive(true);
+        //Time.timeScale = 0f;
     }
 
     public void Resume()
     {
         _menu.SetActive(false);
+        //Time.timeScale = 1f;
     }
     
     public void Options()

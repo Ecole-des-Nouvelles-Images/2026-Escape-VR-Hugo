@@ -1,24 +1,30 @@
+using System;
+using Core.Singletons;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviourSingletonDontDestroyOnLoad<Player>
 {
     [SerializeField] private GameObject _interactorRayLeft;
     [SerializeField] private GameObject _interactorRayRight;
-    
-    public static Player instance;
-    
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
 
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+    public InputActionProperty InputOpenMenu;
+
+    private void OnEnable()
+    {
+        InputOpenMenu.action.started += OnClickPause;
+    }
+
+    private void OnDisable()
+    {
+        InputOpenMenu.action.started -= OnClickPause;
+    }
+
+
+    private void Update()
+    {
+        float valueInputMenu = InputOpenMenu.action.ReadValue<float>();
+        if (valueInputMenu >= 1) OpenPauseMenu();
     }
 
     public void DisableUiRay()
@@ -33,14 +39,18 @@ public class Player : MonoBehaviour
         _interactorRayRight.SetActive(true);
     }
 
-    [ContextMenu("Pause game")]
+    [ContextMenu("Pause")]
+    private void OnClickPause(InputAction.CallbackContext obj)
+    {
+        if (!PauseMenu.Instance.GameInPause) OpenPauseMenu(); else DisablePauseMenu();
+    }
+    
     public void OpenPauseMenu()
     {
         PauseMenu.Instance.PauseGame();
         EnableUiRay();
     }
 
-    [ContextMenu("Unpause game")]
     public void DisablePauseMenu()
     {
         PauseMenu.Instance.Resume();
