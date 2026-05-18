@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 public class CodePadLockHandler : PadLock
 {
@@ -119,6 +115,11 @@ public class CodePadLockHandler : PadLock
     {
         CodePadLock.SetActive(true);
         _bigPadLockSpawned = true;
+        
+        // disable old padLock, and secur if the same
+        if (PadLockManager.Instance.CurrentPadLock == CodePadLock) return;
+        if (PadLockManager.Instance.CurrentPadLock) PadLockManager.Instance.CurrentPadLock.gameObject.SetActive(false);
+        PadLockManager.Instance.CurrentPadLock =  CodePadLock;
     }
 
     private void DespawnBigPadLock()
