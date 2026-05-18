@@ -1,7 +1,7 @@
 using Core;
 using UnityEngine;
 
-namespace _Branches.Hugo.Scripts.PuzzleFlower
+namespace Managers
 {
     public class PuzzleFlowerManager : MonoBehaviour
     {

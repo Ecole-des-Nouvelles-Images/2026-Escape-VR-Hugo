@@ -1,6 +1,7 @@
+using MonoBehiavors;
 using UnityEngine;
 
-namespace _Branches.Hugo.Scripts.Temporal
+namespace Handlers
 {
     public class TemporalSunHandler : TemporalGameObject
     {

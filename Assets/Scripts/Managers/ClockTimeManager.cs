@@ -2,7 +2,7 @@ using System;
 using Core.Singletons;
 using UnityEngine;
 
-namespace _Branches.Hugo.Scripts.Temporal
+namespace Managers
 {
     public class ClockTimeManager : MonoBehaviourSingleton<ClockTimeManager>
     {

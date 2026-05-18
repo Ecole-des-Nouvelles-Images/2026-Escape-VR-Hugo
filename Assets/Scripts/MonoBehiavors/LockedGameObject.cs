@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-namespace _Branches.Hugo.Scripts
+namespace MonoBehiavors
 {
     public class LockedGameObject : MonoBehaviour
     {

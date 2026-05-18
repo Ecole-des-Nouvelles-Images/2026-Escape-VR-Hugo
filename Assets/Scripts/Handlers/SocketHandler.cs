@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-namespace _Branches.Hugo.Scripts.PuzzleFlower
+namespace Handlers
 {
     public abstract class SocketHandler : MonoBehaviour
     {

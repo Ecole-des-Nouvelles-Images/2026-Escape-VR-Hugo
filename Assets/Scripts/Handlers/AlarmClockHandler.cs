@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-namespace _Branches.Hugo.Scripts.PuzzleFlower
+namespace Handlers
 {
     public class AlarmClockHandler : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-namespace _Branches.Hugo.Scripts
+namespace Handlers
 {
     public class DrawerDynamicKnob : MonoBehaviour
     {

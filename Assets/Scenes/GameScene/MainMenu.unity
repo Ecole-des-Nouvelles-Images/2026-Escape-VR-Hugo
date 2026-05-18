@@ -272,6 +272,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 767833574940616145, guid: fba7fe64e256602419d809d16d96846c, type: 3}
+      propertyPath: _pauseMenu
+      value: 
+      objectReference: {fileID: 788632701}
     - target: {fileID: 2675925849336777822, guid: fba7fe64e256602419d809d16d96846c, type: 3}
       propertyPath: m_Name
       value: PlayerVR
@@ -408,6 +412,11 @@ BoxCollider:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5682518520895786329, guid: fba7fe64e256602419d809d16d96846c, type: 3}
   m_PrefabInstance: {fileID: 148167067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &788632701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2293232608138683041, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
+  m_PrefabInstance: {fileID: 56673945}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &800870757
 GameObject:

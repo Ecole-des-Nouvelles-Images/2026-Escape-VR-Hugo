@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using _Branches.Hugo.Scripts.Temporal;
+using MonoBehiavors;
 using UnityEngine;
 
-namespace _Branches.Hugo.Scripts.PuzzleFlower
+namespace Handlers
 {
     public class TemporalSkinnedMeshHandler : TemporalGameObject
     {

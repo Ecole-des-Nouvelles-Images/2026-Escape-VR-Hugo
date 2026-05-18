@@ -1,6 +1,7 @@
+using Managers;
 using UnityEngine;
 
-namespace _Branches.Hugo.Scripts.Temporal
+namespace MonoBehiavors
 {
     public abstract class TemporalGameObject : MonoBehaviour
     {
