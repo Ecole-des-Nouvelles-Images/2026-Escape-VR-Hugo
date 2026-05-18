@@ -137,10 +137,9 @@ public class CodePadLockHandler : PadLock
 
     private void RotateGear(GameObject gearTarget, float rotateValue)
     {
-        Vector3 rotation =  gearTarget.transform.rotation.eulerAngles;
-        Vector3 newRotation = new Vector3(rotation.x  + rotateValue ,rotation.y, rotation.z);
         _canRotateGear = false;
-        gearTarget.transform.DORotate(newRotation, 0.3f).OnComplete(() =>
+        rotateValue = -rotateValue;
+        gearTarget.transform.DOLocalRotate(new Vector3(rotateValue, 0f, 0f), 0.3f, RotateMode.LocalAxisAdd).SetEase(Ease.Linear).OnComplete(() =>
         {
             _canRotateGear = true;
         });

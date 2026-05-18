@@ -19,8 +19,23 @@ public class Player : MonoBehaviour
         _interactorRayRight.SetActive(false);
     }
 
+    public void EnableUiRay()
+    {
+        _interactorRayLeft.SetActive(true);
+        _interactorRayRight.SetActive(true);
+    }
+
+    [ContextMenu("Pause game")]
     public void OpenPauseMenu()
     {
-        
+        _pauseMenu.SetActive(true);
+        EnableUiRay();
+    }
+
+    [ContextMenu("Unpause game")]
+    public void DisablePauseMenu()
+    {
+        _pauseMenu.SetActive(false);
+        DisableUiRay();
     }
 }
