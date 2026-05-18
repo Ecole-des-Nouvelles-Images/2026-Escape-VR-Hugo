@@ -35,6 +35,7 @@ public class SceneLoaderManager : MonoBehaviourSingleton<SceneLoaderManager>
     [ContextMenu("Enable")]
     public void EnableBlackScreen()
     {
+        _blackScreenGm.SetFloat("_ApertureSize", 0);
         DOTween.To(() => _valueSmoothEffect, x => _valueSmoothEffect = x, 0, 1.5f).OnComplete(() =>
         {
             StartCoroutine("TimeToLoad");
@@ -44,6 +45,7 @@ public class SceneLoaderManager : MonoBehaviourSingleton<SceneLoaderManager>
     [ContextMenu("Disable")]
     private void DisableBlackScreen()
     {
+        _blackScreenGm.SetFloat("_ApertureSize", 1);
         DOTween.To(() => _valueSmoothEffect, x => _valueSmoothEffect = x, 1, 1.5f);
     }
 
