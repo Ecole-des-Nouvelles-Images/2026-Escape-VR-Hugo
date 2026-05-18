@@ -5,11 +5,19 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _interactorRayLeft;
     [SerializeField] private GameObject _interactorRayRight;
     
-    [Header("PauseMenu")]
-    [SerializeField] private GameObject _pauseMenu;
+    public static Player instance;
     
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+        
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -28,14 +36,14 @@ public class Player : MonoBehaviour
     [ContextMenu("Pause game")]
     public void OpenPauseMenu()
     {
-        _pauseMenu.SetActive(true);
+        PauseMenu.Instance.PauseGame();
         EnableUiRay();
     }
 
     [ContextMenu("Unpause game")]
     public void DisablePauseMenu()
     {
-        _pauseMenu.SetActive(false);
+        PauseMenu.Instance.Resume();
         DisableUiRay();
     }
 }

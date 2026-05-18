@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,10 +9,16 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private float _currentTime;
     [SerializeField] private bool _isOnSocle;
 
-    [SerializeField] private UnityEvent EventWhenLoad;
-    
+    //[SerializeField] private UnityEvent EventWhenLoad;
+
+    [SerializeField] private Player _player;
     private bool _isLoading = false;
-    
+
+    private void Start()
+    {
+        _player = Player.instance.GetComponent<Player>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -45,7 +52,7 @@ public class SceneLoader : MonoBehaviour
         if (_currentTime >= _maxTime)
         {
             _isLoading = true;
-            EventWhenLoad?.Invoke();
+            _player.DisableUiRay();
             
             Debug.Log("Load Scene : " + SceneName);
             
