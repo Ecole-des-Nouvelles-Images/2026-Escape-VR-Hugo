@@ -12,6 +12,8 @@ namespace _Branches.Hugo.Scripts.PuzzleFlower
         
         protected override void TimeBehavior()
         {
+            if (!_skinnedMeshRenderer || _blendShapeIndexes.Count == 0) return;
+            
             foreach (var blendShapeIndex in _blendShapeIndexes)
             {
                 _skinnedMeshRenderer.SetBlendShapeWeight(blendShapeIndex, _state * 100);
