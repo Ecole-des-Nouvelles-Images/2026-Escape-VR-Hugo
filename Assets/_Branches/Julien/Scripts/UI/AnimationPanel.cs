@@ -25,7 +25,7 @@ public class AnimationPanel : MonoBehaviour
                 scale.y = 0;
                 transform.localScale = scale;
         
-                transform.DOScaleY(1, 0.5f);
+                transform.DOScaleY(1, 0.5f).SetUpdate(true);
                 break;
 
             case TypeAnimation.Slide:
@@ -33,10 +33,10 @@ public class AnimationPanel : MonoBehaviour
                 _rectTransform.offsetMax = new Vector2(-_startPosition.y, _rectTransform.offsetMax.y);
 
                 DOTween.To(() => _rectTransform.offsetMin, x => _rectTransform.offsetMin = x,
-                    new Vector2(_endPosition.x, _rectTransform.offsetMin.y), 0.5f).SetEase(Ease.OutQuint);
+                    new Vector2(_endPosition.x, _rectTransform.offsetMin.y), 0.5f).SetEase(Ease.OutQuint).SetUpdate(true);
                 
                 DOTween.To(() => _rectTransform.offsetMax, x => _rectTransform.offsetMax = x, 
-                    new Vector2(-_endPosition.y, _rectTransform.offsetMax.y), 0.5f).SetEase(Ease.OutQuint);
+                    new Vector2(-_endPosition.y, _rectTransform.offsetMax.y), 0.5f).SetEase(Ease.OutQuint).SetUpdate(true);
                 break;
         }
         

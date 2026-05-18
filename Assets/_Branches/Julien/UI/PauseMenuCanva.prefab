@@ -2623,6 +2623,7 @@ MonoBehaviour:
   _menu: {fileID: 1682403490420203023}
   _optionPanel: {fileID: 6289029664669827230}
   _exitPanel: {fileID: 815005806767079085}
+  GameInPause: 0
 --- !u!223 &8304617693895540833
 Canvas:
   m_ObjectHideFlags: 0
@@ -2668,7 +2669,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5054685357283838816
 MonoBehaviour:
   m_ObjectHideFlags: 0

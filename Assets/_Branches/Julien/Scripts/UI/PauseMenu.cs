@@ -15,14 +15,14 @@ public class PauseMenu : MonoBehaviourSingleton<PauseMenu>
     {
         _menu.SetActive(true);
         GameInPause = true;
-        //Time.timeScale = 0f;
+        Time.timeScale = 0f;
     }
 
     public void Resume()
     {
         _menu.SetActive(false);
         GameInPause = false;
-        //Time.timeScale = 1f;
+        Time.timeScale = 1f;
     }
     
     public void Options()
@@ -39,6 +39,7 @@ public class PauseMenu : MonoBehaviourSingleton<PauseMenu>
 
     public void ReturnMainMenu()
     {
+        Time.timeScale = 1f;
         SceneLoaderManager.Instance.LoadScene(_sceneNameToLoad);
     }
 }
