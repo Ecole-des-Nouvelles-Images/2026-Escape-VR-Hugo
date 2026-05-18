@@ -18,8 +18,6 @@ public class VrRecenter : MonoBehaviour
 
     public void ExecuteRecenter()
     {
-        // Cette méthode aligne la caméra sur la direction de la cible
-        // tout en gardant le rig au sol.
         xrOrigin.MatchOriginUpCameraForward(targetHeading.up, targetHeading.forward);
     }
 }

@@ -63,6 +63,5 @@ public class CuckooHandler : MonoBehaviour
         _bird.SetActive(true);
         AudioManager.Instance.PlayAtPosition(_cuckooSound, _bird.transform.position);
         EventBus.OnCandleKeyUnlocked?.Invoke();
-        
     }
 }

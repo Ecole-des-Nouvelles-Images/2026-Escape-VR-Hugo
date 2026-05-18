@@ -31,7 +31,7 @@ namespace _Branches.Hugo.Scripts.Temporal
 
         private void OnEnable()
         {
-            ClockTimeManager.Instance.OnTimeChanged += InstanceOnOnTimeChanged;
+            if (ClockTimeManager.Instance) ClockTimeManager.Instance.OnTimeChanged += InstanceOnOnTimeChanged;
 
             if (_hourGrab)
             {
@@ -48,7 +48,7 @@ namespace _Branches.Hugo.Scripts.Temporal
 
         private void OnDisable()
         {
-            ClockTimeManager.Instance.OnTimeChanged -= InstanceOnOnTimeChanged;
+            if (ClockTimeManager.Instance) ClockTimeManager.Instance.OnTimeChanged -= InstanceOnOnTimeChanged;
 
             if (_hourGrab) _hourGrab.selectEntered.RemoveAllListeners();
             if (_minuteGrab) _minuteGrab.selectEntered.RemoveAllListeners();
