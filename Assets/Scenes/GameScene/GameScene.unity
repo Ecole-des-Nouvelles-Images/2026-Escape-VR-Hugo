@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (7)
@@ -1493,6 +1497,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (16)
@@ -1831,6 +1839,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 1404381908128748772, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (10)
@@ -1902,6 +1914,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 448200931946381846, guid: 3fb471277e4af2648be0dfaf78cbae38, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 4953379467006904391, guid: 3fb471277e4af2648be0dfaf78cbae38, type: 3}
       propertyPath: m_Name
       value: Drawer_1_Layette
@@ -2173,7 +2189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &553223983
 Transform:
   m_ObjectHideFlags: 0
@@ -2363,6 +2379,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (1)
@@ -2638,6 +2658,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 1404381908128748772, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (3)
@@ -2841,6 +2865,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (4)
@@ -3314,6 +3342,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (15)
@@ -3889,6 +3921,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 1404381908128748772, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (5)
@@ -4349,12 +4385,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 604658905}
     m_Modifications:
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.32110006
       objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.963
+      value: 1.0036
       objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4387,6 +4435,10 @@ PrefabInstance:
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2117098120087512268, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_Name
@@ -4659,6 +4711,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (11)
@@ -5794,6 +5850,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 75216943614235992, guid: 3fb471277e4af2648be0dfaf78cbae38, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4953379467006904391, guid: 3fb471277e4af2648be0dfaf78cbae38, type: 3}
       propertyPath: m_Name
       value: Drawer_1_Layette (1)
@@ -5909,6 +5969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drawer_4_Layette
       objectReference: {fileID: 0}
+    - target: {fileID: 7881034970761591499, guid: a22dd5d3a375f4946a7b672583b0f465, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8509519411979265793, guid: a22dd5d3a375f4946a7b672583b0f465, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -5931,6 +5995,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (17)
@@ -6786,6 +6854,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4407785766254826764, guid: 088d24040b56f014ba0dbed5d3405c17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4598352055325079499, guid: 088d24040b56f014ba0dbed5d3405c17, type: 3}
@@ -6883,6 +6955,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (14)
@@ -7600,6 +7676,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (13)
@@ -7671,6 +7751,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (8)
@@ -7907,6 +7991,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (6)
@@ -9308,6 +9396,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 273577847496219369, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (9)
