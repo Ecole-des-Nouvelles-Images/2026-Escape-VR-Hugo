@@ -7,31 +7,41 @@ namespace Managers
 {
     public class CodePadLockHandler : PadLock
     {
+        [Header("===== SETTINGS =====")]
         [SerializeField] private string RightCode;
         [SerializeField] private string CurrentCode;
-
         [SerializeField] private int NumberOne;
         [SerializeField] private int NumberTwo;
-    
-        [SerializeField] private GameObject CodePadLock;
-
-        [Header("Visual small padLock")]
-    
+        
+        [Header("===== VISUAL =====")]
+        [Header("-- SMALL PADLOCK --")]
         [SerializeField] private GameObject _lockSmall;
-    
-        [Header("Visual big padLock")]
-
+        [Header("-- BIG PADLOCK --")]
+        [SerializeField] private GameObject CodePadLock;
         [FormerlySerializedAs("GearOne")] [SerializeField] private GameObject _gearOne;
         [FormerlySerializedAs("GearTwo")] [SerializeField] private GameObject _gearTwo;
         [FormerlySerializedAs("Lock")] [SerializeField] private GameObject _lock;
+        
+        [Header("===== ANIMATION =====")]
+        [SerializeField] private float _duration = 0.5f;
+        [SerializeField] private AnimationCurve _animationCurve;
     
         private bool _bigPadLockSpawned;
-        private GameObject _player;
         private bool _canRotateGear = true;
 
-        private void Start()
+        // DISPLAY
+        private Sequence _padLockSequence;
+        private Transform _bigVisualTransform;
+        private Vector3 _bigVisualPos;
+        private Quaternion _bigVisualRot;
+        private Vector3 _bigVisualScale;
+
+        private void Awake()
         {
-            _player = GameObject.FindWithTag("Player");
+            _bigVisualTransform = CodePadLock.transform;
+            _bigVisualPos = _bigVisualTransform.position;
+            _bigVisualRot = _bigVisualTransform.rotation;
+            _bigVisualScale = _bigVisualTransform.localScale;
         }
 
         private void Update()
@@ -49,9 +59,54 @@ namespace Managers
         public void Interact()
         {
             if (!IsLock) return;
-            SpawnBigPadLock();
+            PadLockManager.Instance.SetCurrentPadLock(this, _bigPadLockSpawned);
+        }
+        
+        public void SpawnBigPadLock()
+        {
+            _bigPadLockSpawned = true;
+            
+            // DISPLAY
+            if (_padLockSequence != null && _padLockSequence.IsActive())
+            {
+                _padLockSequence.Kill();
+            }
+            
+            _bigVisualTransform.SetPositionAndRotation(transform.position, transform.rotation);
+            CodePadLock.transform.localScale = Vector3.one;
+            
+            CodePadLock.SetActive(true);
+
+            _padLockSequence = DOTween.Sequence()
+                .Join(_bigVisualTransform.DOMove(_bigVisualPos, _duration))
+                .Join(_bigVisualTransform.DORotateQuaternion(_bigVisualRot, _duration))
+                .Join(_bigVisualTransform.DOScale(_bigVisualScale, _duration))
+                .SetEase(_animationCurve);
         }
 
+        public void DespawnBigPadLock()
+        {
+            _bigPadLockSpawned = false;
+            
+            // DISPLAY
+            if (_padLockSequence != null && _padLockSequence.IsActive())
+            {
+                _padLockSequence.Kill();
+            }
+            
+            _padLockSequence = DOTween.Sequence()
+                .Join(_bigVisualTransform.DOMove(transform.position, _duration))
+                .Join(_bigVisualTransform.DORotateQuaternion(transform.rotation, _duration))
+                .Join(_bigVisualTransform.DOScale(transform.localScale, _duration))
+                .SetEase(_animationCurve)
+                .OnComplete(() =>
+                {
+                    CodePadLock.SetActive(false);
+                    
+                    _bigVisualTransform.SetPositionAndRotation(_bigVisualPos, _bigVisualRot);
+                    CodePadLock.transform.localScale = _bigVisualScale;
+                });
+        }
 
         #region RegionModifyCode
 
@@ -112,23 +167,6 @@ namespace Managers
             {
                 Debug.Log("Code is bad");
             }
-        }
-    
-        private void SpawnBigPadLock()
-        {
-            CodePadLock.SetActive(true);
-            _bigPadLockSpawned = true;
-        
-            // disable old padLock, and secur if the same
-            if (PadLockManager.Instance.CurrentPadLock == CodePadLock) return;
-            if (PadLockManager.Instance.CurrentPadLock) PadLockManager.Instance.CurrentPadLock.gameObject.SetActive(false);
-            PadLockManager.Instance.CurrentPadLock =  CodePadLock;
-        }
-
-        private void DespawnBigPadLock()
-        {
-            CodePadLock.SetActive(false);
-            _bigPadLockSpawned = false;
         }
 
         private void OpenLockPad()
