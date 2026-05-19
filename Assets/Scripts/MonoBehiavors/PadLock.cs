@@ -5,6 +5,7 @@ namespace MonoBehiavors
 {
     public class PadLock : MonoBehaviour
     {
+        [Header("===== GLOBAL SETTINGS =====")]
         public bool IsLock = true;
         public UnityEvent UnityEvent;
     
