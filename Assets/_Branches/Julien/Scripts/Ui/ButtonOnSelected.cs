@@ -1,4 +1,3 @@
-using System;
 using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,11 +13,14 @@ public class ButtonOnSelected : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(_mainMenu != null) _mainMenu.OnButtonSelected(transform.position);
+        if (_mainMenu == null) return;
+        _mainMenu.OnButtonSelected(transform.position);
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("Exit");
+        if (_mainMenu == null) return;
+        _mainMenu.OnButtonDeselected();
     }
 }
