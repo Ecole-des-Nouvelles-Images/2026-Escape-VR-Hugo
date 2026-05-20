@@ -57,12 +57,8 @@ namespace Handlers
             {
                 Vector3 worldDirection = _handTransform.position + _offset - _targetRotation.position;
                 Vector3 localDir = _targetRotation.parent.InverseTransformDirection(worldDirection);
-
-                Debug.Log(localDir);
                 
                 targetX = -Mathf.Atan2(localDir.z, -localDir.y) * Mathf.Rad2Deg;
-                
-                Debug.Log(targetX);
             }
 
             Quaternion targetQuat = Quaternion.Euler(targetX, 0f, 0f);

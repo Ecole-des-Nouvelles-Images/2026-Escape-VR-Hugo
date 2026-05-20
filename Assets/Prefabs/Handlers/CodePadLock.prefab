@@ -1013,7 +1013,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 537952111102043262}
         m_TargetAssemblyTypeName: CodePadLockHandler, Assembly-CSharp
-        m_MethodName: AddNumberOne
+        m_MethodName: SetNumberOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1295,7 +1295,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 537952111102043262}
         m_TargetAssemblyTypeName: CodePadLockHandler, Assembly-CSharp
-        m_MethodName: RemoveNumberOne
+        m_MethodName: SetNumberTwo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

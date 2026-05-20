@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DG.Tweening;
+using Handlers;
 using MonoBehiavors;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -19,17 +20,16 @@ namespace Managers
         [SerializeField] private GameObject _lockSmall;
         [Header("-- BIG PADLOCK --")]
         [SerializeField] private GameObject CodePadLock;
-        [SerializeField] private GameObject _gearOne;
-        [SerializeField] private GameObject _gearTwo;
+        [SerializeField] private DynamicGear _gearOne;
+        [SerializeField] private DynamicGear _gearTwo;
         [SerializeField] private GameObject _lock;
-        [SerializeField] private List<XRGrabInteractable> _gearInteractables = new();
+        [SerializeField] private List<XRSimpleInteractable> _gearInteractables = new();
         
         [Header("===== ANIMATION =====")]
         [SerializeField] private float _duration = 0.5f;
         [SerializeField] private AnimationCurve _animationCurve;
     
         private bool _bigPadLockSpawned;
-        private bool _canRotateGear = true;
 
         // DISPLAY
         private Sequence _padLockSequence;
@@ -45,10 +45,10 @@ namespace Managers
             _bigVisualRot = _bigVisualTransform.rotation;
             _bigVisualScale = _bigVisualTransform.localScale;
             
-            foreach (var gearInteractable in _gearInteractables)
-            {
-                gearInteractable.enabled = false;
-            }
+            // foreach (var gearInteractable in _gearInteractables)
+            // {
+            //     gearInteractable.enabled = false;
+            // }
         }
 
         private void Update()
@@ -62,7 +62,24 @@ namespace Managers
             }
         }
 
-        [ContextMenu("Interact")]
+        #region ===== EVENTS =====
+
+        private void OnEnable()
+        {
+            _gearOne.CodeChanged += SetNumberOne;
+            _gearTwo.CodeChanged += SetNumberTwo;
+        }
+        
+        private void OnDisable()
+        {
+            _gearOne.CodeChanged -= SetNumberOne;
+            _gearTwo.CodeChanged -= SetNumberTwo;
+        }
+
+        #endregion
+
+        #region ===== PUBLIC METHODS =====
+
         public void Interact()
         {
             if (!IsLock) return;
@@ -127,48 +144,21 @@ namespace Managers
                 });
         }
 
-        #region RegionModifyCode
-
-        public void AddNumberOne()
-        {
-            if (!_canRotateGear) return;
-            NumberOne++;
-            if (NumberOne < 0) NumberOne = 9;
-            if (NumberOne > 9) NumberOne = 0;
-            SetCode();
-            RotateGear(_gearOne, 36);
-        }
-        public void RemoveNumberOne()
-        {
-            if (!_canRotateGear) return;
-            NumberOne--; 
-            if (NumberOne < 0) NumberOne = 9;
-            if (NumberOne > 9) NumberOne = 0;
-            SetCode();
-            RotateGear(_gearOne, -36);
-        }
-    
-        public void AddNumberTwo()
-        {
-            if (!_canRotateGear) return;
-            NumberTwo++;
-            if (NumberTwo < 0) NumberTwo = 9;
-            if (NumberTwo > 9) NumberTwo = 0;
-            SetCode();
-            RotateGear(_gearTwo, 36);
-        }
-        public void RemoveNumberTwo()
-        {
-            if (!_canRotateGear) return;
-            NumberTwo--;
-            if (NumberTwo < 0) NumberTwo = 9;
-            if (NumberTwo > 9) NumberTwo = 0;
-            SetCode();
-            RotateGear(_gearTwo, -36);
-        }
-    
         #endregion
 
+        #region ===== PRIVATE METHODS =====
+
+        private void SetNumberOne(int value)
+        {
+            NumberOne = value;
+            SetCode();
+        }
+        private void SetNumberTwo(int value)
+        {
+            NumberTwo = value; 
+            SetCode();
+        }
+        
         private void SetCode()
         {
             CurrentCode = new string(NumberOne + "" + NumberTwo);
@@ -195,16 +185,6 @@ namespace Managers
             AnimationUnlock();
         }
 
-        private void RotateGear(GameObject gearTarget, float rotateValue)
-        {
-            _canRotateGear = false;
-            rotateValue = -rotateValue;
-            gearTarget.transform.DOLocalRotate(new Vector3(rotateValue, 0f, 0f), 0.3f, RotateMode.LocalAxisAdd).SetEase(Ease.Linear).OnComplete(() =>
-            {
-                _canRotateGear = true;
-            });
-        }
-
         [ContextMenu("AnimationUnlock")]
         private void AnimationUnlock()
         {
@@ -229,5 +209,7 @@ namespace Managers
                 gameObject.GetComponent<Rigidbody>().isKinematic = false;
             });
         }
+
+        #endregion
     }
 }
