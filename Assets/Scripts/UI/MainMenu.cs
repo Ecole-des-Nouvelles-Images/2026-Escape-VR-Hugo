@@ -110,7 +110,7 @@ namespace UI
 
         public void OnButtonDeselected()
         {
-            Vector3 dir = _selectedPosition.position - _aiguille.transform.localPosition;
+            Vector3 dir = _selectedPosition.position - _aiguille.transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
             _aiguille.transform.DOLocalRotate(new Vector3(0, 0, angle), 0.3f).SetUpdate(true);
