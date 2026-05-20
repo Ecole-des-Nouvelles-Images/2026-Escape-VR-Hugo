@@ -1,7 +1,8 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using MonoBehiavors;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace Managers
 {
@@ -18,9 +19,10 @@ namespace Managers
         [SerializeField] private GameObject _lockSmall;
         [Header("-- BIG PADLOCK --")]
         [SerializeField] private GameObject CodePadLock;
-        [FormerlySerializedAs("GearOne")] [SerializeField] private GameObject _gearOne;
-        [FormerlySerializedAs("GearTwo")] [SerializeField] private GameObject _gearTwo;
-        [FormerlySerializedAs("Lock")] [SerializeField] private GameObject _lock;
+        [SerializeField] private GameObject _gearOne;
+        [SerializeField] private GameObject _gearTwo;
+        [SerializeField] private GameObject _lock;
+        [SerializeField] private List<XRGrabInteractable> _gearInteractables = new();
         
         [Header("===== ANIMATION =====")]
         [SerializeField] private float _duration = 0.5f;
@@ -42,6 +44,11 @@ namespace Managers
             _bigVisualPos = _bigVisualTransform.position;
             _bigVisualRot = _bigVisualTransform.rotation;
             _bigVisualScale = _bigVisualTransform.localScale;
+            
+            foreach (var gearInteractable in _gearInteractables)
+            {
+                gearInteractable.enabled = false;
+            }
         }
 
         private void Update()
@@ -81,7 +88,14 @@ namespace Managers
                 .Join(_bigVisualTransform.DOMove(_bigVisualPos, _duration))
                 .Join(_bigVisualTransform.DORotateQuaternion(_bigVisualRot, _duration))
                 .Join(_bigVisualTransform.DOScale(_bigVisualScale, _duration))
-                .SetEase(_animationCurve);
+                .SetEase(_animationCurve)
+                .OnComplete(() =>
+                {
+                    foreach (var gearInteractable in _gearInteractables)
+                    {
+                        gearInteractable.enabled = true;
+                    }
+                });
         }
 
         public void DespawnBigPadLock()
@@ -92,6 +106,11 @@ namespace Managers
             if (_padLockSequence != null && _padLockSequence.IsActive())
             {
                 _padLockSequence.Kill();
+            }
+            
+            foreach (var gearInteractable in _gearInteractables)
+            {
+                gearInteractable.enabled = false;
             }
             
             _padLockSequence = DOTween.Sequence()
