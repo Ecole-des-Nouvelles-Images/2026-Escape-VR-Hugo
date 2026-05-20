@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
+using MonoBehiavors;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -16,6 +18,7 @@ namespace Handlers
         
         [Header("===== REFERENCES =====")]
         [SerializeField] private XRSimpleInteractable _interactable;
+        [SerializeField] private TriggerCollider _trigger;
         
         [Header("===== ANIMATION =====")]
         [SerializeField] private float _duration = 0.2f;
@@ -100,15 +103,19 @@ namespace Handlers
 
             if (snappedX > 360f) snappedX = 360f;
 
-            // Index de 0 à 10
-            int currentDigit = Mathf.RoundToInt(snappedX / 36f);
-
             Quaternion targetQuat = Quaternion.Euler(snappedX, currentRotation.y, currentRotation.z);
             
-            _snapTween = targetTransform.DOLocalRotateQuaternion(targetQuat, _duration).SetEase(_animationCurve);
-            
-            Debug.Log($"[DynamicGear] Angle final : {snappedX}° -> Index envoyé : {currentDigit}");
-            CodeChanged?.Invoke(currentDigit);
+            _snapTween = targetTransform.DOLocalRotateQuaternion(targetQuat, _duration).SetEase(_animationCurve)
+                .OnComplete(() =>
+                {
+                    List<GameObject> go = _trigger.GetGameObjectsWithTag("PadlockValue");
+                    int currentDigit;
+
+                    currentDigit = Convert.ToInt32(go[0].name);
+                    
+                    Debug.Log(currentDigit);
+                    CodeChanged?.Invoke(currentDigit);
+                });
         }
     }
 }

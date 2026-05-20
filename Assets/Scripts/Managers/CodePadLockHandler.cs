@@ -45,10 +45,10 @@ namespace Managers
             _bigVisualRot = _bigVisualTransform.rotation;
             _bigVisualScale = _bigVisualTransform.localScale;
             
-            // foreach (var gearInteractable in _gearInteractables)
-            // {
-            //     gearInteractable.enabled = false;
-            // }
+            foreach (var gearInteractable in _gearInteractables)
+            {
+                gearInteractable.enabled = false;
+            }
         }
 
         private void Update()
@@ -169,12 +169,7 @@ namespace Managers
         {
             if (RightCode == CurrentCode)
             {
-                Debug.Log("Code is good");
                 OpenLockPad();
-            }
-            else
-            {
-                Debug.Log("Code is bad");
             }
         }
 
