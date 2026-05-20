@@ -551,7 +551,7 @@ MonoBehaviour:
   _interactorRayLeft: {fileID: 6780130577378090259}
   _interactorRayRight: {fileID: 7665473352204490890}
   InputOpenMenu:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Input Open Menu
       m_Type: 0
@@ -559,9 +559,17 @@ MonoBehaviour:
       m_Id: c43a002c-c7e1-41b9-91db-3e6364d51c16
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 5ceba57a-b8f8-4840-bef7-f858761f7156
+        m_Path: 
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Input Open Menu
+        m_Flags: 0
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -8069514856583376848, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
 --- !u!114 &7467246337953922989
 MonoBehaviour:
   m_ObjectHideFlags: 0
