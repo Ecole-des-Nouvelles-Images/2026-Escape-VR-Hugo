@@ -24,20 +24,10 @@ namespace UI
         public void Resume()
         {
             _menu.SetActive(false);
+            _exitPanel.SetActive(false);
+            _optionPanel.SetActive(false);
             GameInPause = false;
             Time.timeScale = 1f;
-        }
-    
-        public void Options()
-        {
-            _optionPanel.SetActive(true);
-            _exitPanel.SetActive(false);
-        }
-
-        public void Quit()
-        {
-            _exitPanel.SetActive(true);
-            _optionPanel.SetActive(false);
         }
 
         public void ReturnMainMenu()
