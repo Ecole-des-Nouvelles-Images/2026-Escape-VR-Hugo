@@ -75,6 +75,11 @@ MonoBehaviour:
   _gearOne: {fileID: 3680587294291337373}
   _gearTwo: {fileID: 9080569835688256807}
   _lock: {fileID: 8414040358481895872}
+  _gearInteractables:
+  - {fileID: 295655716910240702}
+  - {fileID: 7620435442431677667}
+  - {fileID: 396961279165182709}
+  - {fileID: 6879515594136790427}
   _duration: 0.5
   _animationCurve:
     serializedVersion: 2
@@ -1008,7 +1013,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 537952111102043262}
         m_TargetAssemblyTypeName: CodePadLockHandler, Assembly-CSharp
-        m_MethodName: AddNumberOne
+        m_MethodName: SetNumberOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1290,7 +1295,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 537952111102043262}
         m_TargetAssemblyTypeName: CodePadLockHandler, Assembly-CSharp
-        m_MethodName: RemoveNumberOne
+        m_MethodName: SetNumberTwo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

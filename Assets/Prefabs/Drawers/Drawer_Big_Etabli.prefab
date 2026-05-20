@@ -171,8 +171,8 @@ GameObject:
   - component: {fileID: 2054678491079346376}
   - component: {fileID: 8552992742499750931}
   - component: {fileID: 7370938971992304696}
-  - component: {fileID: 7526445878946579890}
-  - component: {fileID: 6277694583227488503}
+  - component: {fileID: 6402723165228194075}
+  - component: {fileID: 4749115828660240537}
   m_Layer: 0
   m_Name: Drawer_Big_Etabli
   m_TagString: Untagged
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &7526445878946579890
+--- !u!114 &6402723165228194075
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -469,15 +469,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2907658474446204095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a611f170381f5248b6d507f7b7a2496, type: 3}
+  m_Script: {fileID: 11500000, guid: 42c6bd7406f21854080898c708c2cd90, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.DrawerDynamicKnob
+  m_EditorClassIdentifier: Assembly-CSharp::Handlers.DrawerDynamicKnob
   _targetRotation: {fileID: 4445552500583097959}
   _rotationSpeed: 10
   _grabInteractable: {fileID: 7370938971992304696}
   _handTransform: {fileID: 0}
   _offset: {x: 0, y: 0, z: 0}
---- !u!114 &6277694583227488503
+--- !u!114 &4749115828660240537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -486,9 +486,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2907658474446204095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a611f170381f5248b6d507f7b7a2496, type: 3}
+  m_Script: {fileID: 11500000, guid: 42c6bd7406f21854080898c708c2cd90, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.DrawerDynamicKnob
+  m_EditorClassIdentifier: Assembly-CSharp::Handlers.DrawerDynamicKnob
   _targetRotation: {fileID: 7409394213378926352}
   _rotationSpeed: 10
   _grabInteractable: {fileID: 7370938971992304696}
