@@ -89,14 +89,14 @@ namespace UI
         {
             DOTween.To(() => _rectTransform.offsetMax, x => _rectTransform.offsetMax = x,
                 new Vector2(0, position.x), 0.5f
-            );
+            ).SetUpdate(true);
 
             DOTween.To(() => _rectTransform.offsetMin, x => _rectTransform.offsetMin = x, 
                 new Vector2(0, position.y), 0.5f
-            ).OnComplete((() =>
+            ).SetUpdate(true).OnComplete(() =>
             {
                 _canClick = true;
-            }));
+            });
         }
 
         public void OnButtonSelected(Vector3 position)
@@ -105,7 +105,7 @@ namespace UI
             Vector3 localDir = _aiguille.transform.parent.InverseTransformDirection(globalDir);
             
             float angle = Mathf.Atan2(localDir.y, localDir.x) * Mathf.Rad2Deg;
-            _aiguille.transform.DOLocalRotate(new Vector3(0, 0, angle), 0.3f);
+            _aiguille.transform.DOLocalRotate(new Vector3(0, 0, angle), 0.3f).SetUpdate(true);
         }
 
         public void OnButtonDeselected()
@@ -113,7 +113,7 @@ namespace UI
             Vector3 dir = _selectedPosition.position - _aiguille.transform.localPosition;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-            _aiguille.transform.DORotate(new Vector3(0, 0, angle), 0.3f);
+            _aiguille.transform.DOLocalRotate(new Vector3(0, 0, angle), 0.3f).SetUpdate(true);
         }
 
         private void SetDefaultDir(Transform t)
