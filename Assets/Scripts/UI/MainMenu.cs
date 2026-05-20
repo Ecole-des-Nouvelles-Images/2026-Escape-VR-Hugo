@@ -23,7 +23,7 @@ namespace UI
         [SerializeField] private Transform _positionExit;
         
         [SerializeField] private GameObject _aiguille;
-        [SerializeField] private Vector3 _selectedPosition;
+        [SerializeField] private Transform _selectedPosition;
 
         private RectTransform _rectTransform;
         private GameObject _currentPanel;
@@ -89,36 +89,37 @@ namespace UI
         {
             DOTween.To(() => _rectTransform.offsetMax, x => _rectTransform.offsetMax = x,
                 new Vector2(0, position.x), 0.5f
-            );
+            ).SetUpdate(true);
 
             DOTween.To(() => _rectTransform.offsetMin, x => _rectTransform.offsetMin = x, 
                 new Vector2(0, position.y), 0.5f
-            ).OnComplete((() =>
+            ).SetUpdate(true).OnComplete(() =>
             {
                 _canClick = true;
-            }));
+            });
         }
 
         public void OnButtonSelected(Vector3 position)
         {
-            Vector3 dir = position - _aiguille.transform.position;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
-            _aiguille.transform.DORotate(new Vector3(0, 0, angle), 0.3f);
+            Vector3 globalDir = position - _aiguille.transform.position;
+            Vector3 localDir = _aiguille.transform.parent.InverseTransformDirection(globalDir);
+            
+            float angle = Mathf.Atan2(localDir.y, localDir.x) * Mathf.Rad2Deg;
+            _aiguille.transform.DOLocalRotate(new Vector3(0, 0, angle), 0.3f).SetUpdate(true);
         }
 
         public void OnButtonDeselected()
         {
-            Vector3 dir = _selectedPosition - _aiguille.transform.position;
+            Vector3 dir = _selectedPosition.position - _aiguille.transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-            _aiguille.transform.DORotate(new Vector3(0, 0, angle), 0.3f);
+            _aiguille.transform.DOLocalRotate(new Vector3(0, 0, angle), 0.3f).SetUpdate(true);
         }
 
         private void SetDefaultDir(Transform t)
         {
             _canClick = false;
-            _selectedPosition = t.localPosition;
+            _selectedPosition.position = t.localPosition;
         }
 
         private bool VerifyIfItsSame(GameObject panel)
