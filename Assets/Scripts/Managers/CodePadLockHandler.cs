@@ -18,6 +18,7 @@ namespace Managers
         [Header("===== VISUAL =====")]
         [Header("-- SMALL PADLOCK --")]
         [SerializeField] private GameObject _lockSmall;
+        [SerializeField] private Rigidbody _smallRb;
         [Header("-- BIG PADLOCK --")]
         [SerializeField] private GameObject CodePadLock;
         [SerializeField] private DynamicGear _gearOne;
@@ -141,6 +142,11 @@ namespace Managers
                     
                     _bigVisualTransform.SetPositionAndRotation(_bigVisualPos, _bigVisualRot);
                     CodePadLock.transform.localScale = _bigVisualScale;
+
+                    if (!IsLock)
+                    {
+                        _smallRb.isKinematic = false;
+                    }
                 });
         }
 
@@ -177,32 +183,22 @@ namespace Managers
         {
             IsLock = false;
             UnityEvent?.Invoke();
+            
             AnimationUnlock();
         }
 
-        [ContextMenu("AnimationUnlock")]
         private void AnimationUnlock()
         {
-            Vector3 rotation =  _lock.transform.rotation.eulerAngles;
-            Vector3 newRotation = new Vector3(rotation.x ,rotation.y, rotation.z + -30);
-            _lock.transform.DORotate(newRotation ,1).OnComplete(() =>
-            {
-                CodePadLock.transform.DOScale(new Vector3(0, 0, 0), 0.5f).OnComplete(() =>
-                {
-                    CodePadLock.SetActive(false);
-                    AnimateReelPadLock();
-                });
-            });
-        }
-
-        private void AnimateReelPadLock()
-        {
-            Vector3 rotation =  _lockSmall.transform.rotation.eulerAngles;
-            Vector3 newRotation = new Vector3(rotation.x ,rotation.y, rotation.z + -30);
-            _lockSmall.transform.DORotate(newRotation, 1).OnComplete(() =>
-            {
-                gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            });
+            // BIG
+            Vector3 rotBig =  _lock.transform.rotation.eulerAngles;
+            Vector3 newRotBig = new Vector3(rotBig.x ,rotBig.y, rotBig.z + -30);
+            _lock.transform.DORotate(newRotBig ,1)
+                .OnComplete(DespawnBigPadLock);
+            
+            // SMALL
+            Vector3 rotSmall =  _lockSmall.transform.rotation.eulerAngles;
+            Vector3 newRotSmall = new Vector3(rotSmall.x ,rotSmall.y, rotSmall.z + -30);
+            _lockSmall.transform.DORotate(newRotSmall, 1);
         }
 
         #endregion
