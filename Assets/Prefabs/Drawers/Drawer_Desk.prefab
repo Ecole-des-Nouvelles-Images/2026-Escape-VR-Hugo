@@ -159,6 +159,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.24446169, y: 0.12752149, z: 0.0043687285}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3330990831790825027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7140082786786902967}
+  m_Layer: 0
+  m_Name: PredictedVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7140082786786902967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3330990831790825027}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4449490042616592223}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4024004451862434754
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +346,7 @@ Transform:
   - {fileID: 9212627082086908314}
   - {fileID: 8316850683508344278}
   - {fileID: 4542753175851781421}
+  - {fileID: 7140082786786902967}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6893668887334841267
@@ -336,14 +368,14 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
+  m_Constraints: 118
+  m_CollisionDetection: 0
 --- !u!153 &8007961466198018674
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -521,7 +553,7 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
-  m_AttachTransform: {fileID: 4542753175851781421}
+  m_AttachTransform: {fileID: 7140082786786902967}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -530,7 +562,7 @@ MonoBehaviour:
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
   m_MovementType: 0
-  m_PredictedVisualsTransform: {fileID: 0}
+  m_PredictedVisualsTransform: {fileID: 7140082786786902967}
   m_VelocityDamping: 1
   m_VelocityScale: 0.1
   m_AngularVelocityDamping: 1
