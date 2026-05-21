@@ -20,7 +20,9 @@ namespace MonoBehiavors
 
         public void ExecuteRecenter()
         {
+            if (targetHeading == null) return;
             xrOrigin.MatchOriginUpCameraForward(targetHeading.up, targetHeading.forward);
+            Debug.Log("Set position");
         }
     }
 }
