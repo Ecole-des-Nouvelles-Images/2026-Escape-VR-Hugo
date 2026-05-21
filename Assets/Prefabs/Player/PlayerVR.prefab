@@ -562,14 +562,22 @@ MonoBehaviour:
       m_SingletonActionBindings:
       - m_Name: 
         m_Id: 5ceba57a-b8f8-4840-bef7-f858761f7156
-        m_Path: 
+        m_Path: <QuestProTouchController>/secondaryButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Input Open Menu
+        m_Flags: 0
+      - m_Name: 
+        m_Id: d45f1002-5789-4f89-8d24-4ab49866e519
+        m_Path: <Keyboard>/p
         m_Interactions: 
         m_Processors: 
         m_Groups: 
         m_Action: Input Open Menu
         m_Flags: 0
       m_Flags: 0
-    m_Reference: {fileID: -8069514856583376848, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+    m_Reference: {fileID: 2383484668496459732, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &7467246337953922989
 MonoBehaviour:
   m_ObjectHideFlags: 0

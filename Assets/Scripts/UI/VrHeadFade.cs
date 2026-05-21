@@ -19,6 +19,7 @@ namespace UI
 
         private void OnTriggerEnter(Collider other)
         {
+            Debug.Log(other.gameObject.name);
             _overlapCount++;
             StartFade(1f);
         }
