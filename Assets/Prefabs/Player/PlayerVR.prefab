@@ -991,7 +991,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3522568198339219767}
   - component: {fileID: 3378809691373515615}
-  - component: {fileID: 4546979355200644742}
   - component: {fileID: 8176697093867481720}
   - component: {fileID: 4867070770060868281}
   - component: {fileID: 4541315820784783635}
@@ -1024,20 +1023,6 @@ Transform:
   m_Father: {fileID: 1575655986706386936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3378809691373515615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5682518520895786329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56277a6fff207ae4aa7c3ceb3ec17d48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VRHeadFade
-  _material: {fileID: 2100000, guid: 947427e833d1a6546b0f115ce37731e6, type: 2}
-  _fadeDuration: 0.2
---- !u!114 &4546979355200644742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
