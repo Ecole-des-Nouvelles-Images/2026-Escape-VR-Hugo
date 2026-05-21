@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 5051907961758982659}
   - component: {fileID: 4554999088045906670}
   - component: {fileID: 1939440401826538273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5051907961758982659
 Transform:
@@ -102,12 +102,12 @@ GameObject:
   - component: {fileID: 4284546622217772142}
   - component: {fileID: 7109697828766068329}
   - component: {fileID: 3653739504113158700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1717197426878409391
 Transform:
@@ -141,21 +141,7 @@ MonoBehaviour:
   _maxTime: 2
   _currentTime: 0
   _isOnSocle: 0
-  EventWhenLoad:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: DisableUiRay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _player: {fileID: 0}
 --- !u!135 &7109697828766068329
 SphereCollider:
   m_ObjectHideFlags: 0
