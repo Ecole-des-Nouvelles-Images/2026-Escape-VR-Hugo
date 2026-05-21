@@ -14,12 +14,12 @@ namespace MonoBehiavors
 
         private void OnEnable()
         {
-            InputOpenMenu.action.started += OnClickPause;
+            InputOpenMenu.action.performed += OnClickPause;
         }
 
         private void OnDisable()
         {
-            InputOpenMenu.action.started -= OnClickPause;
+            InputOpenMenu.action.performed -= OnClickPause;
         }
 
         public void DisableUiRay()
@@ -37,6 +37,7 @@ namespace MonoBehiavors
         [ContextMenu("Pause")]
         private void OnClickPause(InputAction.CallbackContext obj)
         {
+            Debug.Log("Pause");
             if (!PauseMenu.Instance.GameInPause)
             {
                 PauseMenu.Instance.PauseGame();
