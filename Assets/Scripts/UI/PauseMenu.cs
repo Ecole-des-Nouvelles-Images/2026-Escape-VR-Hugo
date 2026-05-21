@@ -16,7 +16,7 @@ namespace UI
     
         public void PauseGame()
         {
-            _menu.SetActive(true);
+            if (_menu) _menu.SetActive(true);
             GameInPause = true;
             Time.timeScale = 0f;
         }
