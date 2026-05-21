@@ -268,6 +268,7 @@ MonoBehaviour:
   NumberOne: 0
   NumberTwo: 0
   _lockSmall: {fileID: 3750610345194965103}
+  _smallRb: {fileID: 8326601347063163602}
   CodePadLock: {fileID: 3183849693511426267}
   _gearOne: {fileID: 3767185265634031260}
   _gearTwo: {fileID: 6745165124655012171}
@@ -1806,6 +1807,18 @@ PrefabInstance:
     - target: {fileID: 1417181388232720258, guid: 36764e8561068c54298ec2381ff021e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614873941897805898, guid: 36764e8561068c54298ec2381ff021e2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614873941897805898, guid: 36764e8561068c54298ec2381ff021e2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614873941897805898, guid: 36764e8561068c54298ec2381ff021e2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3614873941897805898, guid: 36764e8561068c54298ec2381ff021e2, type: 3}
       propertyPath: m_LocalPosition.x
