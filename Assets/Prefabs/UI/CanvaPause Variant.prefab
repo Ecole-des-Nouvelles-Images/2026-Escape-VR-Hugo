@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2615777729862742558, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2768902449678648492, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
       propertyPath: m_LocalPosition.z
@@ -239,6 +239,18 @@ PrefabInstance:
     - target: {fileID: 7757957785208268700, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878778836295200046, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2397134750499716765}
+    - target: {fileID: 7878778836295200046, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878778836295200046, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI.PauseMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8015847757138344450, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
       propertyPath: m_IsActive
