@@ -1,13 +1,10 @@
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace UI
 {
     public class MainMenu : MonoBehaviour
     {
-        [SerializeField] private string _sceneNameToLoad;
-
         [SerializeField] private GameObject _optionPanel;
         [SerializeField] private GameObject _creditsPanel;
         [SerializeField] private GameObject _exitPanel;
@@ -32,12 +29,6 @@ namespace UI
         private void Awake()
         {
             _rectTransform = GetComponent<RectTransform>();
-        }
-
-        public void Play()
-        {
-            SceneManager.LoadScene(_sceneNameToLoad);
-            Debug.Log("Loading scene");
         }
 
         public void Options()

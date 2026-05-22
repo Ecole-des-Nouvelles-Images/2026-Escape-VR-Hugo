@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MonoBehiavors
 {
-    public class Respawn : MonoBehaviour
+    public class RespawnGameObject : MonoBehaviour
     {
         private Vector3 _startPos;
         private Quaternion _startRot;
@@ -18,15 +18,15 @@ namespace MonoBehiavors
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("LimiteMap"))
+            if (other.gameObject.CompareTag("LimitMap"))
             {
-                StartCoroutine("RespawnObject");
+                StartCoroutine(RespawnObject());
             }
         }
 
-        [ContextMenu("Respawning")]
         private IEnumerator RespawnObject()
         {
+            _rigidbody.linearVelocity = Vector3.zero;
             _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             transform.position = _startPos;
             transform.rotation = _startRot;
