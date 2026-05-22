@@ -8,11 +8,10 @@ namespace Managers
 {
     public class SceneLoaderManager : MonoBehaviourSingletonDontDestroyOnLoad<SceneLoaderManager>
     {
-        // _ApertureSize
+        [Header("===== ANIMATION =====")]
+        [SerializeField] public Material _blackScreenGm;
         [Range(0, 1)] public float _valueBlackEffect;
         [Range(0,1)] public float _valueSmoothEffect = 1f;
-        [SerializeField] public Material _blackScreenGm;
-        [SerializeField] private bool _sceneLoaded = false;
     
         private string _sceneName;
     
@@ -35,19 +34,18 @@ namespace Managers
             DOTween.To(() => _valueBlackEffect, x => _valueBlackEffect = x, 0, 0.5f);
             DOTween.To(() => _valueSmoothEffect, x => _valueSmoothEffect = x, 0, 1.5f).OnComplete(() =>
             {
-                StartCoroutine("TimeToLoad");
+                StartCoroutine(LoadSceneRoutine());
             });
         }
     
         [ContextMenu("Disable")]
         private void DisableBlackScreen()
         {
-            //z_blackScreenGm.SetFloat("_ApertureSize", 1);
             DOTween.To(() => _valueBlackEffect, x => _valueSmoothEffect = x, 1, 1.5f);
             DOTween.To(() => _valueBlackEffect, x => _valueBlackEffect = x, 1, 1.5f);
         }
 
-        private IEnumerator TimeToLoad()
+        private IEnumerator LoadSceneRoutine()
         {
             SceneManager.LoadScene(_sceneName);
             yield return new WaitForSeconds(1f);
