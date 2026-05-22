@@ -43,6 +43,14 @@ namespace Handlers
 
         private void Update()
         {
+            if (ClockTimeManager.Instance && ClockTimeManager.Instance.IsMaxTime)
+            {
+                _clockTickInstance.setVolume(0f);
+            }
+            else
+            {
+                _clockTickInstance.setVolume(1f);
+            }
             if (_grabHourHand || _grabMinuteHand)
             {
                 GetTotalMinutesFromHands();
@@ -82,9 +90,10 @@ namespace Handlers
 
         private void OnDestroy()
         {
-            if (AudioManager.Instance)
+            if (_clockTickInstance.isValid())
             {
-                AudioManager.Instance.Stop(_clockTickInstance, STOP_MODE.ALLOWFADEOUT);
+                _clockTickInstance.stop(STOP_MODE.ALLOWFADEOUT);
+                _clockTickInstance.release();
             }
         }
 
