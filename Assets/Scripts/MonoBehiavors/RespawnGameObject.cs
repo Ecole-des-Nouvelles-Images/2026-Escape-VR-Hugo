@@ -16,7 +16,7 @@ namespace MonoBehiavors
             _startPos = transform.position;
         }
 
-        private void OnTriggerExit(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("LimitMap"))
             {
