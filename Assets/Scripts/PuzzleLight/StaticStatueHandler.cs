@@ -1,5 +1,5 @@
-using _Branches.Hugo.Scripts.Temporal;
 using Core.Interfaces;
+using MonoBehiavors;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;

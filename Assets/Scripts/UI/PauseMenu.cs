@@ -16,7 +16,7 @@ namespace UI
     
         public void PauseGame()
         {
-            _menu.SetActive(true);
+            if (_menu) _menu.SetActive(true);
             GameInPause = true;
             Time.timeScale = 0f;
         }
@@ -24,20 +24,10 @@ namespace UI
         public void Resume()
         {
             _menu.SetActive(false);
+            _exitPanel.SetActive(false);
+            _optionPanel.SetActive(false);
             GameInPause = false;
             Time.timeScale = 1f;
-        }
-    
-        public void Options()
-        {
-            _optionPanel.SetActive(true);
-            _exitPanel.SetActive(false);
-        }
-
-        public void Quit()
-        {
-            _exitPanel.SetActive(true);
-            _optionPanel.SetActive(false);
         }
 
         public void ReturnMainMenu()
