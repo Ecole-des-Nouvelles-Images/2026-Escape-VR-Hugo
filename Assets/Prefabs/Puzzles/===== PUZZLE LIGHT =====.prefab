@@ -823,6 +823,13 @@ MonoBehaviour:
   _openAngle: 110
   _openSpeed: 2
   _pivotAxis: {x: 0, y: 1, z: 0}
+  _doorOpenSFX:
+    Guid:
+      Data1: 789027034
+      Data2: 1155711004
+      Data3: 597645716
+      Data4: 1777208460
+    Path: event:/SFX/ClosetDoorOpening
 --- !u!1 &2553888610395961219
 GameObject:
   m_ObjectHideFlags: 0
@@ -3487,6 +3494,13 @@ MonoBehaviour:
   _drawerTransform: {fileID: 2606576115888404002}
   _drawerOffset: {x: 0, y: 0, z: 0.5}
   _openSpeed: 2
+  _drawerOpenSFX:
+    Guid:
+      Data1: 1597255054
+      Data2: 1116706791
+      Data3: -1031090812
+      Data4: 1786834113
+    Path: event:/SFX/OpenDrawer
 --- !u!1 &8852825378524594224
 GameObject:
   m_ObjectHideFlags: 0

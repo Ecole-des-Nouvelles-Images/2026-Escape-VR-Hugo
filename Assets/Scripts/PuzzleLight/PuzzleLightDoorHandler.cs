@@ -1,3 +1,5 @@
+using Core.Audio;
+using FMODUnity;
 using UnityEngine;
 
 namespace PuzzleLight
@@ -13,6 +15,9 @@ namespace PuzzleLight
         [SerializeField] private float _openSpeed = 2f;
 
         [SerializeField] private Vector3 _pivotAxis;
+        
+        [Header("SFX")]
+        [SerializeField] private EventReference _doorOpenSFX;
 
         private Quaternion _closedRotation;
         private Quaternion _targetRotation;
@@ -47,6 +52,7 @@ namespace PuzzleLight
         {
             if (_isOpened) return;
             _isOpened = true;
+            AudioManager.Instance.Play(_doorOpenSFX);
             _targetRotation = _closedRotation * Quaternion.Euler(_pivotAxis * _openAngle);
         }
 

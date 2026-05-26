@@ -1,6 +1,11 @@
 using Managers;
+using System;
+using Core.Audio;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Handlers
 {
@@ -14,17 +19,45 @@ namespace Handlers
         [Header("===== INTERACTION =====")]
         [SerializeField] private XRGrabInteractable _hourGrab;
         [SerializeField] private XRGrabInteractable _minuteGrab;
+        
+        [Header("===== FMOD AUDIO =====")]
+        [SerializeField] private EventReference _clockTickSFX;
+        [SerializeField] private string _fmodParameterName = "ClockHand";
+        [SerializeField] private float _speedSensitivity = 0.6f;
+        
+        private EventInstance _clockTickInstance;
 
         [Header("===== DEBUG =====")]
         [SerializeField] private bool _grabHourHand;
         [SerializeField] private bool _grabMinuteHand;
         [SerializeField] private float _lastMinuteAngle;
 
+
+        private void Start()
+        {
+            if (AudioManager.Instance)
+            {
+                _clockTickInstance = AudioManager.Instance.Play(_clockTickSFX, loop: true, follow: gameObject);
+            }
+        }
+
         private void Update()
         {
+            if (ClockTimeManager.Instance && ClockTimeManager.Instance.IsMaxTime)
+            {
+                _clockTickInstance.setVolume(0f);
+            }
+            else
+            {
+                _clockTickInstance.setVolume(1f);
+            }
             if (_grabHourHand || _grabMinuteHand)
             {
                 GetTotalMinutesFromHands();
+            }
+            else
+            {
+                _clockTickInstance.setParameterByName(_fmodParameterName, 0f);
             }
         }
 
@@ -54,7 +87,16 @@ namespace Handlers
             if (_hourGrab) _hourGrab.selectEntered.RemoveAllListeners();
             if (_minuteGrab) _minuteGrab.selectEntered.RemoveAllListeners();
         }
-        
+
+        private void OnDestroy()
+        {
+            if (_clockTickInstance.isValid())
+            {
+                _clockTickInstance.stop(STOP_MODE.ALLOWFADEOUT);
+                _clockTickInstance.release();
+            }
+        }
+
         private void InstanceOnOnTimeChanged(float currentNormalized)
         {
             if (_grabHourHand || _grabMinuteHand) return;
@@ -90,13 +132,17 @@ namespace Handlers
             float cleanMinuteAngle = Mathf.Repeat(direction * -_minuteHand.localEulerAngles.z, 360f);
 
             float newTotalMinutes = ClockTimeManager.Instance.TotalMinutes;
+            float currentSpeed = 0f; // FMOD velocity storage
 
             if (_grabHourHand)
             {
+                float previousHourMinutes = newTotalMinutes;
                 newTotalMinutes = cleanHourAngle * 2f;
                 if (newTotalMinutes < 360f) newTotalMinutes += 720f;
 
                 _minuteHand.localRotation = Quaternion.Euler(0, 0, direction * -(newTotalMinutes % 60f * 6f));
+
+                currentSpeed = Mathf.Abs(newTotalMinutes - previousHourMinutes) / Time.deltaTime;
             }
             else if (_grabMinuteHand)
             {
@@ -105,7 +151,12 @@ namespace Handlers
                 _lastMinuteAngle = cleanMinuteAngle;
 
                 _hourHand.localRotation = Quaternion.Euler(0, 0, direction * -(newTotalMinutes % 720f * 0.5f));
+                
+                currentSpeed = Mathf.Abs(angleDelta) / Time.deltaTime;
             }
+            
+            float finalParameterValue = currentSpeed * _speedSensitivity;
+            _clockTickInstance.setParameterByName(_fmodParameterName, finalParameterValue);
 
             ClockTimeManager.Instance.SetTimeManually(newTotalMinutes);
         }
