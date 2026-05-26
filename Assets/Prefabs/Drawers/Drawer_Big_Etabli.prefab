@@ -171,8 +171,8 @@ GameObject:
   - component: {fileID: 2054678491079346376}
   - component: {fileID: 8552992742499750931}
   - component: {fileID: 7370938971992304696}
-  - component: {fileID: 7526445878946579890}
-  - component: {fileID: 6277694583227488503}
+  - component: {fileID: 6402723165228194075}
+  - component: {fileID: 4749115828660240537}
   m_Layer: 0
   m_Name: Drawer_Big_Etabli
   m_TagString: Untagged
@@ -197,6 +197,7 @@ Transform:
   - {fileID: 7317079288704890222}
   - {fileID: 6564370519656925117}
   - {fileID: 4880743937107961568}
+  - {fileID: 2468598295090704533}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2054678491079346376
@@ -218,14 +219,14 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
+  m_Constraints: 118
+  m_CollisionDetection: 0
 --- !u!153 &8552992742499750931
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -404,7 +405,7 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
-  m_AttachTransform: {fileID: 6564370519656925117}
+  m_AttachTransform: {fileID: 2468598295090704533}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -413,7 +414,7 @@ MonoBehaviour:
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
   m_MovementType: 0
-  m_PredictedVisualsTransform: {fileID: 0}
+  m_PredictedVisualsTransform: {fileID: 2468598295090704533}
   m_VelocityDamping: 1
   m_VelocityScale: 0.1
   m_AngularVelocityDamping: 1
@@ -459,7 +460,7 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &7526445878946579890
+--- !u!114 &6402723165228194075
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -468,15 +469,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2907658474446204095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a611f170381f5248b6d507f7b7a2496, type: 3}
+  m_Script: {fileID: 11500000, guid: 42c6bd7406f21854080898c708c2cd90, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.DrawerDynamicKnob
+  m_EditorClassIdentifier: Assembly-CSharp::Handlers.DrawerDynamicKnob
   _targetRotation: {fileID: 4445552500583097959}
   _rotationSpeed: 10
   _grabInteractable: {fileID: 7370938971992304696}
   _handTransform: {fileID: 0}
   _offset: {x: 0, y: 0, z: 0}
---- !u!114 &6277694583227488503
+--- !u!114 &4749115828660240537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -485,14 +486,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 2907658474446204095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a611f170381f5248b6d507f7b7a2496, type: 3}
+  m_Script: {fileID: 11500000, guid: 42c6bd7406f21854080898c708c2cd90, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.DrawerDynamicKnob
+  m_EditorClassIdentifier: Assembly-CSharp::Handlers.DrawerDynamicKnob
   _targetRotation: {fileID: 7409394213378926352}
   _rotationSpeed: 10
   _grabInteractable: {fileID: 7370938971992304696}
   _handTransform: {fileID: 0}
   _offset: {x: 0, y: 0, z: 0}
+--- !u!1 &3222810582659563848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2468598295090704533}
+  m_Layer: 0
+  m_Name: PredictedVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2468598295090704533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222810582659563848}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3790575291298919821}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3408067460212354765
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +869,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 885a4b258a3e6c54faad5eadd7daf6d0, type: 2}
+    - target: {fileID: 4103123138260631552, guid: f13c48fb7f1e76845833b0b9480ea68c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -46.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
