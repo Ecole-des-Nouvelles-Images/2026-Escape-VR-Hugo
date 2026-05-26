@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9138020062778765057}
   - component: {fileID: 8645152735318955510}
   - component: {fileID: 9130989525689210865}
+  - component: {fileID: -568318443817979890}
   m_Layer: 0
   m_Name: InteractableObject
   m_TagString: PieceCuckoo
@@ -215,6 +216,26 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &-568318443817979890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3368458601291179146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c126a5598d323743b252ddaf22d794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectImpactAudio
+  impactSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  velocityThreshold: 0.5
 --- !u!1 &4567133288423860161
 GameObject:
   m_ObjectHideFlags: 0

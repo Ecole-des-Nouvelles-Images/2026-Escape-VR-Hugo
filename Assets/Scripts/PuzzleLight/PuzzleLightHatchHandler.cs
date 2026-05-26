@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Core.Audio;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -22,6 +24,9 @@ namespace PuzzleLight
         [SerializeField] private Transform _drawerTransform;
         [SerializeField] private Vector3 _drawerOffset = new Vector3(0, 0, 0.5f);
         [SerializeField] private float _openSpeed = 2f;
+        
+        [Header("SFX")]
+        [SerializeField] private EventReference _drawerOpenSFX;
 
         private Vector3 _closedPosition;
         private Vector3 _targetPosition;
@@ -76,6 +81,7 @@ namespace PuzzleLight
         private void ResolvePuzzle()
         {
             _isResolved = true;
+            AudioManager.Instance.PlayAtPosition(_drawerOpenSFX, transform.position);
             _targetPosition = _closedPosition + _drawerOffset;
         }
 
