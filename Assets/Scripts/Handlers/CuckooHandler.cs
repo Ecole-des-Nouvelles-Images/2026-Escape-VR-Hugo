@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Core;
+using Core.Audio;
 using DG.Tweening;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
@@ -13,6 +15,9 @@ namespace Handlers
         [SerializeField] private GameObject _bird;
     
         [SerializeField] private List<GameObject> _piecesValid = new List<GameObject>();
+        
+        [Header("SFX")] 
+        [SerializeField] private EventReference _cuckooSound;
     
         public void ValidSlot(GameObject piece)
         {
@@ -58,6 +63,7 @@ namespace Handlers
             yield return new WaitForSeconds(1.5f);
         
             _bird.SetActive(true);
+            AudioManager.Instance.PlayAtPosition(_cuckooSound, _bird.transform.position);
             EventBus.OnCandleKeyUnlocked?.Invoke();
         }
     }
