@@ -877,10 +877,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ===== PUZZLE LIGHT =====
       objectReference: {fileID: 0}
-    - target: {fileID: 3000174835303426347, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4646237437492117570, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -932,88 +928,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4770927089247327953, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 214390765}
-    - targetCorrespondingSourceObject: {fileID: 3346941511031805830, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 214390771}
-    - targetCorrespondingSourceObject: {fileID: 4353824928667221560, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 214390770}
-    - targetCorrespondingSourceObject: {fileID: 5739477894975783491, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 214390769}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
---- !u!1 &214390764 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4770927089247327953, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
-  m_PrefabInstance: {fileID: 214390763}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &214390765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 214390764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.RespawnGameObject
---- !u!1 &214390766 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5739477894975783491, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
-  m_PrefabInstance: {fileID: 214390763}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &214390767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4353824928667221560, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
-  m_PrefabInstance: {fileID: 214390763}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &214390768 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3346941511031805830, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
-  m_PrefabInstance: {fileID: 214390763}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &214390769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 214390766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.RespawnGameObject
---- !u!114 &214390770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 214390767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.RespawnGameObject
---- !u!114 &214390771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 214390768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.RespawnGameObject
 --- !u!1001 &249833854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7962,7 +7878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1649940513
 Transform:
   m_ObjectHideFlags: 0
