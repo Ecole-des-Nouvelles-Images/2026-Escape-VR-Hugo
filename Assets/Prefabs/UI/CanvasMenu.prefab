@@ -1745,7 +1745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54650ea7f87e9274eb58f71249ab62de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.MainMenu
-  _sceneNameToLoad: Game_Julien
   _optionPanel: {fileID: 8015847757138344450}
   _creditsPanel: {fileID: 59183258555362093}
   _exitPanel: {fileID: 6895614062421215499}
@@ -4449,6 +4448,7 @@ GameObject:
   - component: {fileID: 4341017386474272214}
   - component: {fileID: 3066028527843927567}
   - component: {fileID: 6199782750727728066}
+  - component: {fileID: 632748944244688877}
   m_Layer: 5
   m_Name: PanelSound
   m_TagString: Untagged
@@ -4542,6 +4542,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &632748944244688877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8647557086246115238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5372f7266db8dbb4db7ecb7c1c6a90f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSettings
+  _masterSlider: {fileID: 4506652990305845897}
+  _musicSlider: {fileID: 4240333912428885406}
+  _gameplaySlider: {fileID: 8010738344146662989}
 --- !u!1 &8799639009652149267
 GameObject:
   m_ObjectHideFlags: 0
