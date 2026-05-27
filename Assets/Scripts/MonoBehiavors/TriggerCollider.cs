@@ -6,8 +6,8 @@ namespace MonoBehiavors
     public class TriggerCollider : MonoBehaviour
     {
         [Header("Settings")]
-        [SerializeField] private List<string> _includedTags = new List<string>();
-        [SerializeField] private List<Collider> _colliders = new List<Collider>();
+        [SerializeField] private List<string> _includedTags = new();
+        [SerializeField] private List<Collider> _colliders = new();
 
         private void OnTriggerEnter(Collider other)
         {
