@@ -2255,10 +2255,6 @@ PrefabInstance:
       value: CodePadLock
       objectReference: {fileID: 0}
     - target: {fileID: 6083761529194076252, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
-      propertyPath: _lockedGameObjects.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6083761529194076252, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: '_lockedGameObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 701215622}
@@ -7878,7 +7874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1649940513
 Transform:
   m_ObjectHideFlags: 0
