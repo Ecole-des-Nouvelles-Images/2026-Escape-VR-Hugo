@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &3739821065279701516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 93ce85b18202ed54385341e95f2d096a, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1745,7 +1745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54650ea7f87e9274eb58f71249ab62de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.MainMenu
-  _sceneNameToLoad: Game_Julien
   _optionPanel: {fileID: 8015847757138344450}
   _creditsPanel: {fileID: 59183258555362093}
   _exitPanel: {fileID: 6895614062421215499}
@@ -3552,7 +3551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: ee691833802ab6b40bd8dd526b2b8971, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4025,7 +4024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 72c72a2da6d64804d81565fefe81b45c, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
