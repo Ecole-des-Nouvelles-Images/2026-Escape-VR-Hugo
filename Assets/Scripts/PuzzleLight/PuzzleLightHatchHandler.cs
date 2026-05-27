@@ -16,7 +16,7 @@ namespace PuzzleLight
         public struct PuzzleLightSocketRequirement
         {
             public XRSocketInteractor Socket;
-            public string requiredTag;
+            public GameObject RequiredGo;
         }
         
         public bool IsResolved { get; private set; }
@@ -31,7 +31,6 @@ namespace PuzzleLight
         [Header("===== ANIMATION =====")]
         [SerializeField] private float _openDuration = 2f;
         [SerializeField] private AnimationCurve _animationCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
-
         
         [Header("===== SFX =====")]
         [SerializeField] private EventReference _drawerOpenSFX;
@@ -84,7 +83,7 @@ namespace PuzzleLight
                 if (req.Socket.hasSelection)
                 {
                     IXRInteractable obj = req.Socket.interactablesSelected[0];
-                    if (obj.transform.CompareTag(req.requiredTag))
+                    if (obj.transform.gameObject == req.RequiredGo)
                     {
                         correctCount++;
                     }
@@ -102,9 +101,20 @@ namespace PuzzleLight
             IsResolved = true;
             _drawerTransform.DOLocalMove(_closedPos + _drawerOffset, _openDuration)
                 .SetEase(_animationCurve);
+
+            Invoke(nameof(DisableInteraction), 0.1f);
             
             // SFX
             AudioManager.Instance.PlayAtPosition(_drawerOpenSFX, transform.position);
+        }
+
+        private void DisableInteraction()
+        {
+            foreach (var req in _socketRequirements)
+            {
+                // req.Socket.enabled = false;
+                req.RequiredGo.GetComponent<XRGrabInteractable>().enabled = false;
+            }
         }
     }
 }

@@ -56,6 +56,8 @@ namespace PuzzleLight
         
         private void RotateDoor(bool isLit)
         {
+            DOTween.Kill(_doorTransform);
+            DOTween.Kill(_drawerTransform);
             _mechanismSequence?.Kill();
             _mechanismSequence = DOTween.Sequence();
 
