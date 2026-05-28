@@ -14,6 +14,7 @@ namespace Managers
 
       [SerializeField] private GameObject _lock;
       [SerializeField] private GameObject _socketTransform;
+      [SerializeField] private BoxCollider _lockCollider;
       private void OnTriggerEnter(Collider other)
       {
          // if (other.gameObject == _keyObject)
@@ -54,8 +55,10 @@ namespace Managers
       {
          _lock.transform.DOMoveY(_lock.transform.position.y + 0.01f, 0.5f).OnComplete(() =>
          {
-            //Rigidbody rb = GetComponent<Rigidbody>();
-            //rb.isKinematic = false;
+            Rigidbody rb = GetComponent<Rigidbody>(); 
+            rb.isKinematic = false;
+            _lockCollider.enabled = true;
+            UnityEvent?.Invoke();
          });
       }
    }

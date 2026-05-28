@@ -13,8 +13,6 @@ namespace MonoBehiavors
         {
             if (!IsLock) return;
             IsLock = false;
-            UnityEvent?.Invoke();
-            
         }
     }
 }
