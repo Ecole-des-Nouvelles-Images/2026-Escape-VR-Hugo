@@ -2,6 +2,7 @@ namespace Core.Interfaces
 {
     public interface ILightReactive
     {
-        public void IsLit();
+        public void OnLightEnter();
+        public void OnLightExit();
     }
 }

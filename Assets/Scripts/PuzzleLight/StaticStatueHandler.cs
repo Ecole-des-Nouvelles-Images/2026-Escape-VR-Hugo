@@ -12,9 +12,11 @@ namespace PuzzleLight
         [SerializeField] private LayerMask _layersToHit;
         [SerializeField] private SplineContainer _splineContainer;
         [SerializeField] private GameObject _splineExtrude;
-    
+
+        private ILightReactive _currentLitObject;
+        
         private Spline _spline;
-        private bool _isBeamActive = false;
+        private bool _isLit;
         
         void Start()
         {
@@ -24,7 +26,7 @@ namespace PuzzleLight
 
         void Update()
         {
-            if (_isBeamActive)
+            if (_isLit)
             {
                 ExecuteBeam();
             }
@@ -36,7 +38,7 @@ namespace PuzzleLight
 
         protected override void TimeBehavior()
         {
-            _isBeamActive = _state > 0; 
+            _isLit = _state > 0; 
         }
 
         private void ExecuteBeam()
@@ -48,8 +50,29 @@ namespace PuzzleLight
             {
                 if (hit.collider.TryGetComponent<ILightReactive>(out var lightReactive))
                 {
-                    lightReactive.IsLit();
+                    if (hit.transform == transform) return;
+                    
+                    if (_currentLitObject == null)
+                    {
+                        lightReactive.OnLightEnter();
+                        _currentLitObject = lightReactive;
+                    }
+                    else if (_currentLitObject != lightReactive)
+                    {
+                        _currentLitObject.OnLightExit();
+                        lightReactive.OnLightEnter();
+                        _currentLitObject = lightReactive;
+                    }
                 }
+                else
+                {
+                    if (_currentLitObject != null)
+                    {
+                        _currentLitObject.OnLightExit();
+                        _currentLitObject = null;
+                    }
+                }
+                
                 UpdateLineRenderer(rayOrigin, hit.point);
             }
         }

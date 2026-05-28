@@ -1,5 +1,6 @@
 using System.Collections;
 using Core;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -9,9 +10,23 @@ namespace Handlers
 {
     public class AlarmClockHandler : MonoBehaviour
     {
-        [Header("===== REFERENCES =====")]
+        [Header("===== REFERENCES SOCKETS =====")]
         [SerializeField] private XRSocketInteractor _alarmMechanismSockets;
         [SerializeField] private XRSocketInteractor _alarmFaceSockets;
+        
+        [Header("===== HOURS HANDS =====")]
+        [SerializeField] private Transform _hoursHandTransform;
+        [SerializeField] private Vector3 _hoursPivotAxis = Vector3.up;
+        [SerializeField] private float _hoursAngle = 90f;
+        
+        [Header("===== MINUTES HANDS =====")]
+        [SerializeField] private Transform _minutesHandTransform;
+        [SerializeField] private Vector3 _minutesPivotAxis = Vector3.up;
+        [SerializeField] private float _minutesAngle = 90f;
+        
+        [Header("===== ANIMATIONS =====")]
+        [SerializeField] private float _duration = 1.5f;
+        [SerializeField] private AnimationCurve _animationCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
         
         [Header("===== DEBUG =====")]
         [SerializeField] private bool _isCompleted;
@@ -35,7 +50,17 @@ namespace Handlers
             _isCompleted = true;
             EventBus.OnAlarmRepaired?.Invoke();
             
+            DisplayCode();
             StartCoroutine(LockObjectInSocket(args.interactableObject.transform, _alarmFaceSockets));
+        }
+
+        private void DisplayCode()
+        {
+            Vector3 targetLocalEulerHours = _hoursHandTransform.localEulerAngles + _hoursPivotAxis * _hoursAngle;
+            _hoursHandTransform.DOLocalRotate(targetLocalEulerHours, _duration).SetEase(_animationCurve);
+            
+            Vector3 targetLocalEulerMinutes = _minutesHandTransform.localEulerAngles + _minutesPivotAxis * _minutesAngle;
+            _minutesHandTransform.DOLocalRotate(targetLocalEulerMinutes, _duration).SetEase(_animationCurve);
         }
 
         private IEnumerator LockObjectInSocket(Transform go, XRSocketInteractor socket)
