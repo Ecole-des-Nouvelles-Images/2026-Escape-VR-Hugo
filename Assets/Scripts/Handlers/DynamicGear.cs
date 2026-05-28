@@ -10,7 +10,7 @@ namespace Handlers
 {
     public class DynamicGear : MonoBehaviour
     {
-        public Action<int> CodeChanged;
+        public Action<DynamicGear, int> CodeChanged;
         
         [Header("===== SETTINGS =====")]
         [SerializeField] private Transform _targetRotation; 
@@ -114,7 +114,7 @@ namespace Handlers
                     currentDigit = Convert.ToInt32(go[0].name);
                     
                     Debug.Log(currentDigit);
-                    CodeChanged?.Invoke(currentDigit);
+                    CodeChanged?.Invoke(this, currentDigit);
                 });
         }
     }

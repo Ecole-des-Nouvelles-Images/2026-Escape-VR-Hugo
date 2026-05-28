@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 38384583814319498}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 1.244, y: 1.379, z: 1.116}
+  m_LocalPosition: {x: 0.906, y: 1.379, z: 1.116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51,7 +51,7 @@ MonoBehaviour:
   _state: 0
   _layersToHit:
     serializedVersion: 2
-    m_Bits: 1073741875
+    m_Bits: 1075839091
   _splineContainer: {fileID: 2335178190141574910}
   _splineExtrude: {fileID: 4143131452872146911}
 --- !u!65 &5098256562006568389
@@ -819,10 +819,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleLightDoorHandler
   _mechanismLightReceiver: {fileID: 3009436567861445182}
+  _puzzleLightHatchHandler: {fileID: 2134884505233760452}
   _doorTransform: {fileID: 6610897348909679509}
-  _openAngle: 110
-  _openSpeed: 2
+  _drawerTransform: {fileID: 2606576115888404002}
   _pivotAxis: {x: 0, y: 1, z: 0}
+  _openAngle: 90
+  _drawerOffset: {x: 0, y: 0, z: 0.5}
+  _openDuration: 2
+  _animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _doorOpenSFX:
     Guid:
       Data1: 789027034
@@ -1077,6 +1104,7 @@ GameObject:
   - component: {fileID: 3997108624282819170}
   - component: {fileID: 8947168175401999998}
   - component: {fileID: 6006120408698039831}
+  - component: {fileID: 1111804308572865754}
   m_Layer: 0
   m_Name: PL_01
   m_TagString: PL_01
@@ -1279,6 +1307,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &1111804308572865754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346941511031805830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.RespawnGameObject
 --- !u!1 &3533994428996459312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,6 +1780,7 @@ GameObject:
   - component: {fileID: 7204732626146873235}
   - component: {fileID: 940506777316776793}
   - component: {fileID: 7895423496109007226}
+  - component: {fileID: 3548377903752236979}
   m_Layer: 0
   m_Name: PL_02
   m_TagString: PL_02
@@ -1942,6 +1983,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &3548377903752236979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4353824928667221560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.RespawnGameObject
 --- !u!1 &4750802209486497764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,6 +2131,7 @@ GameObject:
   - component: {fileID: 940149776046904839}
   - component: {fileID: 8791011812533118198}
   - component: {fileID: 2574327198873999683}
+  - component: {fileID: 2322494025799769669}
   m_Layer: 0
   m_Name: MobileStatue
   m_TagString: Untagged
@@ -2114,10 +2168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d2df7fbe0c70341bccf54df6d0d2a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MobileStatueHandler
-  _litDuration: 0.08
   _layersToHit:
     serializedVersion: 2
-    m_Bits: 1073741875
+    m_Bits: 1075839091
   _splineContainer: {fileID: 4724055179151822085}
   _splineExtrude: {fileID: 4750802209486497764}
 --- !u!114 &940149776046904839
@@ -2297,6 +2350,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.2, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2322494025799769669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770927089247327953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.RespawnGameObject
 --- !u!1 &4781737313854291649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,6 +2582,7 @@ GameObject:
   - component: {fileID: 169938207593518978}
   - component: {fileID: 2941968751620913725}
   - component: {fileID: 3764250823924164543}
+  - component: {fileID: 2419461318309408124}
   m_Layer: 0
   m_Name: PL_03
   m_TagString: PL_03
@@ -2719,6 +2785,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &2419461318309408124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5739477894975783491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.RespawnGameObject
 --- !u!1 &5880255508486868827
 GameObject:
   m_ObjectHideFlags: 0
@@ -3363,7 +3441,7 @@ Transform:
   m_GameObject: {fileID: 7902595026756216142}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.63, z: 0}
+  m_LocalPosition: {x: 0, y: 0.187, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3486,14 +3564,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleLightManager
   _socketRequirements:
   - Socket: {fileID: 2110202368393916147}
-    requiredTag: PL_01
+    RequiredGo: {fileID: 3346941511031805830}
   - Socket: {fileID: 3211237423915529238}
-    requiredTag: PL_02
+    RequiredGo: {fileID: 4353824928667221560}
   - Socket: {fileID: 8080631801031826648}
-    requiredTag: PL_03
+    RequiredGo: {fileID: 5739477894975783491}
   _drawerTransform: {fileID: 2606576115888404002}
   _drawerOffset: {x: 0, y: 0, z: 0.5}
-  _openSpeed: 2
+  _openDuration: 2
+  _animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _drawerOpenSFX:
     Guid:
       Data1: 1597255054
