@@ -354,6 +354,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4783054855446013916, guid: e0da2d0c770859544a801133cdd5875b, type: 3}
   m_PrefabInstance: {fileID: 25571920}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &41361074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+  m_PrefabInstance: {fileID: 1178527582}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.LockedGameObject
 --- !u!1001 &88973771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -522,6 +533,17 @@ Transform:
   - {fileID: 1492094579}
   m_Father: {fileID: 804841930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &155209648 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6909286418512024965, guid: 3fb471277e4af2648be0dfaf78cbae38, type: 3}
+  m_PrefabInstance: {fileID: 484689584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.LockedGameObject
 --- !u!1001 &156097868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -921,6 +943,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2978560984950168166, guid: b8db426f3ec08284699ec07c87c709d7, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4972496759347054667, guid: b8db426f3ec08284699ec07c87c709d7, type: 3}
       propertyPath: m_Name
       value: Drawer_6_Layette
@@ -1132,6 +1158,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 604658905}
     m_Modifications:
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 552092837}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonoBehiavors.LockedGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.12760001
@@ -1209,6 +1247,10 @@ PrefabInstance:
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: _isLocked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7951139396153530487, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1414,6 +1456,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3454136777070477613, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
   m_PrefabInstance: {fileID: 336472178}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &359941496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3920527353523565779, guid: 088d24040b56f014ba0dbed5d3405c17, type: 3}
+  m_PrefabInstance: {fileID: 2086134829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.LockedGameObject
 --- !u!1 &373385965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,6 +1639,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 604658905}
     m_Modifications:
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1528511984}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonoBehiavors.LockedGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1279
@@ -1668,6 +1733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drawer_2_Layette (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7951139396153530487, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0050251484
@@ -1742,6 +1811,10 @@ PrefabInstance:
     - target: {fileID: 4953379467006904391, guid: 3fb471277e4af2648be0dfaf78cbae38, type: 3}
       propertyPath: m_Name
       value: Drawer_1_Layette
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909286418512024965, guid: 3fb471277e4af2648be0dfaf78cbae38, type: 3}
+      propertyPath: _isLocked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7853766414145663267, guid: 3fb471277e4af2648be0dfaf78cbae38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1929,6 +2002,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4783054855446013916, guid: e0da2d0c770859544a801133cdd5875b, type: 3}
   m_PrefabInstance: {fileID: 491598030}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &552092837 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+  m_PrefabInstance: {fileID: 625450938}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.LockedGameObject
 --- !u!1 &568557751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8168225205628825527, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
@@ -2012,6 +2096,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 604658905}
     m_Modifications:
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 41361074}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonoBehiavors.LockedGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.3206
@@ -2313,6 +2409,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drawer_2_Layette (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7951139396153530487, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.22954062
@@ -2380,6 +2480,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 604658905}
     m_Modifications:
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 359941496}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonoBehiavors.LockedGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.008900046
@@ -2587,6 +2699,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3454136777070477613, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
   m_PrefabInstance: {fileID: 635340032}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &642349465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2978560984950168166, guid: b8db426f3ec08284699ec07c87c709d7, type: 3}
+  m_PrefabInstance: {fileID: 263072083}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.LockedGameObject
 --- !u!1001 &646701936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3510,6 +3633,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drawer_2_Layette (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7951139396153530487, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.21957207
@@ -3652,6 +3779,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 604658905}
     m_Modifications:
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1904456043}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonoBehiavors.LockedGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3211
@@ -3829,6 +3968,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 604658905}
     m_Modifications:
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1623158260}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonoBehiavors.LockedGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.32110006
@@ -4354,6 +4505,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 604658905}
     m_Modifications:
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 642349465}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonoBehiavors.LockedGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.32050002
@@ -4788,6 +4951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drawer_2_Layette (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7951139396153530487, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.22954062
@@ -4978,7 +5145,7 @@ PrefabInstance:
       objectReference: {fileID: 1206497412}
     - target: {fileID: 6006890408877507240, guid: 957129afd740ca642849266170357136, type: 3}
       propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UnlockGameObjects
+      value: UnlockContext
       objectReference: {fileID: 0}
     - target: {fileID: 6006890408877507240, guid: 957129afd740ca642849266170357136, type: 3}
       propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -5081,11 +5248,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1206497412}
   m_SourcePrefab: {fileID: 100100000, guid: 957129afd740ca642849266170357136, type: 3}
---- !u!1 &1206497410 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 42395746974774210, guid: 957129afd740ca642849266170357136, type: 3}
-  m_PrefabInstance: {fileID: 1206497409}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1206497411 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3176302950945526370, guid: 957129afd740ca642849266170357136, type: 3}
@@ -5103,8 +5265,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.LockGameObject
-  _lockedGameObjects:
-  - {fileID: 1206497410}
+  _isLocked: 1
+  _context: {fileID: 0}
+  _insideGameObjects: []
+  _insideTrigger: {fileID: 0}
+  _raycastOrigin: {fileID: 0}
+  _raycastLength: 5
+  _raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _isOpen: 0
 --- !u!1001 &1223392812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5116,6 +5286,10 @@ PrefabInstance:
     - target: {fileID: 4840017948917807187, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_Name
       value: Drawer_2_Layette
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+      propertyPath: _isLocked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7951139396153530487, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5483,6 +5657,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 604658905}
     m_Modifications:
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1914620474}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonoBehiavors.LockedGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.09729993
@@ -6317,6 +6503,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a0e70207a9c414847b3986419e6f0dc9, type: 3}
   m_PrefabInstance: {fileID: 1463535668}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1466441891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+  m_PrefabInstance: {fileID: 958347320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.LockedGameObject
 --- !u!1 &1492094578
 GameObject:
   m_ObjectHideFlags: 0
@@ -6564,6 +6761,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 604658905}
     m_Modifications:
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 155209648}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonoBehiavors.LockedGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.32169998
@@ -6626,6 +6835,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
   m_PrefabInstance: {fileID: 1525185655}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1528511984 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+  m_PrefabInstance: {fileID: 319051133}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.LockedGameObject
 --- !u!1001 &1536382426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7088,6 +7308,17 @@ Transform:
   - {fileID: 1796714080}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1623158260 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+  m_PrefabInstance: {fileID: 1223392812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.LockedGameObject
 --- !u!1001 &1625338546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7209,7 +7440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1649940513
 Transform:
   m_ObjectHideFlags: 0
@@ -8559,6 +8790,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3839661017093619503, guid: e2a719e0baa761042a5f7450e838e4c6, type: 3}
   m_PrefabInstance: {fileID: 1899907902}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1904456043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3092900934880473372, guid: c9e2d54598dadde4c9bc6cd1d145516e, type: 3}
+  m_PrefabInstance: {fileID: 1914627701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.LockedGameObject
+--- !u!114 &1914620474 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6883449217973016826, guid: 461567cf19cbe8b43823ccb88b07111b, type: 3}
+  m_PrefabInstance: {fileID: 468424478}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.LockedGameObject
 --- !u!1001 &1914627701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8567,6 +8820,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098046800}
     m_Modifications:
+    - target: {fileID: 3092900934880473372, guid: c9e2d54598dadde4c9bc6cd1d145516e, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3145993012503766809, guid: c9e2d54598dadde4c9bc6cd1d145516e, type: 3}
       propertyPath: m_Name
       value: Drawer_5_Layette
@@ -8769,6 +9026,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 604658905}
     m_Modifications:
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1466441891}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 537952111102043262, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonoBehiavors.LockedGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1455508039012226661, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.32169998
@@ -9276,6 +9545,10 @@ PrefabInstance:
     - target: {fileID: 2861404597188105842, guid: 088d24040b56f014ba0dbed5d3405c17, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920527353523565779, guid: 088d24040b56f014ba0dbed5d3405c17, type: 3}
+      propertyPath: _isLocked
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
