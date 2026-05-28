@@ -19,6 +19,8 @@ namespace Managers
         public float TotalMinutes;
         public bool IsPaused;
 
+        public bool IsMaxTime => TotalMinutes >= _maxTimeMinutes;
+
         private float _lastNotifiedTime = -1f;
         
         public void SetTimeManually(float totalMinutes)

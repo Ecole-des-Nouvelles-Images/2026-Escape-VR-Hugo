@@ -27,8 +27,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.19999999}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 599483969987731077}
   - {fileID: 9016807444290104475}
@@ -51,6 +51,15 @@ MonoBehaviour:
   _reverseRotation: 0
   _hourGrab: {fileID: 6512920801133415615}
   _minuteGrab: {fileID: 6408736949536300200}
+  _clockTickSFX:
+    Guid:
+      Data1: 729209618
+      Data2: 1297191556
+      Data3: 83325355
+      Data4: 922309558
+    Path: event:/SFX/Clock
+  _fmodParameterName: ClockHand
+  _speedSensitivity: 0.6
   _grabHourHand: 0
   _grabMinuteHand: 0
   _lastMinuteAngle: 0

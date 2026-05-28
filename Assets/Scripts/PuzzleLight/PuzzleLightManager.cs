@@ -34,8 +34,8 @@ namespace PuzzleLight
             EventBus.OnMechanismUnlocked -= OnMechanismUnlocked;
             EventBus.OnFirstElementActivated -= OnFirstElementActivated;
             EventBus.OnSecondElementActivated -= OnSecondElementActivated;
-            EventBus.OnThirdElementActivated += OnThirdElementActivated;
-            EventBus.OnLightKeyUnlocked += OnLightKeyUnlocked;
+            EventBus.OnThirdElementActivated -= OnThirdElementActivated;
+            EventBus.OnLightKeyUnlocked -= OnLightKeyUnlocked;
         }
 
         private void OnStaticStatuetteEnlightened()

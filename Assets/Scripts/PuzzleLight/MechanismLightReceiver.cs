@@ -6,11 +6,16 @@ namespace PuzzleLight
 {
     public class MechanismLightReceiver : MonoBehaviour, ILightReactive
     {
-        public event Action OnLit; 
+        public event Action<bool> OnLit; 
 
-        public void IsLit()
+        public void OnLightEnter()
         {
-            OnLit?.Invoke();
+            OnLit?.Invoke(true);
+        }
+
+        public void OnLightExit()
+        {
+            OnLit?.Invoke(false);
         }
     }
 }
