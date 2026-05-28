@@ -9,7 +9,7 @@ namespace MonoBehiavors
         [SerializeField] private float _maxTime;
         [SerializeField] private float _currentTime;
         [SerializeField] private bool _isOnSocle;
-
+        [SerializeField] private bool _loadMenu;
         //[SerializeField] private UnityEvent EventWhenLoad;
 
         [SerializeField] private Player _player;
@@ -24,6 +24,7 @@ namespace MonoBehiavors
         {
             if (other.CompareTag("Player"))
             {
+                if (!_player) _player = other.gameObject.GetComponent<Player>();
                 Debug.Log("Player Enter");
                 _isOnSocle = true;
             }
@@ -53,7 +54,7 @@ namespace MonoBehiavors
             if (_currentTime >= _maxTime)
             {
                 _isLoading = true;
-                _player.DisableUiRay();
+                if (!_loadMenu) _player.DisableUiRay();else {_player.EnableUiRay();}
             
                 Debug.Log("Load Scene : " + SceneName);
             

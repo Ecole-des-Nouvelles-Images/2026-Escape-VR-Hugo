@@ -10,7 +10,7 @@ namespace Managers
     public class CodePadLockHandler : PadLock
     {
         [Header("===== SETTINGS =====")]
-        [SerializeField] private string _rightCode = "59";
+        [SerializeField] private List<string> _rightCodes = new();
         [SerializeField] private string _currentCode = "";
         [SerializeField] private List<int> _currentNumbers = new();
         
@@ -183,9 +183,13 @@ namespace Managers
     
         private void VerifyIfCodeIsRight()
         {
-            if (_rightCode == _currentCode)
+            foreach (var code in _rightCodes)
             {
-                OpenLockPad();
+                if (code == _currentCode)
+                {
+                    OpenLockPad();
+                    return;
+                }
             }
         }
 
