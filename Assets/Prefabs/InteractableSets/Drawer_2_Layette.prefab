@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 8754057527588460460}
   - component: {fileID: 1527009220624089082}
   - component: {fileID: 2894823504880868349}
+  - component: {fileID: 6329161977602130272}
   m_Layer: 0
   m_Name: Drawer_2_Layette
   m_TagString: Untagged
@@ -542,6 +543,25 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &6329161977602130272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4840017948917807187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3c853773f346642852fb7f6144bcc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::XROpenSound
+  _openSFX:
+    Guid:
+      Data1: 1597255054
+      Data2: 1116706791
+      Data3: -1031090812
+      Data4: 1786834113
+    Path: event:/SFX/OpenDrawer
 --- !u!1 &6629795936804740054
 GameObject:
   m_ObjectHideFlags: 0

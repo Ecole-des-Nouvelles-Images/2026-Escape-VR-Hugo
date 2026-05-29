@@ -600,12 +600,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.LockedGameObject
-  _lockedGameObjects:
-  - {fileID: 8899085121505302007}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _isLocked: 1
+  _context: {fileID: 0}
+  _insideGameObjects: []
+  _insideTrigger: {fileID: 0}
+  _raycastOrigin: {fileID: 0}
+  _raycastLength: 5
+  _raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _openSFX:
+    Guid:
+      Data1: 1053297566
+      Data2: 1252157376
+      Data3: 1157492913
+      Data4: 1188409372
+    Path: event:/SFX/BriefCaseOpening
+  _closeSFX:
+    Guid:
+      Data1: 1528782559
+      Data2: 1215690747
+      Data3: 522057381
+      Data4: -1571383446
+    Path: event:/SFX/BriefCaseClosing
+  _isOpen: 0
 --- !u!114 &1469185721669006077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,6 +637,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnlockKnob
   KnobTransform: {fileID: 5561707731947693573}
+  _unlockSFX:
+    Guid:
+      Data1: -1796030303
+      Data2: 1244464630
+      Data3: -1049770055
+      Data4: -460904155
+    Path: event:/SFX/HeavyLock
 --- !u!1 &8899085121505302007
 GameObject:
   m_ObjectHideFlags: 0
