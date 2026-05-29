@@ -767,6 +767,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 940149776046904839, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 885334361}
+    - target: {fileID: 940149776046904839, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 885334361}
     - target: {fileID: 3000174835303426347, guid: 29b8238b69830a84a84f28d179c9cae4, type: 3}
       propertyPath: m_Name
       value: ===== PUZZLE LIGHT =====
@@ -3628,6 +3636,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4415065301277905431, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
   m_PrefabInstance: {fileID: 88973771}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &885334361 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8160732279410198230, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
+  m_PrefabInstance: {fileID: 88973771}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885334359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f81afe16684f4d379fa105c18d9c1d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.AlarmMechanismSocketHandler
 --- !u!1 &889168904
 GameObject:
   m_ObjectHideFlags: 0
@@ -7665,7 +7684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1649940513
 Transform:
   m_ObjectHideFlags: 0
