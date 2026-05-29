@@ -56,6 +56,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 8054c6c393b9f4249a941b706e96abf5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MaskTige:
+        m_Texture: {fileID: 2800000, guid: 1203f9c6e0b6acf47a6ea6d9c5905f3e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -88,6 +92,8 @@ Material:
     m_Floats:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 1
+    - _AlphaThreshold_Fleure: 0.7
+    - _AlphaThreshold_Tige: 0.25
     - _AlphaToMask: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
