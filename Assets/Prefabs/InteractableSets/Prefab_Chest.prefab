@@ -1076,6 +1076,7 @@ Transform:
   m_Children:
   - {fileID: 7664503245506974332}
   - {fileID: 478923661445978898}
+  - {fileID: 1038404957431226190}
   - {fileID: 7868870233417156547}
   - {fileID: 2347658677088511521}
   - {fileID: 3063949358889297344}
@@ -1808,6 +1809,80 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1037645712736766972
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6478523465520136996}
+    m_Modifications:
+    - target: {fileID: 4312876014671026, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312876014671026, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01283
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312876014671026, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312876014671026, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312876014671026, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312876014671026, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312876014671026, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312876014671026, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312876014671026, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312876014671026, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 589806101227254167, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: m_Name
+      value: CodePadLock4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737989358625335057, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6703038275869321766}
+    - target: {fileID: 4737989358625335057, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockContext
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737989358625335057, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+      propertyPath: UnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MonoBehiavors.LockedGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+--- !u!4 &1038404957431226190 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4312876014671026, guid: fe6c70007da71f94aafd814dd8bef126, type: 3}
+  m_PrefabInstance: {fileID: 1037645712736766972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8719205345923502502
 PrefabInstance:
   m_ObjectHideFlags: 0

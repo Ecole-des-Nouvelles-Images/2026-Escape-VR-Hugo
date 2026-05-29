@@ -37,6 +37,13 @@ namespace PuzzleLight
             _closedDoorLocalEuler = _doorTransform.localEulerAngles;
             _closedDrawerPos = _drawerTransform.localPosition;
         }
+        
+        [ContextMenu("RotateDoorTest")]
+        public void RotateDoorTest()
+        {
+            Vector3 targetLocalEuler = _closedDoorLocalEuler + _pivotAxis * _openAngle;
+            _doorTransform.DOLocalRotate(targetLocalEuler, _openDuration).SetEase(_animationCurve);
+        }
 
         #region ===== EVENTS =====
 

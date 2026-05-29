@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 1455508039012226661}
   - component: {fileID: 537952111102043262}
   m_Layer: 0
-  m_Name: CodePadLock
+  m_Name: CodePadLock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1856,6 +1856,10 @@ PrefabInstance:
     - target: {fileID: 7984784449984927210, guid: 36764e8561068c54298ec2381ff021e2, type: 3}
       propertyPath: m_Name
       value: M_CadenaLayetteBig
+      objectReference: {fileID: 0}
+    - target: {fileID: 7984784449984927210, guid: 36764e8561068c54298ec2381ff021e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
