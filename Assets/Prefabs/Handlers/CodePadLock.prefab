@@ -210,7 +210,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1455508039012226661}
   - component: {fileID: 537952111102043262}
-  - component: {fileID: 6083761529194076252}
   m_Layer: 0
   m_Name: CodePadLock
   m_TagString: Untagged
@@ -251,9 +250,9 @@ MonoBehaviour:
   UnityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6083761529194076252}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: _Branches.Hugo.Scripts.LockedGameObject, Assembly-CSharp
-        m_MethodName: UnlockGameObjects
+        m_MethodName: UnlockContext
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -263,7 +262,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _rightCode: 59
+  _rightCodes:
+  - 59
   _currentCode: 
   _currentNumbers: 
   _gears:
@@ -301,21 +301,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6083761529194076252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117098120087512268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c77a49ff4ad45f04c80b268c76a00aae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.LockedGameObject
-  _lockedGameObjects:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &2846562167066115943
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c48ebd64194d904ab04bee3c99f030b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.TriggerCollider
+  _useTags: 1
   _includedTags:
   - PadlockValue
   _colliders: []
@@ -719,6 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c48ebd64194d904ab04bee3c99f030b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.TriggerCollider
+  _useTags: 1
   _includedTags:
   - PadlockValue
   _colliders: []

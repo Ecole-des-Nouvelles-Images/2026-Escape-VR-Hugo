@@ -11,9 +11,8 @@ namespace MonoBehiavors
     
         protected virtual void UnlockPadLock()
         {
+            if (!IsLock) return;
             IsLock = false;
-            UnityEvent?.Invoke();
-            Debug.Log("UnlockPadLock");
         }
     }
 }

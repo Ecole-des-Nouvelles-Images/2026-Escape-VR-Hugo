@@ -5,7 +5,8 @@ namespace MonoBehiavors
 {
     public class TriggerCollider : MonoBehaviour
     {
-        [Header("Settings")]
+        [Header("===== SETTINGS =====")]
+        [SerializeField] private bool _useTags = true;
         [SerializeField] private List<string> _includedTags = new();
         [SerializeField] private List<Collider> _colliders = new();
 
@@ -14,12 +15,19 @@ namespace MonoBehiavors
             _colliders.RemoveAll(collider => collider == null);
             _colliders.RemoveAll(collider => !collider.gameObject.activeSelf);
 
-            foreach (string tag in _includedTags)
+            if (_useTags)
             {
-                if (other.CompareTag(tag))
+                foreach (string tag in _includedTags)
                 {
-                    _colliders.Add(other);
+                    if (other.CompareTag(tag))
+                    {
+                        _colliders.Add(other);
+                    }
                 }
+            }
+            else
+            {
+                _colliders.Add(other);
             }
         }
 
@@ -64,6 +72,21 @@ namespace MonoBehiavors
                 {
                     gameObjects.Add(col.gameObject);
                 }
+            }
+            
+            return gameObjects;
+        }
+        
+        public List<GameObject> GetGameObjects()
+        {
+            _colliders.RemoveAll(collider => collider == null);
+            _colliders.RemoveAll(collider => !collider.gameObject.activeSelf);
+            
+            List<GameObject> gameObjects = new List<GameObject>();
+            
+            foreach (Collider col in _colliders)
+            {
+                gameObjects.Add(col.gameObject);
             }
             
             return gameObjects;
