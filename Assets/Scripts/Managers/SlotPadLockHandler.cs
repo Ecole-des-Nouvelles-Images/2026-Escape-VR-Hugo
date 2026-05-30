@@ -38,11 +38,11 @@ namespace Managers
          Debug.Log("Animated Key");
          _keyObject.GetComponent<BoxCollider>().enabled = false;
 
-         _socketTransform.transform.DOMoveZ(_socketTransform.transform.position.z - 0.03f, 1f).OnComplete(() =>
+         _socketTransform.transform.DOLocalMoveZ(_socketTransform.transform.localPosition.z + 0.03f, 1f).OnComplete(() =>
          {
             Debug.Log("Rotation");
     
-            _socketTransform.transform.DOLocalRotate(new Vector3(0, -90, 0), 0.5f, RotateMode.LocalAxisAdd)
+            _socketTransform.transform.DOLocalRotate(new Vector3(0, 90, 0), 0.5f, RotateMode.LocalAxisAdd)
                .OnComplete(() =>
                {
                   PadLockAnimation();

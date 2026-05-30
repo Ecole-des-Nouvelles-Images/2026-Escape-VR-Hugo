@@ -10,7 +10,7 @@ namespace MonoBehiavors
         private bool _slotOccuped;
         public bool IsValid;
     
-        private CuckooHandler _cuckoo;
+        [SerializeField] private CuckooHandler _cuckoo;
 
         private void Awake()
         {

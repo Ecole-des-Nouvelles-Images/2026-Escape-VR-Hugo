@@ -67,8 +67,8 @@ namespace PuzzleLight
             //     if (_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
             // }
             
-            Vector3 rayOrigin = transform.position;
-            Vector3 rayDirection = transform.forward;
+            Vector3 rayOrigin = _splineContainer.transform.position;
+            Vector3 rayDirection = _splineContainer.transform.forward;
         
             if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, _layersToHit))
             {
@@ -105,8 +105,8 @@ namespace PuzzleLight
         {
             if (!_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(true);
 
-            float3 localStart = transform.InverseTransformPoint(start);
-            float3 localEnd = transform.InverseTransformPoint(end);
+            float3 localStart = _splineContainer.transform.InverseTransformPoint(start);
+            float3 localEnd = _splineContainer.transform.InverseTransformPoint(end);
 
             _spline.SetKnot(0, new BezierKnot(localStart));
             _spline.SetKnot(1, new BezierKnot(localEnd));
