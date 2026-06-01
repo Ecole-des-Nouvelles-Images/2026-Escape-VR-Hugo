@@ -119,6 +119,30 @@ MonoBehaviour:
   _keyObject: {fileID: 0}
   OffSetPositionOnKey: {x: 0, y: -0.007, z: 0.38}
   OffSetRotationOnKey: {x: 45, y: 0, z: 0}
+  _lock: {fileID: 0}
+  _socketTransform: {fileID: 0}
+  _lockCollider: {fileID: 0}
+  _keyInsertSFX:
+    Guid:
+      Data1: 742292118
+      Data2: 1259087564
+      Data3: -784041315
+      Data4: -2076131441
+    Path: event:/SFX/KeyInsert
+  _keyTurnSFX:
+    Guid:
+      Data1: 386861860
+      Data2: 1096920094
+      Data3: 134770307
+      Data4: 152321408
+    Path: event:/SFX/MechanicalHandling
+  _lockOpenSFX:
+    Guid:
+      Data1: 705073326
+      Data2: 1206447869
+      Data3: 782922682
+      Data4: -737389299
+    Path: event:/SFX/Unlock
 --- !u!114 &6947668793663965460
 MonoBehaviour:
   m_ObjectHideFlags: 0
