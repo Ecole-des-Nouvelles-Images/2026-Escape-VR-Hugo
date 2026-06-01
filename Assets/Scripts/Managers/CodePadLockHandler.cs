@@ -162,6 +162,7 @@ namespace Managers
                     if (!IsLock)
                     {
                         _smallRb.isKinematic = false;
+                        UnityEvent?.Invoke();
                     }
                 });
         }
@@ -206,7 +207,6 @@ namespace Managers
         private void OpenLockPad()
         {
             IsLock = false;
-            UnityEvent?.Invoke();
             
             if (AudioManager.Instance && !_unlockSFX.IsNull)
             {
