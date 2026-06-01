@@ -12,20 +12,20 @@ namespace MonoBehiavors
 
         public InputActionProperty InputOpenMenu;
         
-        [Header("DebugMenu")]
-        public InputActionProperty InputDebugMenu;
-        [SerializeField] private bool _debugMenuOpen;
-        [SerializeField] private GameObject _debugMenu;
+        // [Header("DebugMenu")]
+        // public InputActionProperty InputDebugMenu;
+        // [SerializeField] private bool _debugMenuOpen;
+        // [SerializeField] private GameObject _debugMenu;
         
         private void OnEnable()
         {
             InputOpenMenu.action.performed += OnClickPause;
-            InputDebugMenu.action.performed += DebugMenu;
+            //InputDebugMenu.action.performed += DebugMenu;
         }
         private void OnDisable()
         {
             InputOpenMenu.action.performed -= OnClickPause;
-            InputDebugMenu.action.performed -= DebugMenu;
+            //InputDebugMenu.action.performed -= DebugMenu;
         }
 
         public void DisableUiRay()
@@ -72,21 +72,21 @@ namespace MonoBehiavors
         }
 
         // debug
-        private void DebugMenu(InputAction.CallbackContext obj)
-        {
-            if (!_debugMenuOpen)
-            {
-                _debugMenuOpen = true;
-                _debugMenu.SetActive(true);
-                EnableUiRay();
-            }
-            else
-            {
-                _debugMenuOpen = false;
-                _debugMenu.SetActive(false);
-                if (!PauseMenu.Instance.GameInPause) DisableUiRay();
-            }
-        }
+        // private void DebugMenu(InputAction.CallbackContext obj)
+        // {
+        //     if (!_debugMenuOpen)
+        //     {
+        //         _debugMenuOpen = true;
+        //         _debugMenu.SetActive(true);
+        //         EnableUiRay();
+        //     }
+        //     else
+        //     {
+        //         _debugMenuOpen = false;
+        //         _debugMenu.SetActive(false);
+        //         if (!PauseMenu.Instance.GameInPause) DisableUiRay();
+        //     }
+        // }
 
     }
 }

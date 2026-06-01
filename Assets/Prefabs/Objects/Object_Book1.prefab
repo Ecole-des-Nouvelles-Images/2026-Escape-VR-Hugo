@@ -10,7 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3368458601291179146, guid: 67e80743af5a941418a11f37e51b2872, type: 3}
       propertyPath: m_Name
-      value: InteractableObjectDynamic Variant
+      value: Object_Book1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337803016217196637, guid: 67e80743af5a941418a11f37e51b2872, type: 3}
+      propertyPath: impactSound.Path
+      value: event:/SFX/BookDrop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337803016217196637, guid: 67e80743af5a941418a11f37e51b2872, type: 3}
+      propertyPath: impactSound.Guid.Data1
+      value: -1749294065
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337803016217196637, guid: 67e80743af5a941418a11f37e51b2872, type: 3}
+      propertyPath: impactSound.Guid.Data2
+      value: 1244795521
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337803016217196637, guid: 67e80743af5a941418a11f37e51b2872, type: 3}
+      propertyPath: impactSound.Guid.Data3
+      value: -2001607761
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337803016217196637, guid: 67e80743af5a941418a11f37e51b2872, type: 3}
+      propertyPath: impactSound.Guid.Data4
+      value: -1965489458
       objectReference: {fileID: 0}
     - target: {fileID: 9138020062778765057, guid: 67e80743af5a941418a11f37e51b2872, type: 3}
       propertyPath: m_LocalPosition.x

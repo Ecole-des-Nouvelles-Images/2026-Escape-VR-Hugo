@@ -6,7 +6,7 @@ namespace PuzzleLight
 {
     public class MechanismLightReceiver : MonoBehaviour, ILightReactive
     {
-        public event Action<bool> OnLit; 
+        public event Action<bool> OnLit;
 
         public void OnLightEnter()
         {

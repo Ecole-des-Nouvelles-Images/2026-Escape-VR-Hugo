@@ -167,6 +167,26 @@ PrefabInstance:
       propertyPath: m_FirstSelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3068738719589650828, guid: eafbc73ac88b35348a0d067e9b90a5ef, type: 3}
+      propertyPath: impactSound.Path
+      value: event:/SFX/PutOnWood
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068738719589650828, guid: eafbc73ac88b35348a0d067e9b90a5ef, type: 3}
+      propertyPath: impactSound.Guid.Data1
+      value: 791627588
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068738719589650828, guid: eafbc73ac88b35348a0d067e9b90a5ef, type: 3}
+      propertyPath: impactSound.Guid.Data2
+      value: 1340895169
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068738719589650828, guid: eafbc73ac88b35348a0d067e9b90a5ef, type: 3}
+      propertyPath: impactSound.Guid.Data3
+      value: -705718095
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068738719589650828, guid: eafbc73ac88b35348a0d067e9b90a5ef, type: 3}
+      propertyPath: impactSound.Guid.Data4
+      value: 801182260
+      objectReference: {fileID: 0}
     - target: {fileID: 6043008920572087643, guid: eafbc73ac88b35348a0d067e9b90a5ef, type: 3}
       propertyPath: m_Name
       value: EndingHandler
@@ -207,3 +227,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EndingHandler
   SceneName: MainMenu
   _timeOfSound: 0
+  _teleport: {fileID: 0}
