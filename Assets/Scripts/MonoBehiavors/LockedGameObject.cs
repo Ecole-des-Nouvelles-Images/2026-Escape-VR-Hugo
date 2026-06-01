@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Core.Audio;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
@@ -27,6 +28,10 @@ namespace MonoBehiavors
         [SerializeField] private Transform _raycastOrigin;
         [SerializeField] private float _raycastLength = 5f;
         [SerializeField] private LayerMask _raycastMask;
+        
+        [Header("===== FMOD AUDIO =====")]
+        [SerializeField] private FMODUnity.EventReference _openSFX;
+        [SerializeField] private FMODUnity.EventReference _closeSFX;
 
         [Header("===== DEBUG =====")]
         [SerializeField] private bool _isOpen;
@@ -91,6 +96,11 @@ namespace MonoBehiavors
                     _lastHitObject = currentHitObject;
 
                     _isOpen = false;
+                    
+                    if (AudioManager.Instance && !_closeSFX.IsNull)
+                    {
+                        AudioManager.Instance.Play(_closeSFX, loop: false, follow: gameObject);
+                    }
                 }
             }
             else
@@ -101,6 +111,11 @@ namespace MonoBehiavors
                     _lastHitObject = null;
                     
                     _isOpen = true;
+                }
+                
+                if (AudioManager.Instance && !_openSFX.IsNull)
+                {
+                    AudioManager.Instance.Play(_openSFX, loop: false, follow: gameObject);
                 }
             }
         }
