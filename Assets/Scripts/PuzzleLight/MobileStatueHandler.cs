@@ -1,4 +1,6 @@
+using Core.Audio;
 using Core.Interfaces;
+using FMODUnity;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -16,6 +18,9 @@ namespace PuzzleLight
         [SerializeField] private MeshRenderer _splineMeshRenderer;
         [SerializeField] private Transform _splineSparkle;
         [SerializeField] private float _sparkleOffset = -0.1f;
+        
+        [Header("===== FMOD AUDIO =====")]
+        [SerializeField] private EventReference _beamIgniteSFX;
         
         private ILightReactive _currentLitObject;
         
@@ -48,6 +53,11 @@ namespace PuzzleLight
         public void OnLightEnter()
         {
             _isLit = true;
+            
+            if (AudioManager.Instance && !_beamIgniteSFX.IsNull)
+            {
+                AudioManager.Instance.PlayAtPosition(_beamIgniteSFX, transform.position, loop: false);
+            }
         }
 
         public void OnLightExit()

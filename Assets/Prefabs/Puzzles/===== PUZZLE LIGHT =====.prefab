@@ -56,6 +56,13 @@ MonoBehaviour:
   _splineMeshRenderer: {fileID: 7040708259467743793}
   _splineSparkle: {fileID: 3532474818587977449}
   _sparkleOffset: -0.001
+  _beamIgniteSFX:
+    Guid:
+      Data1: 1785234067
+      Data2: 1297451807
+      Data3: -1486253682
+      Data4: 734745433
+    Path: event:/SFX/CrystalShine
 --- !u!1 &134715905036206152
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +400,20 @@ MonoBehaviour:
   _raycastMask:
     serializedVersion: 2
     m_Bits: 64
+  _openSFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  _closeSFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   _isOpen: 0
 --- !u!1 &2123040713526254446
 GameObject:
@@ -583,6 +604,27 @@ MonoBehaviour:
       Data3: 597645716
       Data4: 1777208460
     Path: event:/SFX/ClosetDoorOpening
+  _doorCloseSFX:
+    Guid:
+      Data1: 1871550937
+      Data2: 1310210961
+      Data3: 411599543
+      Data4: -1418811928
+    Path: event:/SFX/ClosetDoorClosing
+  _drawerOpenSFX:
+    Guid:
+      Data1: 1597255054
+      Data2: 1116706791
+      Data3: -1031090812
+      Data4: 1786834113
+    Path: event:/SFX/OpenDrawer
+  _drawerCloseSFX:
+    Guid:
+      Data1: 2137627176
+      Data2: 1223959142
+      Data3: -1418432621
+      Data4: 470644151
+    Path: event:/SFX/CloseDrawer
 --- !u!1 &2603098632850631863
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +913,7 @@ GameObject:
   - component: {fileID: 3997108624282819170}
   - component: {fileID: 6006120408698039831}
   - component: {fileID: 1111804308572865754}
+  - component: {fileID: 4875070344328055959}
   m_Layer: 0
   m_Name: PL_01
   m_TagString: PL_01
@@ -1063,6 +1106,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.RespawnGameObject
+--- !u!114 &4875070344328055959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346941511031805830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c126a5598d323743b252ddaf22d794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectImpactAudio
+  impactSound:
+    Guid:
+      Data1: 791627588
+      Data2: 1340895169
+      Data3: -705718095
+      Data4: 801182260
+    Path: event:/SFX/PutOnWood
+  velocityThreshold: 0.5
 --- !u!1 &3651582082837731207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,6 +1519,7 @@ GameObject:
   - component: {fileID: 7204732626146873235}
   - component: {fileID: 7895423496109007226}
   - component: {fileID: 3548377903752236979}
+  - component: {fileID: 8953160933817384960}
   m_Layer: 0
   m_Name: PL_02
   m_TagString: PL_02
@@ -1648,6 +1712,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.RespawnGameObject
+--- !u!114 &8953160933817384960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4353824928667221560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c126a5598d323743b252ddaf22d794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectImpactAudio
+  impactSound:
+    Guid:
+      Data1: 791627588
+      Data2: 1340895169
+      Data3: -705718095
+      Data4: 801182260
+    Path: event:/SFX/PutOnWood
+  velocityThreshold: 0.5
 --- !u!1 &4750802209486497764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,6 +1870,7 @@ GameObject:
   - component: {fileID: 8791011812533118198}
   - component: {fileID: 2322494025799769669}
   - component: {fileID: 1747084218107546242}
+  - component: {fileID: 1858368040198518117}
   m_Layer: 0
   m_Name: MobileStatue
   m_TagString: Untagged
@@ -1831,6 +1916,13 @@ MonoBehaviour:
   _splineMeshRenderer: {fileID: 788213546362024643}
   _splineSparkle: {fileID: 7592047607050355298}
   _sparkleOffset: -0.001
+  _beamIgniteSFX:
+    Guid:
+      Data1: 1785234067
+      Data2: 1297451807
+      Data3: -1486253682
+      Data4: 734745433
+    Path: event:/SFX/CrystalShine
 --- !u!114 &940149776046904839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2047,6 +2139,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3, y: 0.3, z: 0.3}
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!114 &1858368040198518117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770927089247327953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c126a5598d323743b252ddaf22d794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectImpactAudio
+  impactSound:
+    Guid:
+      Data1: 791627588
+      Data2: 1340895169
+      Data3: -705718095
+      Data4: 801182260
+    Path: event:/SFX/PutOnWood
+  velocityThreshold: 0.5
 --- !u!1 &4781737313854291649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,6 +2266,7 @@ GameObject:
   - component: {fileID: 169938207593518978}
   - component: {fileID: 3764250823924164543}
   - component: {fileID: 2419461318309408124}
+  - component: {fileID: 2250741542422570128}
   m_Layer: 0
   m_Name: PL_03
   m_TagString: PL_03
@@ -2346,6 +2459,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb513b3e112b9b34780bf990ebc0817c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.RespawnGameObject
+--- !u!114 &2250741542422570128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5739477894975783491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c126a5598d323743b252ddaf22d794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectImpactAudio
+  impactSound:
+    Guid:
+      Data1: 791627588
+      Data2: 1340895169
+      Data3: -705718095
+      Data4: 801182260
+    Path: event:/SFX/PutOnWood
+  velocityThreshold: 0.5
 --- !u!1 &6089879632802376653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,6 +2838,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36241c0081d336478b6fa95f77dd5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightReceiver
+  _beamIgniteSFX:
+    Guid:
+      Data1: 1785234067
+      Data2: 1297451807
+      Data3: -1486253682
+      Data4: 734745433
+    Path: event:/SFX/CrystalShine
 --- !u!65 &4021383383158933480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2814,6 +2954,20 @@ MonoBehaviour:
       Data3: -1031090812
       Data4: 1786834113
     Path: event:/SFX/OpenDrawer
+  _statuePlaceSFX:
+    Guid:
+      Data1: 1426732723
+      Data2: 1195176628
+      Data3: 1534181526
+      Data4: -1662898255
+    Path: event:/SFX/StatuePlace
+  _statueRemoveSFX:
+    Guid:
+      Data1: -1294237577
+      Data2: 1162370131
+      Data3: -1329790309
+      Data4: 1091167881
+    Path: event:/SFX/StatueRemove
 --- !u!1 &8893245937032130052
 GameObject:
   m_ObjectHideFlags: 0

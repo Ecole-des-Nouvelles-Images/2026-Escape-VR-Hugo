@@ -806,6 +806,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7252450258929596146}
     - target: {fileID: 5356570713157397830, guid: 68262112011df4f479944a672ce136c7, type: 3}
+      propertyPath: _keyObject
+      value: 
+      objectReference: {fileID: 4505096456058637462}
+    - target: {fileID: 5356570713157397830, guid: 68262112011df4f479944a672ce136c7, type: 3}
       propertyPath: _lockCollider
       value: 
       objectReference: {fileID: 8409625108170296752}
@@ -1149,6 +1153,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CandleKey Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 195307951044449536, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: _valueDrop
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 195307951044449536, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: _temporalRange.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8529141
@@ -1197,11 +1209,20 @@ PrefabInstance:
       propertyPath: m_UseDynamicAttach
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8580291263104104324, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0249
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+--- !u!1 &4505096456058637462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6595024687031376185, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+  m_PrefabInstance: {fileID: 7278781653345949103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8335037419369764348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
