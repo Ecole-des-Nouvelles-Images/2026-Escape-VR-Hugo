@@ -54,7 +54,7 @@ namespace Handlers
         }
 
         /// <summary>
-        /// Active ou désactive l'effet d'aberration chromatique
+        /// Active ou désactive l'effet d'aberration chromatique Hugo il pue
         /// </summary>
         public void SetChromaticAberrationActive(bool active)
         {
