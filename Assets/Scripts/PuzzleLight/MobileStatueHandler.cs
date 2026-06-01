@@ -8,47 +8,96 @@ namespace PuzzleLight
     public class MobileStatueHandler : MonoBehaviour, ILightReactive
     {
         [Header("===== SETTINGS =====")]
-        [SerializeField, Tooltip("Time in seconds for the statue to stay lit after being hit by a raycast.")] private float _litDuration = 0.08f;
         [SerializeField] private LayerMask _layersToHit;
         [SerializeField] private SplineContainer _splineContainer;
         [SerializeField] private GameObject _splineExtrude;
         
+        private ILightReactive _currentLitObject;
+        
         private Spline _spline;
-        private float _lastLitTime = -Mathf.Infinity;
+        private bool _isLit;
 
         void Start()
         {
             if (_splineContainer) _spline = _splineContainer.Spline;
             if (_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
         }
-
-        void LateUpdate()
+        
+        void Update()
         {
-            if (Time.time - _lastLitTime > _litDuration)
+            if (_isLit)
             {
-                if (_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
+                ExecuteBeam();
             }
         }
 
-        public void IsLit()
-        {
-            _lastLitTime = Time.time;
-        
-            Vector3 origin = transform.position;
-            Vector3 direction = transform.forward;
+        #region ===== ILightReactive =====
 
-            if (Physics.Raycast(origin, direction, out var hit, Mathf.Infinity, _layersToHit))
+        public void OnLightEnter()
+        {
+            _isLit = true;
+        }
+
+        public void OnLightExit()
+        {
+            _isLit = false;
+            if (_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
+        }
+
+        #endregion
+        
+        private void ExecuteBeam()
+        {
+            // _lastLitTime = Time.time;
+            //
+            // Vector3 origin = transform.position;
+            // Vector3 direction = transform.forward;
+            //
+            // if (Physics.Raycast(origin, direction, out var hit, Mathf.Infinity, _layersToHit))
+            // {
+            //     if (hit.collider.TryGetComponent<ILightReactive>(out var lightReactive))
+            //     {
+            //         if (hit.transform != transform)
+            //             lightReactive.OnLightEnter();
+            //     }
+            //     UpdateLineRenderer(origin, hit.point);
+            // }
+            // else
+            // {
+            //     if (_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
+            // }
+            
+            Vector3 rayOrigin = _splineContainer.transform.position;
+            Vector3 rayDirection = _splineContainer.transform.forward;
+        
+            if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, _layersToHit))
             {
                 if (hit.collider.TryGetComponent<ILightReactive>(out var lightReactive))
                 {
-                    if (hit.transform != transform)
-                        lightReactive.IsLit();
+                    if (hit.transform == transform) return;
+                    
+                    if (_currentLitObject == null)
+                    {
+                        lightReactive.OnLightEnter();
+                        _currentLitObject = lightReactive;
+                    }
+                    else if (_currentLitObject != lightReactive)
+                    {
+                        _currentLitObject.OnLightExit();
+                        lightReactive.OnLightEnter();
+                        _currentLitObject = lightReactive;
+                    }
                 }
-                UpdateLineRenderer(origin, hit.point);
-            }
-            else
-            {
-                if (_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
+                else
+                {
+                    if (_currentLitObject != null)
+                    {
+                        _currentLitObject.OnLightExit();
+                        _currentLitObject = null;
+                    }
+                }
+                
+                UpdateLineRenderer(rayOrigin, hit.point);
             }
         }
 
@@ -56,8 +105,8 @@ namespace PuzzleLight
         {
             if (!_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(true);
 
-            float3 localStart = transform.InverseTransformPoint(start);
-            float3 localEnd = transform.InverseTransformPoint(end);
+            float3 localStart = _splineContainer.transform.InverseTransformPoint(start);
+            float3 localEnd = _splineContainer.transform.InverseTransformPoint(end);
 
             _spline.SetKnot(0, new BezierKnot(localStart));
             _spline.SetKnot(1, new BezierKnot(localEnd));

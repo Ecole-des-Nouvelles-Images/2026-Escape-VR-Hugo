@@ -10,10 +10,12 @@ namespace Managers
     public class CodePadLockHandler : PadLock
     {
         [Header("===== SETTINGS =====")]
-        [SerializeField] private string RightCode;
-        [SerializeField] private string CurrentCode;
-        [SerializeField] private int NumberOne;
-        [SerializeField] private int NumberTwo;
+        [SerializeField] private List<string> _rightCodes = new();
+        [SerializeField] private string _currentCode = "";
+        [SerializeField] private List<int> _currentNumbers = new();
+        
+        [Header("===== REFERENCES =====")]
+        [SerializeField] private List<DynamicGear> _gears = new();
         
         [Header("===== VISUAL =====")]
         [Header("-- SMALL PADLOCK --")]
@@ -21,8 +23,6 @@ namespace Managers
         [SerializeField] private Rigidbody _smallRb;
         [Header("-- BIG PADLOCK --")]
         [SerializeField] private GameObject CodePadLock;
-        [SerializeField] private DynamicGear _gearOne;
-        [SerializeField] private DynamicGear _gearTwo;
         [SerializeField] private GameObject _lock;
         [SerializeField] private List<XRSimpleInteractable> _gearInteractables = new();
         
@@ -45,6 +45,12 @@ namespace Managers
             _bigVisualPos = _bigVisualTransform.position;
             _bigVisualRot = _bigVisualTransform.rotation;
             _bigVisualScale = _bigVisualTransform.localScale;
+
+            foreach (var gear in _gears)
+            {
+                _currentNumbers.Add(0);
+            }
+            SetCode();
             
             foreach (var gearInteractable in _gearInteractables)
             {
@@ -67,14 +73,18 @@ namespace Managers
 
         private void OnEnable()
         {
-            _gearOne.CodeChanged += SetNumberOne;
-            _gearTwo.CodeChanged += SetNumberTwo;
+            for (int i = 0; i < _gears.Count; i++)
+            {
+                _gears[i].CodeChanged += SetNumber;
+            }
         }
         
         private void OnDisable()
         {
-            _gearOne.CodeChanged -= SetNumberOne;
-            _gearTwo.CodeChanged -= SetNumberTwo;
+            for (int i = 0; i < _gears.Count; i++)
+            {
+                _gears[i].CodeChanged -= SetNumber;
+            }
         }
 
         #endregion
@@ -154,28 +164,32 @@ namespace Managers
 
         #region ===== PRIVATE METHODS =====
 
-        private void SetNumberOne(int value)
+        private void SetNumber(DynamicGear context, int value)
         {
-            NumberOne = value;
-            SetCode();
-        }
-        private void SetNumberTwo(int value)
-        {
-            NumberTwo = value; 
+            int index = _gears.IndexOf(context);
+            _currentNumbers[index] = value;
             SetCode();
         }
         
         private void SetCode()
         {
-            CurrentCode = new string(NumberOne + "" + NumberTwo);
+            _currentCode = "";
+            foreach (var number in _currentNumbers)
+            {
+                _currentCode += number;
+            }
             VerifyIfCodeIsRight();
         }
     
         private void VerifyIfCodeIsRight()
         {
-            if (RightCode == CurrentCode)
+            foreach (var code in _rightCodes)
             {
-                OpenLockPad();
+                if (code == _currentCode)
+                {
+                    OpenLockPad();
+                    return;
+                }
             }
         }
 

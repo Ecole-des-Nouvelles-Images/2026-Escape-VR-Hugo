@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using Core.Audio;
+using DG.Tweening;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -10,33 +12,46 @@ namespace PuzzleLight
 {
     public class PuzzleLightHatchHandler : MonoBehaviour
     {
-        [System.Serializable]
-        public struct PuzzleLighSocketRequirement
+        [Serializable]
+        public struct PuzzleLightSocketRequirement
         {
             public XRSocketInteractor Socket;
-            public string requiredTag;
+            public GameObject RequiredGo;
         }
         
-        [Header("Sockets Configuration")]
-        [SerializeField] private List<PuzzleLighSocketRequirement> _socketRequirements = new();
-
-        [Header("DrawerToOpen")] 
-        [SerializeField] private Transform _drawerTransform;
-        [SerializeField] private Vector3 _drawerOffset = new Vector3(0, 0, 0.5f);
-        [SerializeField] private float _openSpeed = 2f;
+        public bool IsResolved { get; private set; }
         
-        [Header("SFX")]
+        [Header("===== SOCKETS =====")]
+        [SerializeField] private List<PuzzleLightSocketRequirement> _socketRequirements = new();
+
+        [Header("===== SETTINGS DRAWER =====")] 
+        [SerializeField] private Transform _drawerTransform;
+        [SerializeField] private Vector3 _drawerOffset = new(0, 0, 0.5f);
+        
+        [Header("===== ANIMATION =====")]
+        [SerializeField] private float _openDuration = 2f;
+        [SerializeField] private AnimationCurve _animationCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+        
+        [Header("===== SFX =====")]
         [SerializeField] private EventReference _drawerOpenSFX;
 
-        private Vector3 _closedPosition;
-        private Vector3 _targetPosition;
-        private bool _isResolved = false;
+        private Vector3 _closedPos;
+
+        [ContextMenu("ResolvePuzzle")]
+        public void IsResolve()
+        {
+            IsResolved = true;
+        }
     
         void Start()
         {
-            _closedPosition = _drawerTransform.localPosition;
-            _targetPosition = _closedPosition;
+            _closedPos = _drawerTransform.localPosition;
+        }
 
+        #region ===== EVENTS =====
+
+        private void OnEnable()
+        {
             foreach (var req in _socketRequirements)
             {
                 req.Socket.selectEntered.AddListener(OnSocketChanged);
@@ -44,18 +59,21 @@ namespace PuzzleLight
             }
         }
 
-        void Update()
+        private void OnDisable()
         {
-            if (_isResolved)
+            foreach (var req in _socketRequirements)
             {
-                _drawerTransform.localPosition = Vector3.Lerp(_drawerTransform.localPosition, _targetPosition, Time.deltaTime * _openSpeed);
+                req.Socket.selectExited.RemoveListener(OnSocketChanged);
+                req.Socket.selectEntered.RemoveListener(OnSocketChanged);
             }
         }
-
+        
         private void OnSocketChanged(BaseInteractionEventArgs arg)
         {
             CheckPuzzleState();
         }
+
+        #endregion
 
         private void CheckPuzzleState()
         {
@@ -65,14 +83,14 @@ namespace PuzzleLight
                 if (req.Socket.hasSelection)
                 {
                     IXRInteractable obj = req.Socket.interactablesSelected[0];
-                    if (obj.transform.CompareTag(req.requiredTag))
+                    if (obj.transform.gameObject == req.RequiredGo)
                     {
                         correctCount++;
                     }
                 }
             }
 
-            if (correctCount == _socketRequirements.Count && !_isResolved)
+            if (correctCount == _socketRequirements.Count && !IsResolved)
             {
                 ResolvePuzzle();
             }
@@ -80,17 +98,22 @@ namespace PuzzleLight
 
         private void ResolvePuzzle()
         {
-            _isResolved = true;
+            IsResolved = true;
+            _drawerTransform.DOLocalMove(_closedPos + _drawerOffset, _openDuration)
+                .SetEase(_animationCurve);
+
+            Invoke(nameof(DisableInteraction), 0.1f);
+            
+            // SFX
             AudioManager.Instance.PlayAtPosition(_drawerOpenSFX, transform.position);
-            _targetPosition = _closedPosition + _drawerOffset;
         }
 
-        private void OnDestroy()
+        private void DisableInteraction()
         {
             foreach (var req in _socketRequirements)
             {
-                req.Socket.selectExited.RemoveListener(OnSocketChanged);
-                req.Socket.selectEntered.RemoveListener(OnSocketChanged);
+                // req.Socket.enabled = false;
+                req.RequiredGo.GetComponent<XRGrabInteractable>().enabled = false;
             }
         }
     }
