@@ -14,10 +14,10 @@ namespace Handlers
         [SerializeField] private GameObject _candleVisual;
 
         [Header("Fire")] 
+        public bool IsFire;
         [SerializeField] private bool _fireInStart;
         [SerializeField] private GameObject _flameGameObject;
         [SerializeField] private GameObject _flameVisual;
-        [SerializeField] private bool _isFire;
         [SerializeField] private Transform _firePoint;
     
         [Header("ObjectInside")] 
@@ -42,8 +42,8 @@ namespace Handlers
         [ContextMenu("Fire")]
         public void Fire()
         {
-            if (_isFire) return;
-            _isFire = true;
+            if (IsFire) return;
+            IsFire = true;
             _flameVisual.SetActive(true);
             float currentTime = ClockTimeManager.Instance.NormalizedCurrentTime;
         
@@ -54,7 +54,7 @@ namespace Handlers
         private void BlowOut()
         {
             _flameVisual.GetComponent<FlameAnimation>().BlowOut();
-            _isFire = false;
+            IsFire = false;
             _temporalRange = Vector2.zero;
         }
         
@@ -71,7 +71,7 @@ namespace Handlers
             {
                 PutObjectInCandle();
             }
-            if (!_isFire) return;
+            if (!IsFire) return;
 
             float currentTime = ClockTimeManager.Instance.NormalizedCurrentTime;
 
