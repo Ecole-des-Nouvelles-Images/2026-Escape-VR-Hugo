@@ -11,7 +11,11 @@ namespace Handlers
         {
             if (other.CompareTag("Flame"))
             {
-                _event?.Invoke();
+                CandleHandler candlerHandler = other.gameObject.transform.parent.GetComponent<CandleHandler>();
+                if (candlerHandler.IsFire)
+                {
+                    _event?.Invoke();
+                }
             }
         }
     }
