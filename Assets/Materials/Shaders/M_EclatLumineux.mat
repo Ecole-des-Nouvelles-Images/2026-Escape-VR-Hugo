@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8366074000256446253
+--- !u!114 &-1796861839606262099
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_RayonLumiere
-  m_Shader: {fileID: -6465566751694194690, guid: 8d2a736e32bf75640a6eb21eb65b6c97, type: 3}
+  m_Name: M_EclatLumineux
+  m_Shader: {fileID: -6465566751694194690, guid: b08a25aea72624641ab9c157e35377c7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -37,6 +37,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Text1:
+        m_Texture: {fileID: 2800000, guid: dd2497d59aaa8bb49a64ddb1f0aa1473, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Text2:
+        m_Texture: {fileID: 2800000, guid: cb3e1401c502d7f46b6385fbf263cfe6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -51,16 +59,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BeamLength: 5.4
-    - _MaskDistance1: 3.33
-    - _MaskDistance2: 0
-    - _NoiseScale: 6.76
-    - _NoiseSpeed: -1.4
+    - _Choix_Textures: 0.22
+    - _Nombre_Branches: 8
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SplineLength: 1
-    - _XRMotionVectorsPass: 1
+    - _RotateSpeed: 1.5
+    - _SwitchTime: 3
+    - _Taille_Eclat: 0.4
+    - _Taille_Hole: 0.1
+    - _pulsationSpeed: 5
     m_Colors:
-    - _Color: {r: 1.0224078, g: 1.3223141, b: 1.6055588, a: 1}
+    - _Color_Eclat: {r: 0.41344783, g: 0.4755918, b: 0.5377358, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
