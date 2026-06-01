@@ -54,6 +54,20 @@ MonoBehaviour:
   _raycastMask:
     serializedVersion: 2
     m_Bits: 64
+  _openSFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  _closeSFX:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   _isOpen: 0
 --- !u!1 &755113747740805548
 GameObject:
@@ -147,7 +161,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8335037419369764348}
   m_Father: {fileID: 6038276998206747828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4072198852086844097
@@ -1121,6 +1136,76 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1132086295859922696, guid: f73f87a56b22a394e917a3fdbf340b09, type: 3}
   m_PrefabInstance: {fileID: 5835253985377119060}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7278781653345949103
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5862999418856305571}
+    m_Modifications:
+    - target: {fileID: 128955186104335685, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_Name
+      value: CandleKey Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.8529141
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.91163075
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00000032782552
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516405144352298310, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329528605620072795, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+      propertyPath: m_UseDynamicAttach
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+--- !u!4 &8335037419369764348 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1634645064012480595, guid: 13b20375028c6d446921c42ee2a02ddc, type: 3}
+  m_PrefabInstance: {fileID: 7278781653345949103}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8058159684956033495
 PrefabInstance:
