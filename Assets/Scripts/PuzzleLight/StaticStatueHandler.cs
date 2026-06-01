@@ -1,4 +1,6 @@
+using Core.Audio;
 using Core.Interfaces;
+using FMODUnity;
 using MonoBehiavors;
 using Unity.Mathematics;
 using UnityEngine;
@@ -18,10 +20,14 @@ namespace PuzzleLight
         [SerializeField] private Transform _splineSparkle;
         [SerializeField] private float _sparkleOffset = -0.1f;
 
+        [Header("===== FMOD AUDIO =====")] 
+        [SerializeField] private EventReference _beamIgniteSFX;
+
         private ILightReactive _currentLitObject;
         
         private Spline _spline;
         private bool _isLit;
+        private bool _wasLitLastFrame;
         
         private Material _material;
 
@@ -38,6 +44,16 @@ namespace PuzzleLight
 
         void Update()
         {
+            if (_isLit && !_wasLitLastFrame)
+            {
+                if (AudioManager.Instance && !_beamIgniteSFX.IsNull)
+                {
+                    AudioManager.Instance.PlayAtPosition(_beamIgniteSFX, transform.position, loop: false);
+                }
+            }           
+            
+            _wasLitLastFrame = _isLit;
+            
             if (_isLit)
             {
                 ExecuteBeam();
