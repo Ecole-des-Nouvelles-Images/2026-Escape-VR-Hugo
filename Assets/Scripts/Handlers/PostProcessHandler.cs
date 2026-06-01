@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -6,12 +7,12 @@ namespace Handlers
 {
     public class PostProcessHandler : MonoBehaviour
     {
-        [Header("===== RENDERER FEATURE =====")]
-        [SerializeField] private UniversalRendererData _rendererData;
-        [SerializeField] private string _featureName = "FeatureName";
-        
-        [Header("===== UNIVERSAL RENDER PIPELINE =====")]
-        [SerializeField] private UniversalRenderPipelineAsset _renderPipelineAsset;
+        // [Header("===== RENDERER FEATURE =====")]
+        // [SerializeField] private UniversalRendererData _rendererData;
+        // [SerializeField] private string _featureName = "FeatureName";
+        //
+        // [Header("===== UNIVERSAL RENDER PIPELINE =====")]
+        // [SerializeField] private UniversalRenderPipelineAsset _renderPipelineAsset;
 
         [Header("===== VOLUME EFFECTS =====")]
         [SerializeField] private Volume _globalVolume;
@@ -21,14 +22,14 @@ namespace Handlers
 
         void Awake()
         {
-            if (_rendererData != null)
-            {
-                _targetFeature = _rendererData.rendererFeatures.Find(f => f.name == _featureName);
-                if (_targetFeature == null)
-                {
-                    Debug.LogWarning($"[GraphicsController] Feature '{_featureName}' introuvable !");
-                }
-            }
+            // if (_rendererData != null)
+            // {
+            //     _targetFeature = _rendererData.rendererFeatures.Find(f => f.name == _featureName);
+            //     if (_targetFeature == null)
+            //     {
+            //         Debug.LogWarning($"[GraphicsController] Feature '{_featureName}' introuvable !");
+            //     }
+            // }
 
             if (_globalVolume != null && _globalVolume.profile != null)
             {
@@ -45,11 +46,11 @@ namespace Handlers
         /// </summary>
         public void SetRendererFeatureActive(bool active)
         {
-            if (_targetFeature == null) return;
-            _targetFeature.SetActive(active);
-            _rendererData.SetDirty(); 
-            
-            if (_renderPipelineAsset) _renderPipelineAsset.supportsCameraOpaqueTexture = active;
+            // if (_targetFeature == null) return;
+            // _targetFeature.SetActive(active);
+            // _rendererData.SetDirty(); 
+            //
+            // if (_renderPipelineAsset) _renderPipelineAsset.supportsCameraOpaqueTexture = active;
         }
 
         /// <summary>
@@ -58,7 +59,19 @@ namespace Handlers
         public void SetChromaticAberrationActive(bool active)
         {
             if (_chromaticAberration == null) return;
-            _chromaticAberration.active = active;
+
+            if (active) _chromaticAberration.active = true;
+
+            float targetValue = active ? 1f : 0f;
+
+            DOTween.To(() => _chromaticAberration.intensity.value, 
+                    x => _chromaticAberration.intensity.value = x, 
+                    targetValue, 
+                    0.5f)
+                .SetEase(Ease.InOutQuad)
+                .OnComplete(() => {
+                    if (!active) _chromaticAberration.active = false;
+                });
         }
     }
 }
