@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 7370938971992304696}
   - component: {fileID: 6402723165228194075}
   - component: {fileID: 4749115828660240537}
+  - component: {fileID: 4459558765387283957}
   m_Layer: 0
   m_Name: Drawer_Big_Etabli
   m_TagString: Untagged
@@ -495,6 +496,25 @@ MonoBehaviour:
   _grabInteractable: {fileID: 7370938971992304696}
   _handTransform: {fileID: 0}
   _offset: {x: 0, y: 0, z: 0}
+--- !u!114 &4459558765387283957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2907658474446204095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3c853773f346642852fb7f6144bcc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::XROpenSound
+  _openSFX:
+    Guid:
+      Data1: 1597255054
+      Data2: 1116706791
+      Data3: -1031090812
+      Data4: 1786834113
+    Path: event:/SFX/OpenDrawer
 --- !u!1 &3222810582659563848
 GameObject:
   m_ObjectHideFlags: 0

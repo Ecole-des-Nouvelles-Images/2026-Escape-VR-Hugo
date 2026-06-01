@@ -14,9 +14,10 @@ namespace Handlers
         [SerializeField] private GameObject _candleVisual;
 
         [Header("Fire")] 
+        public bool IsFire;
         [SerializeField] private bool _fireInStart;
         [SerializeField] private GameObject _flameGameObject;
-        [SerializeField] private bool _isFire;
+        [SerializeField] private GameObject _flameVisual;
         [SerializeField] private Transform _firePoint;
     
         [Header("ObjectInside")] 
@@ -41,14 +42,22 @@ namespace Handlers
         [ContextMenu("Fire")]
         public void Fire()
         {
-            if (_isFire) return;
-            _isFire = true;
-            _flameGameObject.SetActive(true);
+            if (IsFire) return;
+            IsFire = true;
+            _flameVisual.SetActive(true);
             float currentTime = ClockTimeManager.Instance.NormalizedCurrentTime;
         
             if(!_fireInStart) _temporalRange = new Vector2(currentTime, currentTime + 0.3f);
         }
     
+        [ContextMenu("BlowOut")]
+        private void BlowOut()
+        {
+            _flameVisual.GetComponent<FlameAnimation>().BlowOut();
+            IsFire = false;
+            _temporalRange = Vector2.zero;
+        }
+        
         protected override void TimeBehavior()
         {
             _candleVisual.transform.localScale = new Vector3(1, 1 - _state, 1);
@@ -62,7 +71,7 @@ namespace Handlers
             {
                 PutObjectInCandle();
             }
-            if (!_isFire) return;
+            if (!IsFire) return;
 
             float currentTime = ClockTimeManager.Instance.NormalizedCurrentTime;
 
@@ -79,13 +88,7 @@ namespace Handlers
                 if (!_flameGameObject.activeSelf) _flameGameObject.SetActive(true);
             }
         }
-
-        private void BlowOut()
-        {
-            _flameGameObject.SetActive(false);
-            _isFire = false;
-            _temporalRange = Vector2.zero;
-        }
+        
 
         private void DropObjectInCandle()
         {
