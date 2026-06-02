@@ -17,7 +17,6 @@ namespace MonoBehiavors
             _numberRightKey++;
             if (_numberRightKey == 3) OpenDrawer();
             if (_numberRightKey == 3) StartCoroutine(OpenDrawer());
-        
         }
 
         [ContextMenu("OpenDrawer")]
