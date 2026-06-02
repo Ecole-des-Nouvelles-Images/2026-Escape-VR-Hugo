@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 6893668887334841267}
   - component: {fileID: 8007961466198018674}
   - component: {fileID: 128405686558347059}
+  - component: {fileID: 2858561663423371761}
   m_Layer: 0
   m_Name: Drawer_Desk
   m_TagString: Untagged
@@ -609,6 +610,25 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &2858561663423371761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6733436258959999568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3c853773f346642852fb7f6144bcc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::XROpenSound
+  _openSFX:
+    Guid:
+      Data1: 1597255054
+      Data2: 1116706791
+      Data3: -1031090812
+      Data4: 1786834113
+    Path: event:/SFX/OpenDrawer
 --- !u!1 &8305147881131634890
 GameObject:
   m_ObjectHideFlags: 0

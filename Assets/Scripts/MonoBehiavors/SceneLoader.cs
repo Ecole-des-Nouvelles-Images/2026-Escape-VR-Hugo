@@ -1,3 +1,5 @@
+using Core.Audio;
+using FMODUnity;
 using Managers;
 using UnityEngine;
 
@@ -11,6 +13,9 @@ namespace MonoBehiavors
         [SerializeField] private bool _isOnSocle;
         [SerializeField] private bool _loadMenu;
         //[SerializeField] private UnityEvent EventWhenLoad;
+
+        [Header("==== FMOD AUDIO ====")] 
+        [SerializeField] private EventReference _clockDongSFX;
 
         [SerializeField] private Player _player;
         private bool _isLoading = false;
@@ -57,6 +62,11 @@ namespace MonoBehiavors
                 if (!_loadMenu) _player.DisableUiRay();else {_player.EnableUiRay();}
             
                 Debug.Log("Load Scene : " + SceneName);
+                
+                if (AudioManager.Instance && !_clockDongSFX.IsNull)
+                {
+                    AudioManager.Instance.Play(_clockDongSFX, loop: false, follow: gameObject);
+                }
             
                 SceneLoaderManager.Instance.LoadScene(SceneName);
             }

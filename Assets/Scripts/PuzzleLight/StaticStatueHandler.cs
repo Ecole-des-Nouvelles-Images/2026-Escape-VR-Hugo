@@ -1,4 +1,6 @@
+using Core.Audio;
 using Core.Interfaces;
+using FMODUnity;
 using MonoBehiavors;
 using Unity.Mathematics;
 using UnityEngine;
@@ -12,12 +14,28 @@ namespace PuzzleLight
         [SerializeField] private LayerMask _layersToHit;
         [SerializeField] private SplineContainer _splineContainer;
         [SerializeField] private GameObject _splineExtrude;
+        
+        [Header("===== VISUAL LIGHT =====")]
+        [SerializeField] private MeshRenderer _splineMeshRenderer;
+        [SerializeField] private Transform _splineSparkle;
+        [SerializeField] private float _sparkleOffset = -0.1f;
+
+        [Header("===== FMOD AUDIO =====")] 
+        [SerializeField] private EventReference _beamIgniteSFX;
 
         private ILightReactive _currentLitObject;
         
         private Spline _spline;
         private bool _isLit;
+        private bool _wasLitLastFrame;
         
+        private Material _material;
+
+        private void Awake()
+        {
+            _material = _splineMeshRenderer.material;
+        }
+
         void Start()
         {
             if (_splineContainer) _spline = _splineContainer.Spline;
@@ -26,6 +44,16 @@ namespace PuzzleLight
 
         void Update()
         {
+            if (_isLit && !_wasLitLastFrame)
+            {
+                if (AudioManager.Instance && !_beamIgniteSFX.IsNull)
+                {
+                    AudioManager.Instance.PlayAtPosition(_beamIgniteSFX, transform.position, loop: false);
+                }
+            }           
+            
+            _wasLitLastFrame = _isLit;
+            
             if (_isLit)
             {
                 ExecuteBeam();
@@ -73,7 +101,7 @@ namespace PuzzleLight
                     }
                 }
                 
-                UpdateLineRenderer(rayOrigin, hit.point);
+                UpdateLineRenderer(rayOrigin, hit.point, hit.normal);
             }
         }
 
@@ -82,7 +110,7 @@ namespace PuzzleLight
             if (_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
         }
 
-        private void UpdateLineRenderer(Vector3 start, Vector3 end)
+        private void UpdateLineRenderer(Vector3 start, Vector3 end, Vector3 hitNormal)
         {
             if (!_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(true);
 
@@ -91,6 +119,19 @@ namespace PuzzleLight
 
             _spline.SetKnot(0, new BezierKnot(localStart));
             _spline.SetKnot(1, new BezierKnot(localEnd));
+            
+            // SHADER
+            _material.SetFloat("_SplineLength", Vector3.Distance(localStart, localEnd) / 2);
+            
+            // SPARKLE
+            if (_splineSparkle != null)
+            {
+                var vector3 = _splineSparkle.localPosition;
+                vector3.z = localEnd.z + _sparkleOffset;
+                _splineSparkle.localPosition = vector3;
+                
+                _splineSparkle.rotation = Quaternion.LookRotation(-hitNormal);
+            }
         }
     }
 }

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Core.Audio;
 using DG.Tweening;
+using FMODUnity;
 using Handlers;
 using MonoBehiavors;
 using UnityEngine;
@@ -29,6 +31,10 @@ namespace Managers
         [Header("===== ANIMATION =====")]
         [SerializeField] private float _duration = 0.5f;
         [SerializeField] private AnimationCurve _animationCurve;
+
+        [Header("===== FMOD AUDIO =====")] 
+        [SerializeField] private EventReference _gearTickSFX;
+        [SerializeField] private EventReference _unlockSFX;
     
         private bool _bigPadLockSpawned;
 
@@ -156,6 +162,7 @@ namespace Managers
                     if (!IsLock)
                     {
                         _smallRb.isKinematic = false;
+                        UnityEvent?.Invoke();
                     }
                 });
         }
@@ -168,6 +175,10 @@ namespace Managers
         {
             int index = _gears.IndexOf(context);
             _currentNumbers[index] = value;
+            if (AudioManager.Instance && !_gearTickSFX.IsNull)
+            {
+                AudioManager.Instance.Play(_gearTickSFX, loop: false, follow: context.gameObject);
+            }
             SetCode();
         }
         
@@ -196,7 +207,11 @@ namespace Managers
         private void OpenLockPad()
         {
             IsLock = false;
-            UnityEvent?.Invoke();
+            
+            if (AudioManager.Instance && !_unlockSFX.IsNull)
+            {
+                AudioManager.Instance.Play(_unlockSFX, loop: false, follow: gameObject);
+            }
             
             AnimationUnlock();
         }

@@ -44,7 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160610d3006731343a3d3424728911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoaderManager
+  _blackScreenGm: {fileID: 2100000, guid: 0a35b7e20f75a8540a2c14b9555078cb, type: 2}
   _valueBlackEffect: 1
   _valueSmoothEffect: 0.8
-  _blackScreenGm: {fileID: 2100000, guid: 0a35b7e20f75a8540a2c14b9555078cb, type: 2}
-  _sceneLoaded: 0
+  _menuMusic:
+    Guid:
+      Data1: -1776211602
+      Data2: 1258331823
+      Data3: 2035751603
+      Data4: 131962475
+    Path: event:/Music/MenuMusic

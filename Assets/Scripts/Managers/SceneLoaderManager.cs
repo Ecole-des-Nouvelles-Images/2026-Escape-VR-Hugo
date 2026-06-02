@@ -1,8 +1,13 @@
+using System;
 using System.Collections;
+using Core.Audio;
 using Core.Singletons;
 using DG.Tweening;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Managers
 {
@@ -12,9 +17,21 @@ namespace Managers
         [SerializeField] public Material _blackScreenGm;
         [Range(0, 1)] public float _valueBlackEffect;
         [Range(0,1)] public float _valueSmoothEffect = 1f;
+
+        [Header("===== SFX =====")] 
+        [SerializeField] private EventReference _menuMusic;
+        private EventInstance _menuMusicInstance;
     
         private string _sceneName;
-    
+
+        private void Start()
+        {
+            if (AudioManager.Instance && !_menuMusic.IsNull)
+            {
+                _menuMusicInstance = AudioManager.Instance.Play(_menuMusic, loop: true);
+            }
+        }
+
         public void LoadScene(string sceneName)
         {
             Debug.Log("LoadedScene");
@@ -47,6 +64,11 @@ namespace Managers
 
         private IEnumerator LoadSceneRoutine()
         {
+            if (AudioManager.Instance && _menuMusicInstance.isValid())
+            {
+                AudioManager.Instance.Stop(_menuMusicInstance, STOP_MODE.ALLOWFADEOUT);
+                _menuMusicInstance = default;
+            }
             SceneManager.LoadScene(_sceneName);
             yield return new WaitForSeconds(1f);
             DisableBlackScreen();   

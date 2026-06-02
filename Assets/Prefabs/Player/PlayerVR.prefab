@@ -575,20 +575,6 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 2383484668496459732, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  InputDebugMenu:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Input Debug Menu
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 698e09eb-2c59-48e4-a0c0-22c7acd867e2
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 4087585226709447195, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  _debugMenuOpen: 0
-  _debugMenu: {fileID: 6691391113816440004}
 --- !u!114 &7467246337953922989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1839,11 +1825,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3771717710737161701, guid: 5fe7a3f987bfb374daf538760b638e63, type: 3}
   m_PrefabInstance: {fileID: 1098104430091962238}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6691391113816440004 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6044350677559409594, guid: 5fe7a3f987bfb374daf538760b638e63, type: 3}
-  m_PrefabInstance: {fileID: 1098104430091962238}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3756938472420473645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1896,6 +1877,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Hand Model
       objectReference: {fileID: 0}
+    - target: {fileID: 5686134208196863108, guid: 1edc4730b7c7a05459cfa2eecf0d35d4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b9381a54a7e67341a8dc0c3ed073209, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2030,6 +2015,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1033382428144213117}
     m_Modifications:
+    - target: {fileID: 109434732392105323, guid: 7a0bb1ab5ebde2f4f9c95e6b23ef63d0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b9381a54a7e67341a8dc0c3ed073209, type: 2}
     - target: {fileID: 109434732395284509, guid: 7a0bb1ab5ebde2f4f9c95e6b23ef63d0, type: 3}
       propertyPath: m_Name
       value: Left Hand Model
