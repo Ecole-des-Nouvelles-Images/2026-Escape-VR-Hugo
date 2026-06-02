@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9004111619159120900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3917856027972970272}
+  - component: {fileID: 7524393605050230635}
+  m_Layer: 0
+  m_Name: NarrationAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3917856027972970272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004111619159120900}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.96433, y: -0, z: -0.91285}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7524393605050230635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004111619159120900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3921bef6f70d34bbf9c3a2732fc1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sounds.NarrationAudio
+  _narrationEvent01:
+    Guid:
+      Data1: -1662203785
+      Data2: 1148122109
+      Data3: 356387494
+      Data4: 349951997
+    Path: event:/SFX/Narration01
+  _narrationEvent02:
+    Guid:
+      Data1: -243547171
+      Data2: 1267021440
+      Data3: 1385549218
+      Data4: -1715518659
+    Path: event:/SFX/Narration02
+  _narrationEvent03:
+    Guid:
+      Data1: -1125927874
+      Data2: 1236325318
+      Data3: -213652079
+      Data4: 1434385218
+    Path: event:/SFX/Narration03
+  _narrationEvent04:
+    Guid:
+      Data1: 1689097312
+      Data2: 1100056931
+      Data3: -772931659
+      Data4: 1206426356
+    Path: event:/SFX/Narration04
