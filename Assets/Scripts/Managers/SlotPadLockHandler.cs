@@ -32,6 +32,7 @@ namespace Managers
 
       public void UnlockPadLock()
       {
+         
          base.UnlockPadLock();
          Debug.Log("UnlockPadLock");
          _keyObject.GetComponent<BoxCollider>().enabled = false;
@@ -59,7 +60,7 @@ namespace Managers
                AudioManager.Instance.Play(_keyTurnSFX, loop: false, follow: _socketTransform);
             }
     
-            _socketTransform.transform.DOLocalRotate(new Vector3(0, 90, 0), 0.5f, RotateMode.LocalAxisAdd)
+            _socketTransform.transform.DOLocalRotate(new Vector3(0, 0, -90), 0.5f, RotateMode.LocalAxisAdd)
                .OnComplete(() =>
                {
                   PadLockAnimation();
