@@ -68,7 +68,7 @@ namespace Managers
         {
             if (_bigPadLockSpawned)
             {
-                if (Vector3.Distance(Camera.main.gameObject.transform.position, CodePadLock.transform.position) > 2.5f)
+                if (Vector3.Distance(Camera.main.gameObject.transform.position, CodePadLock.transform.position) > 1.5f)
                 {
                     DespawnBigPadLock();
                 }
@@ -162,6 +162,7 @@ namespace Managers
                     if (!IsLock)
                     {
                         _smallRb.isKinematic = false;
+                        UnityEvent?.Invoke();
                     }
                 });
         }
@@ -206,7 +207,6 @@ namespace Managers
         private void OpenLockPad()
         {
             IsLock = false;
-            UnityEvent?.Invoke();
             
             if (AudioManager.Instance && !_unlockSFX.IsNull)
             {

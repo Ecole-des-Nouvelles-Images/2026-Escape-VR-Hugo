@@ -34,6 +34,8 @@ namespace PuzzleLight
         
         [Header("===== SFX =====")]
         [SerializeField] private EventReference _drawerOpenSFX;
+        [SerializeField] private EventReference _statuePlaceSFX;
+        [SerializeField] private EventReference _statueRemoveSFX;
 
         private Vector3 _closedPos;
 
@@ -70,6 +72,20 @@ namespace PuzzleLight
         
         private void OnSocketChanged(BaseInteractionEventArgs arg)
         {
+            if (AudioManager.Instance)
+            {
+                Vector3 socketPos = arg.interactorObject.transform.position;
+                if (arg is SelectEnterEventArgs)
+                {
+                    if (!_statuePlaceSFX.IsNull)
+                        AudioManager.Instance.PlayAtPosition(_statuePlaceSFX, socketPos);
+                }
+                else if (arg is SelectExitEventArgs)
+                {
+                    if (!_statueRemoveSFX.IsNull)
+                        AudioManager.Instance.PlayAtPosition(_statueRemoveSFX, socketPos);
+                }
+            }
             CheckPuzzleState();
         }
 

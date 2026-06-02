@@ -26,6 +26,9 @@ namespace PuzzleLight
         
         [Header("===== SFX =====")]
         [SerializeField] private EventReference _doorOpenSFX;
+        [SerializeField] private EventReference _doorCloseSFX;
+        [SerializeField] private EventReference _drawerOpenSFX;
+        [SerializeField] private EventReference _drawerCloseSFX;
 
         private Vector3 _closedDoorLocalEuler;
         private Vector3 _closedDrawerPos; 
@@ -75,11 +78,18 @@ namespace PuzzleLight
                 if (!_puzzleLightHatchHandler.IsResolved)
                 {
                     _mechanismSequence.Append(_doorTransform.DOLocalRotate(targetLocalEuler, _openDuration).SetEase(_animationCurve));
+                    
+                    _mechanismSequence.OnStart(() => PlaySound(_doorOpenSFX));
                 }
                 else
                 {
                     _mechanismSequence.Append(_doorTransform.DOLocalRotate(targetLocalEuler, _openDuration).SetEase(_animationCurve));
                     _mechanismSequence.Append(_drawerTransform.DOLocalMove(_closedDrawerPos + _drawerOffset, _openDuration).SetEase(_animationCurve));
+
+                    _mechanismSequence.OnStart(() => PlaySound(_doorOpenSFX));
+                    _mechanismSequence.InsertCallback(_openDuration, () => PlaySound(_drawerOpenSFX));
+                    
+
                 }
             }
             else
@@ -87,11 +97,16 @@ namespace PuzzleLight
                 if (!_puzzleLightHatchHandler.IsResolved)
                 {
                     _mechanismSequence.Append(_doorTransform.DOLocalRotate(_closedDoorLocalEuler, _openDuration).SetEase(_animationCurve));
+                    
+                    _mechanismSequence.OnStart(() => PlaySound(_doorCloseSFX));
                 }
                 else
                 {
                     _mechanismSequence.Append(_drawerTransform.DOLocalMove(_closedDrawerPos, _openDuration).SetEase(_animationCurve));
                     _mechanismSequence.Append(_doorTransform.DOLocalRotate(_closedDoorLocalEuler, _openDuration).SetEase(_animationCurve));
+                    
+                    _mechanismSequence.OnStart(() => PlaySound(_drawerCloseSFX));
+                    _mechanismSequence.InsertCallback(_openDuration, () => PlaySound(_doorCloseSFX));
                 }
             }
             
@@ -102,5 +117,13 @@ namespace PuzzleLight
         }
 
         #endregion
+
+        private void PlaySound(EventReference sfx)
+        {
+            if (AudioManager.Instance && !sfx.IsNull)
+            {
+                AudioManager.Instance.PlayAtPosition(sfx, transform.position);
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace _Branches.Hugo.Scripts
+namespace MonoBehiavors
 {
     public class ParentHandler : MonoBehaviour
     {
