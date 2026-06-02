@@ -22,11 +22,11 @@ namespace MonoBehiavors
         [ContextMenu("OpenDrawer")]
         private IEnumerator OpenDrawer()
         {
-            Vector3 rotation = transform.rotation.eulerAngles;
+            Vector3 rotation = _gear.transform.rotation.eulerAngles;
             rotation.x += 180;
             _gear.transform.DORotate(rotation, 1f);
             yield return new WaitForSeconds(2.5f);
-            _drawer.transform.DOMoveX(transform.position.x + 0.45f, 1);
+            _drawer.transform.DOMoveX(transform.position.x - 0.45f, 1);
         }
     }
 }

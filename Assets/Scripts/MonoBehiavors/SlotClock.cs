@@ -54,10 +54,10 @@ namespace MonoBehiavors
         public IEnumerator Animation()
         {
             yield return new WaitForSeconds(0.3f);
-            transform.DOMoveX(transform.position.x - 0.07f, 1).OnComplete(() =>
+            transform.DOMoveX(transform.position.x + 0.07f, 1).OnComplete(() =>
             {
                 Vector3 rotation = transform.rotation.eulerAngles;
-                rotation.x += 90;
+                rotation.z -= 90;
                 transform.DORotate(rotation, 0.1f).OnComplete((() =>
                 {
                     _onRightKeyInsert?.Invoke();
