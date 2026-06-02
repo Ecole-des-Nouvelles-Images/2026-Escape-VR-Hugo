@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 9151598083468874673}
   - component: {fileID: 819396329722894119}
   - component: {fileID: 1517615121266902519}
+  - component: {fileID: 2248347577696237869}
   m_Layer: 0
   m_Name: AlarmClockFace
   m_TagString: AlarmFace
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_Colliders:
   - {fileID: 8433246496884004855}
   m_InteractionLayers:
-    m_Bits: 33
+    m_Bits: 129
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -459,6 +460,26 @@ MonoBehaviour:
   _conectedSocket: {fileID: 6598144860078874}
   _disableDelay: 0.1
   _alarmClockHandler: {fileID: 6141786827992451027}
+--- !u!114 &2248347577696237869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896797713358852472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c126a5598d323743b252ddaf22d794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectImpactAudio
+  impactSound:
+    Guid:
+      Data1: 791627588
+      Data2: 1340895169
+      Data3: -705718095
+      Data4: 801182260
+    Path: event:/SFX/PutOnWood
+  velocityThreshold: 0.5
 --- !u!1 &2897935600036556217
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +768,7 @@ GameObject:
   - component: {fileID: 6746463401216058161}
   - component: {fileID: 4554710781689000492}
   - component: {fileID: 8160732279410198230}
+  - component: {fileID: 4489943679004650323}
   m_Layer: 0
   m_Name: AlarmClockMechanism
   m_TagString: AlarmMechanism
@@ -814,7 +836,7 @@ MonoBehaviour:
   m_Colliders:
   - {fileID: 2164392901229063724}
   m_InteractionLayers:
-    m_Bits: 17
+    m_Bits: 65
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -968,6 +990,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.AlarmMechanismSocketHandler
   _conectedSocket: {fileID: 1297658564593911069}
   _disableDelay: 0.1
+--- !u!114 &4489943679004650323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415065301277905431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c126a5598d323743b252ddaf22d794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectImpactAudio
+  impactSound:
+    Guid:
+      Data1: 791627588
+      Data2: 1340895169
+      Data3: -705718095
+      Data4: 801182260
+    Path: event:/SFX/PutOnWood
+  velocityThreshold: 0.5
 --- !u!1 &4622113530759711326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +1135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 32
+    m_Bits: 128
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1208,7 +1250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 16
+    m_Bits: 64
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1486,6 +1528,7 @@ GameObject:
   - component: {fileID: 6141786827992451027}
   - component: {fileID: 7921975491044904956}
   - component: {fileID: 2488404993049713653}
+  - component: {fileID: 5328886880009364690}
   m_Layer: 0
   m_Name: AlarmClockBase
   m_TagString: AlarmBase
@@ -1557,6 +1600,20 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _gearInsertSFX:
+    Guid:
+      Data1: 386861860
+      Data2: 1096920094
+      Data3: 134770307
+      Data4: 152321408
+    Path: event:/SFX/MechanicalHandling
+  _alarmRepairedSFX:
+    Guid:
+      Data1: 98533571
+      Data2: 1231928938
+      Data3: 1582887589
+      Data4: -1287891434
+    Path: event:/SFX/AlarmClock
   _isCompleted: 0
   _advancement: 0
 --- !u!54 &7921975491044904956
@@ -1720,6 +1777,26 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &5328886880009364690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8168225205628825527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c126a5598d323743b252ddaf22d794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectImpactAudio
+  impactSound:
+    Guid:
+      Data1: 791627588
+      Data2: 1340895169
+      Data3: -705718095
+      Data4: 801182260
+    Path: event:/SFX/PutOnWood
+  velocityThreshold: 0.5
 --- !u!1001 &289602488371091661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2131,9 +2208,49 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6703038275869321766, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
+      propertyPath: _openSFX.Path
+      value: event:/SFX/ChestOpening
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703038275869321766, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
+      propertyPath: _closeSFX.Path
+      value: event:/SFX/ChestClosing
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703038275869321766, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
       propertyPath: _raycastOrigin
       value: 
       objectReference: {fileID: 6816633883216552055}
+    - target: {fileID: 6703038275869321766, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
+      propertyPath: _openSFX.Guid.Data1
+      value: 282884721
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703038275869321766, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
+      propertyPath: _openSFX.Guid.Data2
+      value: 1207633221
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703038275869321766, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
+      propertyPath: _openSFX.Guid.Data3
+      value: 1780564363
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703038275869321766, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
+      propertyPath: _openSFX.Guid.Data4
+      value: -829778305
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703038275869321766, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
+      propertyPath: _closeSFX.Guid.Data1
+      value: -1890634316
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703038275869321766, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
+      propertyPath: _closeSFX.Guid.Data2
+      value: 1203561425
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703038275869321766, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
+      propertyPath: _closeSFX.Guid.Data3
+      value: -1752774991
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703038275869321766, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
+      propertyPath: _closeSFX.Guid.Data4
+      value: 1096765455
+      objectReference: {fileID: 0}
     - target: {fileID: 8978355385060846190, guid: b2c6df18a6b91de4aad976411f51ca04, type: 3}
       propertyPath: m_Size.x
       value: 0.02515734
@@ -2205,11 +2322,11 @@ MonoBehaviour:
   KnobTransform: {fileID: 4724885202751670831}
   _unlockSFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 179385650
+      Data2: 1075686707
+      Data3: -396361823
+      Data4: -1619057414
+    Path: event:/SFX/MediumLock
 --- !u!1001 &4911345117687089119
 PrefabInstance:
   m_ObjectHideFlags: 0
