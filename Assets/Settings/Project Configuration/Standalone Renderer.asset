@@ -46,8 +46,7 @@ MonoBehaviour:
     probeVolumeBlendStatesCS: {fileID: 0}
   m_RendererFeatures:
   - {fileID: -4790847079989220017}
-  - {fileID: 365708967834494242}
-  m_RendererFeatureMap: 4f6d06b8f67d83bd2225f35e5e421305
+  m_RendererFeatureMap: 4f6d06b8f67d83bd
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -76,29 +75,3 @@ MonoBehaviour:
   m_DepthTextureFormat: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 0
---- !u!114 &365708967834494242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62c9c65cf3354c93be831c8bc075510, type: 3}
-  m_Name: ScreenSpaceAmbientOcclusion
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusion
-  m_Active: 1
-  m_Settings:
-    AOMethod: 0
-    Downsample: 1
-    AfterOpaque: 0
-    Source: 0
-    NormalSamples: 1
-    Intensity: 2
-    DirectLightingStrength: 0.25
-    Radius: 0.035
-    Samples: 1
-    BlurQuality: 2
-    Falloff: 10
-    SampleCount: -1

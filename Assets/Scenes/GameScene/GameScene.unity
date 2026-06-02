@@ -5626,11 +5626,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 957129afd740ca642849266170357136, type: 3}
---- !u!1 &1206497410 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4110396651277980506, guid: 957129afd740ca642849266170357136, type: 3}
-  m_PrefabInstance: {fileID: 1206497409}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1223392812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9444,10 +9439,26 @@ PrefabInstance:
       propertyPath: _rightKey
       value: 
       objectReference: {fileID: 88973772}
+    - target: {fileID: 5380302832471094961, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
+      propertyPath: _onRightKeyInsert.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2047218637}
+    - target: {fileID: 5380302832471094961, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
+      propertyPath: _onRightKeyInsert.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddKey
+      objectReference: {fileID: 0}
     - target: {fileID: 6165889771373811783, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
       propertyPath: _rightKey
       value: 
-      objectReference: {fileID: 1206497410}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165889771373811783, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
+      propertyPath: _onRightKeyInsert.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2047218637}
+    - target: {fileID: 6165889771373811783, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
+      propertyPath: _onRightKeyInsert.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddKey
+      objectReference: {fileID: 0}
     - target: {fileID: 8651421998121806418, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.32
@@ -9492,6 +9503,14 @@ PrefabInstance:
       propertyPath: _rightKey
       value: 
       objectReference: {fileID: 214390764}
+    - target: {fileID: 8886098899063162672, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
+      propertyPath: _onRightKeyInsert.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2047218637}
+    - target: {fileID: 8886098899063162672, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
+      propertyPath: _onRightKeyInsert.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddKey
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9502,6 +9521,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8651421998121806418, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
   m_PrefabInstance: {fileID: 2047218635}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2047218637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4979449847398623125, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
+  m_PrefabInstance: {fileID: 2047218635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c4828e04676394988d918079ef872c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.MainClockPuzzle
 --- !u!1001 &2048709399
 PrefabInstance:
   m_ObjectHideFlags: 0
