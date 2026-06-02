@@ -68,7 +68,7 @@ namespace Managers
         {
             if (_bigPadLockSpawned)
             {
-                if (Vector3.Distance(Camera.main.gameObject.transform.position, CodePadLock.transform.position) > 2.5f)
+                if (Vector3.Distance(Camera.main.gameObject.transform.position, CodePadLock.transform.position) > 1.5f)
                 {
                     DespawnBigPadLock();
                 }
