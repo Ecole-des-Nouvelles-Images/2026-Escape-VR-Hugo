@@ -40,5 +40,10 @@ namespace Core
         public static Action OnLightKeyInserted;
         public static Action OnFlowerKeyInserted;
         public static Action OnLetterRecovered;
+        
+        // ===== NARRATION AUDIO =====
+        public static Action OnNarrationEvent02;
+        public static Action OnNarrationEvent03;
+        public static Action OnNarrationEvent04;
     }
 }
