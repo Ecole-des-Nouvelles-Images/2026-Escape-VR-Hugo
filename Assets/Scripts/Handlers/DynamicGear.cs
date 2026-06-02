@@ -14,7 +14,7 @@ namespace Handlers
         
         [Header("===== SETTINGS =====")]
         [SerializeField] private Transform _targetRotation; 
-        [SerializeField] private float _rotationSpeed = 15f;
+        [SerializeField] private float _rotationSpeed = 25f; // Légèrement augmenté pour une meilleure réactivité en relatif
         
         [Header("===== REFERENCES =====")]
         [SerializeField] private XRSimpleInteractable _interactable;
@@ -28,9 +28,17 @@ namespace Handlers
         [SerializeField] private Transform _handTransform;
         [SerializeField] private Vector3 _offset;
 
-        private float _initialHandAngle;
-        private float _initialGearAngleX;
+        private float _lastHandAngle; // Stocke l'angle de la frame PRÉCÉDENTE
+        private float _currentSmoothX; 
         private Tween _snapTween;
+
+        private void Start()
+        {
+            if (_targetRotation)
+            {
+                _currentSmoothX = _targetRotation.localRotation.eulerAngles.x;
+            }
+        }
 
         #region ===== EVENTS =====
 
@@ -56,8 +64,12 @@ namespace Handlers
 
             _handTransform = context.interactorObject.transform;
 
-            _initialGearAngleX = _targetRotation.localRotation.eulerAngles.x;
-            _initialHandAngle = CalculateCurrentHandAngle();
+            // Recalcul de l'angle de l'engrenage pour être sûr de partir d'une valeur propre
+            float rawAngle = _targetRotation.localRotation.eulerAngles.x;
+            _currentSmoothX = _currentSmoothX + Mathf.DeltaAngle(_currentSmoothX, rawAngle);
+            
+            // L'angle de référence initial est l'angle actuel de la main
+            _lastHandAngle = CalculateCurrentHandAngle();
         }
         
         private void OnSelectExited(SelectExitEventArgs context)
@@ -72,18 +84,23 @@ namespace Handlers
         {
             if (!_targetRotation || !_handTransform) return;
 
+            // 1. On récupère l'angle de la main à CETTE frame
             float currentHandAngle = CalculateCurrentHandAngle();
 
-            float angleDelta = Mathf.DeltaAngle(_initialHandAngle, currentHandAngle);
+            // 2. On calcule la différence entre la frame PRÉCÉDENTE et MAINTENANT
+            float frameAngleDelta = Mathf.DeltaAngle(_lastHandAngle, currentHandAngle);
 
-            float targetX = _initialGearAngleX + angleDelta;
-            Quaternion targetQuat = Quaternion.Euler(targetX, 0f, 0f);
+            // 3. On applique directement ce petit changement à notre cible
+            float targetX = _currentSmoothX + frameAngleDelta;
 
-            _targetRotation.localRotation = Quaternion.Slerp(
-                _targetRotation.localRotation, 
-                targetQuat, 
-                _rotationSpeed * Time.deltaTime
-            );
+            // 4. On lisse le mouvement pour l'effet physique
+            _currentSmoothX = Mathf.Lerp(_currentSmoothX, targetX, _rotationSpeed * Time.deltaTime);
+
+            // 5. On applique la rotation finale
+            _targetRotation.localRotation = Quaternion.Euler(_currentSmoothX, 0f, 0f);
+
+            // CRUCIAL : On sauvegarde l'angle actuel pour qu'il devienne l'angle "précédent" à la prochaine frame
+            _lastHandAngle = currentHandAngle;
         }
 
         private float CalculateCurrentHandAngle()
@@ -108,13 +125,15 @@ namespace Handlers
             _snapTween = targetTransform.DOLocalRotateQuaternion(targetQuat, _duration).SetEase(_animationCurve)
                 .OnComplete(() =>
                 {
-                    List<GameObject> go = _trigger.GetGameObjectsWithTag("PadlockValue");
-                    int currentDigit;
+                    _currentSmoothX = snappedX;
 
-                    currentDigit = Convert.ToInt32(go[0].name);
-                    
-                    Debug.Log(currentDigit);
-                    CodeChanged?.Invoke(this, currentDigit);
+                    List<GameObject> go = _trigger.GetGameObjectsWithTag("PadlockValue");
+                    if (go != null && go.Count > 0)
+                    {
+                        int currentDigit = Convert.ToInt32(go[0].name);
+                        Debug.Log(currentDigit);
+                        CodeChanged?.Invoke(this, currentDigit);
+                    }
                 });
         }
     }
