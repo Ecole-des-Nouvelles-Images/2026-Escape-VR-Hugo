@@ -111,11 +111,11 @@ namespace MonoBehiavors
                     _lastHitObject = null;
                     
                     _isOpen = true;
-                }
-                
-                if (AudioManager.Instance && !_openSFX.IsNull)
-                {
-                    AudioManager.Instance.Play(_openSFX, loop: false, follow: gameObject);
+                    
+                    if (AudioManager.Instance && !_openSFX.IsNull)
+                    {
+                        AudioManager.Instance.Play(_openSFX, loop: false, follow: gameObject);
+                    }
                 }
             }
         }

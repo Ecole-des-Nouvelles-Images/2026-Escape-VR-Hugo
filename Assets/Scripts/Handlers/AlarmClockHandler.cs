@@ -1,6 +1,8 @@
 using System.Collections;
 using Core;
+using Core.Audio;
 using DG.Tweening;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -27,6 +29,10 @@ namespace Handlers
         [Header("===== ANIMATIONS =====")]
         [SerializeField] private float _duration = 1.5f;
         [SerializeField] private AnimationCurve _animationCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
+        [Header("===== FMOD AUDIO =====")] 
+        [SerializeField] private EventReference _gearInsertSFX;
+        [SerializeField] private EventReference _alarmRepairedSFX;
         
         [Header("===== DEBUG =====")]
         [SerializeField] private bool _isCompleted;
@@ -41,6 +47,8 @@ namespace Handlers
         {
             _advancement++;
             
+            PlaySoundAtPosition(_gearInsertSFX, _alarmMechanismSockets.transform.position);
+            
             StartCoroutine(LockObjectInSocket(args.interactableObject.transform, _alarmMechanismSockets));
         }
         
@@ -48,6 +56,9 @@ namespace Handlers
         {
             _advancement++;
             _isCompleted = true;
+            
+            PlaySoundAtPosition(_gearInsertSFX, _alarmFaceSockets.transform.position);
+            PlaySoundAtPosition(_alarmRepairedSFX, _alarmFaceSockets.transform.position);
             EventBus.OnAlarmRepaired?.Invoke();
             
             DisplayCode();
@@ -87,6 +98,14 @@ namespace Handlers
             go.localRotation = Quaternion.identity;
 
             socket.enabled = false;
+        }
+
+        private void PlaySoundAtPosition(EventReference sfx, Vector3 position)
+        {
+            if (AudioManager.Instance && !sfx.IsNull)
+            {
+                AudioManager.Instance.PlayAtPosition(sfx, position);
+            }
         }
     }
 }
