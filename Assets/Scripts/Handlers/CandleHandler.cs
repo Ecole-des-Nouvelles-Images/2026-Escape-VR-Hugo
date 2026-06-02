@@ -95,9 +95,10 @@ namespace Handlers
             if (_objectToDrop == null) return;
         
             _objectToDrop.transform.parent = null;
+            
             _objectToDrop.GetComponent<XRGrabInteractable>().enabled = true;
-            _objectToDrop.GetComponent<BoxCollider>().isTrigger = false;
-        
+            _objectToDrop.GetComponent<BoxCollider>().enabled = true;
+            
             Rigidbody rb = _objectToDrop.GetComponent<Rigidbody>();
             rb.isKinematic = false;
             rb.useGravity = true;
@@ -111,7 +112,7 @@ namespace Handlers
 
             _objectToDrop.transform.parent = transform;
             _objectToDrop.GetComponent<XRGrabInteractable>().enabled = false;
-            _objectToDrop.GetComponent<BoxCollider>().isTrigger = true;
+            _objectToDrop.GetComponent<BoxCollider>().enabled = false;
         
             Rigidbody rb = _objectToDrop.GetComponent<Rigidbody>();
             rb.isKinematic = true;
