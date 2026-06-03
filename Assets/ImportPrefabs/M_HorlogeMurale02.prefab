@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4865470618778748319
 Transform:
@@ -88,18 +88,38 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 37fe2b7b94f39104cae547d690c760ec, type: 2}
+    - target: {fileID: -188158220771725795, guid: 855e91743f7a1214d96868cd7a2f0c87, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 855e91743f7a1214d96868cd7a2f0c87, type: 3}
       propertyPath: m_Name
       value: M_HorlogeMurale02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 855e91743f7a1214d96868cd7a2f0c87, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1956479735070680111, guid: 855e91743f7a1214d96868cd7a2f0c87, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d33fbf57492efbc41beb13c811ef8e06, type: 2}
+    - target: {fileID: 4300327102845245752, guid: 855e91743f7a1214d96868cd7a2f0c87, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791925995901043875, guid: 855e91743f7a1214d96868cd7a2f0c87, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6046728103004272792, guid: 855e91743f7a1214d96868cd7a2f0c87, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 37fe2b7b94f39104cae547d690c760ec, type: 2}
+    - target: {fileID: 7502823831554165006, guid: 855e91743f7a1214d96868cd7a2f0c87, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

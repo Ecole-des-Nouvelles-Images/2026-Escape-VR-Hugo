@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9194559105293700397
 Transform:
@@ -92,14 +92,34 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d33fbf57492efbc41beb13c811ef8e06, type: 2}
+    - target: {fileID: -3638339558315494335, guid: cd7871d510db53a4f8ba1549defb9507, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1311408038651395576, guid: cd7871d510db53a4f8ba1549defb9507, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4447962213328132, guid: cd7871d510db53a4f8ba1549defb9507, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cd7871d510db53a4f8ba1549defb9507, type: 3}
       propertyPath: m_Name
       value: M_HorlogeMurale01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd7871d510db53a4f8ba1549defb9507, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 985110399403196117, guid: cd7871d510db53a4f8ba1549defb9507, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 37fe2b7b94f39104cae547d690c760ec, type: 2}
+    - target: {fileID: 6289113625131126240, guid: cd7871d510db53a4f8ba1549defb9507, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
