@@ -796,6 +796,7 @@ GameObject:
   - component: {fileID: 6251625709455795767}
   - component: {fileID: 1715638147656265136}
   - component: {fileID: 8453148837993656532}
+  - component: {fileID: 4922338223763000173}
   m_Layer: 0
   m_Name: Right direct interactor
   m_TagString: Untagged
@@ -978,6 +979,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.07
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4922338223763000173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846032563476219712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81f79c78dff37e4ba12c3700e74b0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.GrabAutoDrop
+  _maxGrabDistance: 0.5
 --- !u!1 &5682518520895786329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,6 +1394,7 @@ GameObject:
   - component: {fileID: 6665300300397009314}
   - component: {fileID: 1124779294709640710}
   - component: {fileID: 290253658675041217}
+  - component: {fileID: 8886818225930184692}
   m_Layer: 0
   m_Name: Left direct interactor
   m_TagString: Untagged
@@ -1562,6 +1577,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.07
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8886818225930184692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7718709676440919684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81f79c78dff37e4ba12c3700e74b0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Branches.Hugo.Scripts.GrabAutoDrop
+  _maxGrabDistance: 0.5
 --- !u!1 &8703532151658911205
 GameObject:
   m_ObjectHideFlags: 0

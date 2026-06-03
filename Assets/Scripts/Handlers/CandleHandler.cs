@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Core;
 using Managers;
 using MonoBehiavors;
@@ -45,6 +47,7 @@ namespace Handlers
             if (IsFire) return;
             IsFire = true;
             _flameVisual.SetActive(true);
+            for (int i = 0; i < _flameVisual.transform.childCount; i++) { _flameVisual.transform.GetChild(i).gameObject.SetActive(true); }
             float currentTime = ClockTimeManager.Instance.NormalizedCurrentTime;
         
             if(!_fireInStart) _temporalRange = new Vector2(currentTime, currentTime + 0.3f);
@@ -53,7 +56,9 @@ namespace Handlers
         [ContextMenu("BlowOut")]
         private void BlowOut()
         {
-            _flameVisual.GetComponent<FlameAnimation>().BlowOut();
+            List<FlameAnimation> flames = _flameVisual.GetComponentsInChildren<FlameAnimation>().ToList();
+            foreach (var flame in flames) { flame.BlowOut(); }
+            //_flameVisual.GetComponent<FlameAnimation>().BlowOut();
             IsFire = false;
             _temporalRange = Vector2.zero;
         }
@@ -95,9 +100,10 @@ namespace Handlers
             if (_objectToDrop == null) return;
         
             _objectToDrop.transform.parent = null;
+            
             _objectToDrop.GetComponent<XRGrabInteractable>().enabled = true;
             _objectToDrop.GetComponent<BoxCollider>().isTrigger = false;
-        
+            
             Rigidbody rb = _objectToDrop.GetComponent<Rigidbody>();
             rb.isKinematic = false;
             rb.useGravity = true;
@@ -111,7 +117,7 @@ namespace Handlers
 
             _objectToDrop.transform.parent = transform;
             _objectToDrop.GetComponent<XRGrabInteractable>().enabled = false;
-            _objectToDrop.GetComponent<BoxCollider>().isTrigger = true;
+            _objectToDrop.GetComponent<BoxCollider>().isTrigger = true ;
         
             Rigidbody rb = _objectToDrop.GetComponent<Rigidbody>();
             rb.isKinematic = true;
