@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Core;
+using Core.Audio;
 using DG.Tweening;
 using FMODUnity;
 using UnityEngine;
@@ -16,13 +17,22 @@ namespace Handlers
         [SerializeField] private List<GameObject> _slotCorchet = new List<GameObject>();
         
         [Header("SFX")] 
-        [SerializeField] private EventReference _cuckooSound;
+        [SerializeField] private EventReference _cuckooSFX;
+        [SerializeField] private EventReference _pieceInsertedSFX;
     
         [SerializeField] private Animator _animation;
 
         private void Start()
         {
             
+        }
+
+        public void PlayInsertionSound(GameObject piece)
+        {
+            if (AudioManager.Instance && !_pieceInsertedSFX.IsNull && piece != null)
+            {
+                AudioManager.Instance.PlayAtPosition(_pieceInsertedSFX, piece.transform.position);
+            }
         }
 
         public void ValidSlot(GameObject piece)
@@ -73,6 +83,11 @@ namespace Handlers
             }
             EventBus.OnCuckooClockRepaired?.Invoke();
             _animation.SetTrigger("PlayAnimation");
+            
+            if (AudioManager.Instance && !_cuckooSFX.IsNull)
+            {
+                AudioManager.Instance.PlayAtPosition(_cuckooSFX, transform.position);
+            }
             
             yield return new WaitForSeconds(1.5f);
             

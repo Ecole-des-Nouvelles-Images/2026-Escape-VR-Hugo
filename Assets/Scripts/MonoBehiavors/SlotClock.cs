@@ -1,5 +1,7 @@
 using System.Collections;
+using Core.Audio;
 using DG.Tweening;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -11,6 +13,10 @@ namespace MonoBehiavors
     {
         [SerializeField] private GameObject _rightKey;
         [SerializeField] private UnityEvent _onRightKeyInsert;
+        
+        [Header("===== FMOD AUDIO =====")]
+        [SerializeField] private EventReference _keyInsertSFX;
+        [SerializeField] private EventReference _keyTurnSFX;
     
         private XRSocketInteractor _XRSocketInteractor;
         private bool _slotOcuped;
@@ -47,6 +53,12 @@ namespace MonoBehiavors
                 Debug.Log("InsertKey");
                 obj.GetComponent<Rigidbody>().isKinematic = true;
                 obj.GetComponent<BoxCollider>().isTrigger = true;
+                
+                if (AudioManager.Instance && !_keyInsertSFX.IsNull)
+                {
+                    AudioManager.Instance.PlayAtPosition(_keyInsertSFX, transform.position);
+                }
+                
                 StartCoroutine("Animation");
                 _slotOcuped = true;
             }
@@ -59,6 +71,11 @@ namespace MonoBehiavors
             {
                 Vector3 rotation = transform.rotation.eulerAngles;
                 rotation.z -= 90;
+                if (AudioManager.Instance && !_keyTurnSFX.IsNull)
+                {
+                    AudioManager.Instance.PlayAtPosition(_keyTurnSFX, transform.position);
+                }
+                
                 transform.DORotate(rotation, 0.1f).OnComplete((() =>
                 {
                     _onRightKeyInsert?.Invoke();
