@@ -56,18 +56,18 @@ MonoBehaviour:
     m_Bits: 64
   _openSFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1053297566
+      Data2: 1252157376
+      Data3: 1157492913
+      Data4: 1188409372
+    Path: event:/SFX/BriefCaseOpening
   _closeSFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1528782559
+      Data2: 1215690747
+      Data3: 522057381
+      Data4: -1571383446
+    Path: event:/SFX/BriefCaseClosing
   _isOpen: 0
 --- !u!1 &755113747740805548
 GameObject:
@@ -571,26 +571,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coucou
       objectReference: {fileID: 0}
-    - target: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-      propertyPath: _slotCorchet.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-      propertyPath: '_slotCorchet.Array.data[0]'
-      value: 
-      objectReference: {fileID: 6724097239572873249}
-    - target: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-      propertyPath: '_slotCorchet.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2444591518640709661}
-    - target: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-      propertyPath: '_slotCorchet.Array.data[2]'
-      value: 
-      objectReference: {fileID: 2015975252504138712}
-    - target: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-      propertyPath: '_slotCorchet.Array.data[3]'
-      value: 
-      objectReference: {fileID: 4566108712990364685}
     - target: {fileID: 7600288209135489869, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.14069997
@@ -632,24 +612,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1208872216860289125, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
   m_PrefabInstance: {fileID: 1187798562415408622}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2015975252504138712 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 829162267508581942, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-  m_PrefabInstance: {fileID: 1187798562415408622}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2444591518640709661 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3573333037309384179, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-  m_PrefabInstance: {fileID: 1187798562415408622}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4225629858717168042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3089358877958046788, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-  m_PrefabInstance: {fileID: 1187798562415408622}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4566108712990364685 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3397398370915328483, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
   m_PrefabInstance: {fileID: 1187798562415408622}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4966012156964771572 stripped
@@ -679,11 +644,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3059563762226424370, guid: 0523e569f03c02548b0cf26fa639b0d0, type: 3}
---- !u!1 &6724097239572873249 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5560576302459680207, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-  m_PrefabInstance: {fileID: 1187798562415408622}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8147775210646431606 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
@@ -1304,6 +1264,26 @@ PrefabInstance:
     - target: {fileID: 1078977113654535173, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
       propertyPath: m_Center.y
       value: 0.07405693
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469185721669006077, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
+      propertyPath: _unlockSFX.Path
+      value: event:/SFX/MediumLock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469185721669006077, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
+      propertyPath: _unlockSFX.Guid.Data1
+      value: 179385650
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469185721669006077, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
+      propertyPath: _unlockSFX.Guid.Data2
+      value: 1075686707
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469185721669006077, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
+      propertyPath: _unlockSFX.Guid.Data3
+      value: -396361823
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469185721669006077, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
+      propertyPath: _unlockSFX.Guid.Data4
+      value: -1619057414
       objectReference: {fileID: 0}
     - target: {fileID: 4042046794053241848, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
       propertyPath: m_Layer

@@ -150,6 +150,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7019244974846579352}
+        m_TargetAssemblyTypeName: Handlers.CuckooHandler, Assembly-CSharp
+        m_MethodName: PlayInsertionSound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3911464410408818236}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -320,6 +332,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7019244974846579352}
+        m_TargetAssemblyTypeName: Handlers.CuckooHandler, Assembly-CSharp
+        m_MethodName: PlayInsertionSound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5988046141419852039}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -423,13 +447,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CoucouHandler
   _SlotValid: 0
   _piecesValid: []
-  _cuckooSound:
+  _slotCorchet:
+  - {fileID: 5560576302459680207}
+  - {fileID: 3573333037309384179}
+  - {fileID: 829162267508581942}
+  - {fileID: 3397398370915328483}
+  _cuckooSFX:
     Guid:
       Data1: 806015469
       Data2: 1269980591
       Data3: 1500935565
       Data4: -871971410
     Path: event:/SFX/Cuckoo
+  _pieceInsertedSFX:
+    Guid:
+      Data1: 386861860
+      Data2: 1096920094
+      Data3: 134770307
+      Data4: 152321408
+    Path: event:/SFX/MechanicalHandling
   _animation: {fileID: 4787277625394752600}
 --- !u!1 &7544073200712996631
 GameObject:
@@ -541,6 +577,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7019244974846579352}
+        m_TargetAssemblyTypeName: Handlers.CuckooHandler, Assembly-CSharp
+        m_MethodName: PlayInsertionSound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7544073200712996631}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -716,6 +764,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7019244974846579352}
+        m_TargetAssemblyTypeName: Handlers.CuckooHandler, Assembly-CSharp
+        m_MethodName: PlayInsertionSound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8051812672564025008}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -831,14 +891,34 @@ PrefabInstance:
       addedObject: {fileID: 4901171641265222208}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 798e638768732824ca44952759746fa2, type: 3}
+--- !u!1 &829162267508581942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 639438459555721034, guid: 798e638768732824ca44952759746fa2, type: 3}
+  m_PrefabInstance: {fileID: 242767032469883260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3397398370915328483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3205296869050493087, guid: 798e638768732824ca44952759746fa2, type: 3}
+  m_PrefabInstance: {fileID: 242767032469883260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3470254288195193608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3708339050397926004, guid: 798e638768732824ca44952759746fa2, type: 3}
   m_PrefabInstance: {fileID: 242767032469883260}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3573333037309384179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3659592664085781647, guid: 798e638768732824ca44952759746fa2, type: 3}
+  m_PrefabInstance: {fileID: 242767032469883260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &4787277625394752600 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4697721663848932644, guid: 798e638768732824ca44952759746fa2, type: 3}
+  m_PrefabInstance: {fileID: 242767032469883260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5560576302459680207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5653523846018071731, guid: 798e638768732824ca44952759746fa2, type: 3}
   m_PrefabInstance: {fileID: 242767032469883260}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8387858420650126890 stripped
