@@ -1303,6 +1303,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4284546622217772142, guid: 6014965dd972fbb43968fd06af6a8b0d, type: 3}
+      propertyPath: SceneName
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 8745319856471669377, guid: 6014965dd972fbb43968fd06af6a8b0d, type: 3}
       propertyPath: m_Name
       value: Teleport
@@ -13758,6 +13762,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1255215964}
     m_Modifications:
+    - target: {fileID: 350921979732079040, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
+      propertyPath: _teleport
+      value: 
+      objectReference: {fileID: 236521277}
     - target: {fileID: 718113959337656880, guid: cb7e331eefd806748aa61f64464538b0, type: 3}
       propertyPath: _teleport
       value: 
