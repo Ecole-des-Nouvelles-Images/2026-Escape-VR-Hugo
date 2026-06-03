@@ -19,7 +19,8 @@ namespace PuzzleLight
         [SerializeField] private Vector3 _rayOffset;
         [SerializeField] private MeshRenderer _splineMeshRenderer;
         [SerializeField] private Transform _splineSparkle;
-        [SerializeField] private float _sparkleOffset = -0.1f;
+        [Tooltip("Distance pour décoller le sparkle du mur. Utilise une valeur positive (ex: 0.05) pour le rapprocher de la statue.")]
+        [SerializeField] private float _sparkleOffset = 0.05f; 
 
         [Header("===== FMOD AUDIO =====")] 
         [SerializeField] private EventReference _beamIgniteSFX;
@@ -34,13 +35,16 @@ namespace PuzzleLight
 
         private void Awake()
         {
-            _material = _splineMeshRenderer.material;
+            if (_splineMeshRenderer != null)
+            {
+                _material = _splineMeshRenderer.material;
+            }
         }
 
         void Start()
         {
-            if (_splineContainer) _spline = _splineContainer.Spline;
-            if (_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
+            if (_splineContainer != null) _spline = _splineContainer.Spline;
+            if (_splineExtrude != null && _splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
         }
 
         void Update()
@@ -75,7 +79,7 @@ namespace PuzzleLight
             Vector3 rayOrigin = transform.position;
             Vector3 rayDirection = transform.forward + _rayOffset;
         
-            if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, _layersToHit))
+            if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, Mathf.Infinity, _layersToHit))
             {
                 if (hit.collider.TryGetComponent<ILightReactive>(out var lightReactive))
                 {
@@ -108,30 +112,33 @@ namespace PuzzleLight
 
         private void StopBeam()
         {
-            if (_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
+            if (_splineExtrude != null && _splineExtrude.activeInHierarchy) _splineExtrude.SetActive(false);
         }
 
         private void UpdateLineRenderer(Vector3 start, Vector3 end, Vector3 hitNormal)
         {
-            if (!_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(true);
+            if (_splineExtrude != null && !_splineExtrude.activeInHierarchy) _splineExtrude.SetActive(true);
 
             float3 localStart = transform.InverseTransformPoint(start);
             float3 localEnd = transform.InverseTransformPoint(end);
 
-            _spline.SetKnot(0, new BezierKnot(localStart));
-            _spline.SetKnot(1, new BezierKnot(localEnd));
-            
+            if (_spline != null)
+            {
+                _spline.SetKnot(0, new BezierKnot(localStart));
+                _spline.SetKnot(1, new BezierKnot(localEnd));
+            }
+    
             // SHADER
-            _material.SetFloat("_SplineLength", Vector3.Distance(localStart, localEnd) / 2);
-            
+            if (_material != null)
+            {
+                _material.SetFloat("_SplineLength", Vector3.Distance(localStart, localEnd) / 2);
+            }
+    
             // SPARKLE
             if (_splineSparkle != null)
             {
-                var vector3 = _splineSparkle.localPosition;
-                vector3.z = localEnd.z + _sparkleOffset;
-                _splineSparkle.localPosition = vector3;
-                
-                _splineSparkle.rotation = Quaternion.LookRotation(-hitNormal);
+                _splineSparkle.position = end + (hitNormal * _sparkleOffset);
+                _splineSparkle.rotation = Quaternion.LookRotation(hitNormal);
             }
         }
     }
