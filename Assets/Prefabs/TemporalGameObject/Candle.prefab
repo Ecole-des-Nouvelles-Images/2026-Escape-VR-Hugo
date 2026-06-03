@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 1352494662964746166}
   - component: {fileID: 4356252512298514747}
   - component: {fileID: 1911913064500900525}
+  - component: {fileID: 5662871142399959426}
   m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
@@ -294,6 +295,20 @@ MonoBehaviour:
   _objectToDrop: {fileID: 0}
   _dropedHisObject: 0
   _dropedObjectWasInteracted: 0
+  _candleIgniteSFX:
+    Guid:
+      Data1: -1700413753
+      Data2: 1317482850
+      Data3: 710023851
+      Data4: -539964249
+    Path: event:/SFX/CandleLightning
+  _candleBlowOutSFX:
+    Guid:
+      Data1: -1710230224
+      Data2: 1077950260
+      Data3: -242422629
+      Data4: 897659457
+    Path: event:/SFX/CandleBlowingOut
 --- !u!114 &1352494662964746166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +477,26 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &5662871142399959426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660106522597190186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c126a5598d323743b252ddaf22d794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectImpactAudio
+  impactSound:
+    Guid:
+      Data1: 791627588
+      Data2: 1340895169
+      Data3: -705718095
+      Data4: 801182260
+    Path: event:/SFX/PutOnWood
+  velocityThreshold: 0.5
 --- !u!1 &8246002218112906231
 GameObject:
   m_ObjectHideFlags: 0
