@@ -16,6 +16,7 @@ namespace PuzzleLight
         [SerializeField] private GameObject _splineExtrude;
         
         [Header("===== VISUAL LIGHT =====")]
+        [SerializeField] private Vector3 _rayOffset;
         [SerializeField] private MeshRenderer _splineMeshRenderer;
         [SerializeField] private Transform _splineSparkle;
         [SerializeField] private float _sparkleOffset = -0.1f;
@@ -72,7 +73,7 @@ namespace PuzzleLight
         private void ExecuteBeam()
         {
             Vector3 rayOrigin = transform.position;
-            Vector3 rayDirection = transform.forward;
+            Vector3 rayDirection = transform.forward + _rayOffset;
         
             if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, _layersToHit))
             {
