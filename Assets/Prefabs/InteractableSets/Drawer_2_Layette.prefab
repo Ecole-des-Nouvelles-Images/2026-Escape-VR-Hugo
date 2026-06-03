@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 8754057527588460460}
   - component: {fileID: 1527009220624089082}
   - component: {fileID: 2894823504880868349}
-  - component: {fileID: 6329161977602130272}
+  - component: {fileID: -5269308248094283423}
   m_Layer: 0
   m_Name: Drawer_2_Layette
   m_TagString: Untagged
@@ -544,6 +544,25 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &-5269308248094283423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4840017948917807187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3c853773f346642852fb7f6144bcc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::XROpenSound
+  _openSFX:
+    Guid:
+      Data1: 789027034
+      Data2: 1155711004
+      Data3: 597645716
+      Data4: 1777208460
+    Path: event:/SFX/ClosetDoorOpening
 --- !u!1 &6374849147292461946
 GameObject:
   m_ObjectHideFlags: 0
