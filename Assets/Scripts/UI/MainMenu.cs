@@ -107,6 +107,11 @@ namespace UI
             _aiguille.transform.DOLocalRotate(new Vector3(0, 0, angle), 0.3f).SetUpdate(true);
         }
 
+        public void SetLocomotionToPlayer()
+        {
+            MonoBehiavors.Player.Instance.SetLocomotion();
+        }
+        
         private void SetDefaultDir(Transform t)
         {
             _canClick = false;

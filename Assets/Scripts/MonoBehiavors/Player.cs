@@ -1,7 +1,10 @@
 using Core.Singletons;
 using UI;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 
 namespace MonoBehiavors
 {
@@ -9,14 +12,24 @@ namespace MonoBehiavors
     {
         [SerializeField] private GameObject _interactorRayLeft;
         [SerializeField] private GameObject _interactorRayRight;
-
+        [SerializeField] private ContinuousMoveProvider _moveProvider;
+        [SerializeField] private ContinuousTurnProvider _turnProvider;
+        
+        [SerializeField] private bool _useJoysticks;
         public InputActionProperty InputOpenMenu;
         
         // [Header("DebugMenu")]
         // public InputActionProperty InputDebugMenu;
         // [SerializeField] private bool _debugMenuOpen;
         // [SerializeField] private GameObject _debugMenu;
-        
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _moveProvider = GetComponentInChildren<ContinuousMoveProvider>();
+            _turnProvider = GetComponentInChildren<ContinuousTurnProvider>();
+        }
+
         private void OnEnable()
         {
             InputOpenMenu.action.performed += OnClickPause;
@@ -71,6 +84,23 @@ namespace MonoBehiavors
             }
         }
 
+        public void SetLocomotion()
+        {
+            Debug.Log("Set locomotion");
+            if (!_useJoysticks)
+            {
+                _moveProvider.enabled = true;
+                _turnProvider.enabled = true;
+                _useJoysticks = true; 
+            }
+            else
+            {
+                _moveProvider.enabled = false;
+                _turnProvider.enabled = false;
+                _useJoysticks = false;
+            }
+        }
+        
         // debug
         // private void DebugMenu(InputAction.CallbackContext obj)
         // {
@@ -87,6 +117,6 @@ namespace MonoBehiavors
         //         if (!PauseMenu.Instance.GameInPause) DisableUiRay();
         //     }
         // }
-
+        
     }
 }
