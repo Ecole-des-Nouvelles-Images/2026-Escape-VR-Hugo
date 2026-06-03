@@ -46,6 +46,7 @@ namespace MonoBehiavors
             {
                 Debug.Log("InsertKey");
                 obj.GetComponent<Rigidbody>().isKinematic = true;
+                obj.GetComponent<BoxCollider>().isTrigger = true;
                 StartCoroutine("Animation");
                 _slotOcuped = true;
             }
