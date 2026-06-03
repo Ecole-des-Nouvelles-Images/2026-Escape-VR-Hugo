@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SG_ColorRamp
+  m_Name: M_ColorRamp
   m_Shader: {fileID: -6465566751694194690, guid: 52fbff1f0545a5f44b6d16a0abfada03, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,10 +54,10 @@ Material:
     - _Height: -1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothstep: -0.5
+    - _Smoothstep: -0.7
     - _XRMotionVectorsPass: 1
     m_Colors:
-    - _BottomColor: {r: 0, g: 0.9490199, b: 1, a: 1}
-    - _TopColor: {r: 0, g: 0.9490196, b: 1, a: 0}
+    - _BottomColor: {r: 0.5137255, g: 0.04705883, b: 0.027450982, a: 1}
+    - _TopColor: {r: 0.5137254, g: 0.0470588, b: 0.02745098, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
