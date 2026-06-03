@@ -15,7 +15,7 @@ namespace MonoBehiavors
         [SerializeField] private ContinuousMoveProvider _moveProvider;
         [SerializeField] private ContinuousTurnProvider _turnProvider;
         
-        [SerializeField] private bool _useJoysticks;
+        public bool UseJoysticks;
         public InputActionProperty InputOpenMenu;
         
         // [Header("DebugMenu")]
@@ -87,17 +87,17 @@ namespace MonoBehiavors
         public void SetLocomotion()
         {
             Debug.Log("Set locomotion");
-            if (!_useJoysticks)
+            if (!UseJoysticks)
             {
                 _moveProvider.enabled = true;
                 _turnProvider.enabled = true;
-                _useJoysticks = true; 
+                UseJoysticks = true; 
             }
             else
             {
                 _moveProvider.enabled = false;
                 _turnProvider.enabled = false;
-                _useJoysticks = false;
+                UseJoysticks = false;
             }
         }
         
