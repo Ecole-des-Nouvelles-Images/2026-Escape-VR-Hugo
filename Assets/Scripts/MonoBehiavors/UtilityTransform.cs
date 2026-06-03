@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace _Branches.Hugo.Scripts
+namespace MonoBehiavors
 {
     public class UtilityTransform : MonoBehaviour
     {
