@@ -176,9 +176,9 @@ namespace MonoBehiavors
             if (cache.Grab == null) cache.Grab = target.GetComponentInParent<XRGrabInteractable>();
             if (cache.Grab == null) cache.Grab = target.GetComponentInChildren<XRGrabInteractable>();
 
-            // cache.Rb = target.GetComponent<Rigidbody>();
-            // if (cache.Rb == null) cache.Rb = target.GetComponentInParent<Rigidbody>();
-            // if (cache.Rb == null) cache.Rb = target.GetComponentInChildren<Rigidbody>();
+            cache.Rb = target.GetComponent<Rigidbody>();
+            if (cache.Rb == null) cache.Rb = target.GetComponentInParent<Rigidbody>();
+            if (cache.Rb == null) cache.Rb = target.GetComponentInChildren<Rigidbody>();
 
             return cache;
         }
