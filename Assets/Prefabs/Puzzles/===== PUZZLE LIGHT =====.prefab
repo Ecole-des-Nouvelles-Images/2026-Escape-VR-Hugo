@@ -53,6 +53,7 @@ MonoBehaviour:
     m_Bits: 1075839091
   _splineContainer: {fileID: 2335178190141574910}
   _splineExtrude: {fileID: 4143131452872146911}
+  _rayOffset: {x: 0, y: 0, z: 0}
   _splineMeshRenderer: {fileID: 7040708259467743793}
   _splineSparkle: {fileID: 3532474818587977449}
   _sparkleOffset: -0.001
@@ -3807,13 +3808,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 5864005996342203096}
     m_Modifications:
     - target: {fileID: 3064919308769112785, guid: 630bd203a8363a745bbc46821f602b57, type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3064919308769112785, guid: 630bd203a8363a745bbc46821f602b57, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4207358411754722756}
+    - target: {fileID: 3064919308769112785, guid: 630bd203a8363a745bbc46821f602b57, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3064919308769112785, guid: 630bd203a8363a745bbc46821f602b57, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RemoveParent
