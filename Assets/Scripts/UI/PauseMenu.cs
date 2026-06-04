@@ -11,6 +11,7 @@ namespace UI
         [SerializeField] private GameObject _menu;
         [SerializeField] private GameObject _optionPanel;
         [SerializeField] private GameObject _exitPanel;
+        [SerializeField] private GameObject _spawner;
 
         public bool GameInPause;
     
@@ -30,10 +31,9 @@ namespace UI
             Time.timeScale = 1f;
         }
 
-        public void ReturnMainMenu()
+        public void SpawnTeleport()
         {
-            Time.timeScale = 1f;
-            SceneLoaderManager.Instance.LoadScene(_sceneNameToLoad);
+            _spawner.SetActive(true);
         }
     }
 }
