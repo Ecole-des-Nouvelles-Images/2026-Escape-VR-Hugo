@@ -421,7 +421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "G\xE9n\xE9rale"
+  m_text: "G\xE9n\xE9ral"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a448b9bfd10c75a43ae31d318f92b2bf, type: 2}
   m_sharedMaterial: {fileID: 5508402490039599105, guid: a448b9bfd10c75a43ae31d318f92b2bf, type: 2}
@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3739821065279701516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1637,7 +1637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Musiques
+  m_text: Musique
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a448b9bfd10c75a43ae31d318f92b2bf, type: 2}
   m_sharedMaterial: {fileID: 5508402490039599105, guid: a448b9bfd10c75a43ae31d318f92b2bf, type: 2}
@@ -3694,7 +3694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.92314464, b: 0.7783019, a: 1}
+  m_Color: {r: 1, g: 0.8980392, b: 0.7058824, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3703,10 +3703,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 58473e278d2441e488ee002cd32593a0, type: 3}
-    m_FontSize: 70
+    m_FontSize: 62
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 0
     m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3714,7 +3714,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Activer les joyticks
+  m_Text: Activer les joysticks
 --- !u!1 &7832253813686524007
 GameObject:
   m_ObjectHideFlags: 0
@@ -4599,10 +4599,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hugo Isambart : Product Owner, Lead D\xE9veloppeur\n\nDurand Julien :
+  m_text: "Hugo Isambart : Product Owner, Lead D\xE9veloppeur\n\nJulien Durand :
     D\xE9veloppeur\n\nAlexandre Renaux : D\xE9veloppeur, Sound Designer\n\nCalvin
-    Ovide : Lead Artist, Artiste 3D\n\nMaelys Manicas : Artiste 3D et 2D\n\nMarion
-    Deubreille : Artiste 3D"
+    Ovide : Lead Artiste, Artiste 3D\n\nMa\xEBlys Manicas : Artiste 3D et 2D\n\nMarion
+    Dubreuil : Artiste 3D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a448b9bfd10c75a43ae31d318f92b2bf, type: 2}
   m_sharedMaterial: {fileID: 5508402490039599105, guid: a448b9bfd10c75a43ae31d318f92b2bf, type: 2}
