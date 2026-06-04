@@ -13,5 +13,6 @@ public class EquipableSocket : MonoBehaviour
     {
         GameObject o = arg.interactableObject.transform.gameObject;
         o.GetComponent<EquipableObject>().EnableCollider();
+        
     }
 }

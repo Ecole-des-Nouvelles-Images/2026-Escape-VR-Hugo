@@ -8,10 +8,12 @@ public class EquipableObject : MonoBehaviour
     public bool CanBeEquipable;
     
     private List<BoxCollider> _colliders;
-
+    private Rigidbody _rb; 
+    
     private void Awake()
     {
         _colliders = GetComponentsInChildren<BoxCollider>().ToList();
+        _rb = GetComponent<Rigidbody>();
     }
 
     [ContextMenu("Enable")]
@@ -19,7 +21,8 @@ public class EquipableObject : MonoBehaviour
     {
         foreach (BoxCollider col in _colliders)
         {
-            col.isTrigger = false;
+            //col.isTrigger = false;
+            _rb.isKinematic = false;
         }
     }
     
@@ -28,7 +31,8 @@ public class EquipableObject : MonoBehaviour
     {
         foreach (BoxCollider col in _colliders)
         {
-            col.isTrigger = true;
+           //col.isTrigger = true;
+            _rb.isKinematic = true;
         }
     }
 }
