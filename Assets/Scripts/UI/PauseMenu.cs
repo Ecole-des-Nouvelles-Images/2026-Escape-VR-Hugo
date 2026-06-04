@@ -19,7 +19,6 @@ namespace UI
         {
             if (_menu) _menu.SetActive(true);
             GameInPause = true;
-            Time.timeScale = 0f;
         }
 
         public void Resume()
