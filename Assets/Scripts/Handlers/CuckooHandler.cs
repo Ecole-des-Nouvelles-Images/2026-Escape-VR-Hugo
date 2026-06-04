@@ -90,14 +90,13 @@ namespace Handlers
                 AudioManager.Instance.PlayAtPosition(_gearSFX, transform.position);
             }
             
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(3.5f);
             
             if (AudioManager.Instance && !_cuckooSFX.IsNull)
             {
                 AudioManager.Instance.PlayAtPosition(_cuckooSFX, transform.position);
             }
             
-        
             EventBus.OnCandleKeyUnlocked?.Invoke();
         }
     }
