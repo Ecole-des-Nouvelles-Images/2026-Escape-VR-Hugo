@@ -69,6 +69,7 @@ namespace MonoBehiavors
                 }
             
                 SceneLoaderManager.Instance.LoadScene(SceneName);
+                Time.timeScale = 1f;
             }
         }
     }
