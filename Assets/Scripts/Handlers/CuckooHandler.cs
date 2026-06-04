@@ -18,6 +18,7 @@ namespace Handlers
         
         [Header("SFX")] 
         [SerializeField] private EventReference _cuckooSFX;
+        [SerializeField] private EventReference _gearSFX;
         [SerializeField] private EventReference _pieceInsertedSFX;
     
         [SerializeField] private Animator _animation;
@@ -84,12 +85,17 @@ namespace Handlers
             EventBus.OnCuckooClockRepaired?.Invoke();
             _animation.SetTrigger("PlayAnimation");
             
+            if (AudioManager.Instance && !_gearSFX.IsNull)
+            {
+                AudioManager.Instance.PlayAtPosition(_gearSFX, transform.position);
+            }
+            
+            yield return new WaitForSeconds(1.5f);
+            
             if (AudioManager.Instance && !_cuckooSFX.IsNull)
             {
                 AudioManager.Instance.PlayAtPosition(_cuckooSFX, transform.position);
             }
-            
-            yield return new WaitForSeconds(1.5f);
             
         
             EventBus.OnCandleKeyUnlocked?.Invoke();
