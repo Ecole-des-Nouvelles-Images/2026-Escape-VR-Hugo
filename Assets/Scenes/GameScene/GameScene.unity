@@ -8622,8 +8622,16 @@ PrefabInstance:
       value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2397134750499716765, guid: 89292b3ae8f05804d8928c31cf51a176, type: 3}
+      propertyPath: _spawner
+      value: 
+      objectReference: {fileID: 236521277}
+    - target: {fileID: 2397134750499716765, guid: 89292b3ae8f05804d8928c31cf51a176, type: 3}
       propertyPath: _sceneNameToLoad
       value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928088428770020390, guid: 89292b3ae8f05804d8928c31cf51a176, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5682786988415604621, guid: 89292b3ae8f05804d8928c31cf51a176, type: 3}
       propertyPath: m_IsActive
