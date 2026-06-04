@@ -56,18 +56,18 @@ MonoBehaviour:
     m_Bits: 64
   _openSFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1053297566
+      Data2: 1252157376
+      Data3: 1157492913
+      Data4: 1188409372
+    Path: event:/SFX/BriefCaseOpening
   _closeSFX:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1528782559
+      Data2: 1215690747
+      Data3: 522057381
+      Data4: -1571383446
+    Path: event:/SFX/BriefCaseClosing
   _isOpen: 0
 --- !u!1 &755113747740805548
 GameObject:
@@ -427,6 +427,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CandleNormal
       objectReference: {fileID: 0}
+    - target: {fileID: 4064898776413067795, guid: 0d6165a50509da94a99964f799736c07, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2049
+      objectReference: {fileID: 0}
     - target: {fileID: 4141313076937356511, guid: 0d6165a50509da94a99964f799736c07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1774
@@ -535,6 +539,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1673786676466591107, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033580617718881534, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     - target: {fileID: 3285909514173950806, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
       propertyPath: _cuckoo
       value: 
@@ -543,6 +555,10 @@ PrefabInstance:
       propertyPath: _rightPiece
       value: 
       objectReference: {fileID: 7233290370611725461}
+    - target: {fileID: 3750287875581836081, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     - target: {fileID: 4075248904770756912, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.14069997
@@ -571,26 +587,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coucou
       objectReference: {fileID: 0}
-    - target: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-      propertyPath: _slotCorchet.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-      propertyPath: '_slotCorchet.Array.data[0]'
-      value: 
-      objectReference: {fileID: 6724097239572873249}
-    - target: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-      propertyPath: '_slotCorchet.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2444591518640709661}
-    - target: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-      propertyPath: '_slotCorchet.Array.data[2]'
-      value: 
-      objectReference: {fileID: 2015975252504138712}
-    - target: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-      propertyPath: '_slotCorchet.Array.data[3]'
-      value: 
-      objectReference: {fileID: 4566108712990364685}
     - target: {fileID: 7600288209135489869, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.14069997
@@ -603,6 +599,10 @@ PrefabInstance:
       propertyPath: _rightPiece
       value: 
       objectReference: {fileID: 6867715557299612764}
+    - target: {fileID: 8746477864216606548, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     - target: {fileID: 9053462822567674953, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.14069997
@@ -632,24 +632,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1208872216860289125, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
   m_PrefabInstance: {fileID: 1187798562415408622}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2015975252504138712 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 829162267508581942, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-  m_PrefabInstance: {fileID: 1187798562415408622}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2444591518640709661 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3573333037309384179, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-  m_PrefabInstance: {fileID: 1187798562415408622}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4225629858717168042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3089358877958046788, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-  m_PrefabInstance: {fileID: 1187798562415408622}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4566108712990364685 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3397398370915328483, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
   m_PrefabInstance: {fileID: 1187798562415408622}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4966012156964771572 stripped
@@ -679,11 +664,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3059563762226424370, guid: 0523e569f03c02548b0cf26fa639b0d0, type: 3}
---- !u!1 &6724097239572873249 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5560576302459680207, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
-  m_PrefabInstance: {fileID: 1187798562415408622}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8147775210646431606 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7019244974846579352, guid: 93de4a5ebd2530d47a269bd02dd822c8, type: 3}
@@ -1009,6 +989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CandleBig
       objectReference: {fileID: 0}
+    - target: {fileID: 1630000143487343176, guid: ed9710dc48683a547b4be64f774f80ab, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2049
+      objectReference: {fileID: 0}
     - target: {fileID: 1697683153455723652, guid: ed9710dc48683a547b4be64f774f80ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.191
@@ -1120,6 +1104,10 @@ PrefabInstance:
     - target: {fileID: 6821992527219284671, guid: f73f87a56b22a394e917a3fdbf340b09, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.2510071
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898700599077172339, guid: f73f87a56b22a394e917a3fdbf340b09, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2049
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1305,6 +1293,26 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.07405693
       objectReference: {fileID: 0}
+    - target: {fileID: 1469185721669006077, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
+      propertyPath: _unlockSFX.Path
+      value: event:/SFX/MediumLock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469185721669006077, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
+      propertyPath: _unlockSFX.Guid.Data1
+      value: 179385650
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469185721669006077, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
+      propertyPath: _unlockSFX.Guid.Data2
+      value: 1075686707
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469185721669006077, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
+      propertyPath: _unlockSFX.Guid.Data3
+      value: -396361823
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469185721669006077, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
+      propertyPath: _unlockSFX.Guid.Data4
+      value: -1619057414
+      objectReference: {fileID: 0}
     - target: {fileID: 4042046794053241848, guid: 1ae6fe7abec805c4ca9163799f4e77ba, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1466,6 +1474,10 @@ PrefabInstance:
     - target: {fileID: 4654346642633993038, guid: 2567faeecdc42b341843e5ce9af60cd9, type: 3}
       propertyPath: m_Name
       value: CandleSmall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260930644365785236, guid: 2567faeecdc42b341843e5ce9af60cd9, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2049
       objectReference: {fileID: 0}
     - target: {fileID: 6337345964793468504, guid: 2567faeecdc42b341843e5ce9af60cd9, type: 3}
       propertyPath: m_LocalPosition.x

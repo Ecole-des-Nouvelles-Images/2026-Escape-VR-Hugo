@@ -5,7 +5,6 @@ using UnityEngine;
 public class EndingHandler : MonoBehaviour
 {
     private bool _wasTaked;
-    public string SceneName;
     [SerializeField] private float _timeOfSound;
     [SerializeField] private GameObject _teleport;
     
@@ -23,7 +22,7 @@ public class EndingHandler : MonoBehaviour
     {
         Debug.Log("Start delay");
         yield return new WaitForSeconds(_timeOfSound + 3f);
-        _teleport.SetActive(true);
         Debug.Log("finished");
+        _teleport.SetActive(true);
     }
 }

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6118684716968737895}
   - component: {fileID: 7951287447409289835}
   - component: {fileID: 6508473644837870114}
+  - component: {fileID: 6850330270047342530}
+  - component: {fileID: 1529447671490134972}
   m_Layer: 0
   m_Name: KeyClockCandle
   m_TagString: Untagged
@@ -114,6 +116,18 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PieceCuckoo, Assembly-CSharp
         m_MethodName: UnAttachToSlot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1529447671490134972}
+        m_TargetAssemblyTypeName: MonoBehiavors.TriggerNarrationEvent03, Assembly-CSharp
+        m_MethodName: StartNarrationEvent03
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -237,6 +251,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.060004465, y: 0.23028474, z: 0.026635615}
   m_Center: {x: 0.0003361432, y: 0.115765385, z: 0.00091260206}
+--- !u!114 &6850330270047342530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994078303723582453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c126a5598d323743b252ddaf22d794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectImpactAudio
+  impactSound:
+    Guid:
+      Data1: -381133966
+      Data2: 1267691649
+      Data3: 656219312
+      Data4: -363517278
+    Path: event:/SFX/KeyDrop
+  velocityThreshold: 0.5
+--- !u!114 &1529447671490134972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994078303723582453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14dc9cdf88785d44c9f136e0f1dc5372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonoBehiavors.TriggerNarrationEvent03
 --- !u!1 &4994532569216947995
 GameObject:
   m_ObjectHideFlags: 0

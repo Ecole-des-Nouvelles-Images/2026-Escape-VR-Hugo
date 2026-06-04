@@ -1,3 +1,4 @@
+using Core;
 using Managers;
 using Core.Audio;
 using FMOD.Studio;
@@ -30,6 +31,7 @@ namespace Handlers
         [SerializeField] private bool _grabHourHand;
         [SerializeField] private bool _grabMinuteHand;
         [SerializeField] private float _lastMinuteAngle;
+        [SerializeField] private bool _firstInteraction;
 
 
         private void Start()
@@ -57,6 +59,15 @@ namespace Handlers
             else
             {
                 _clockTickInstance.setParameterByName(_fmodParameterName, 0f);
+            }
+        }
+
+        public void StartNarration()
+        {
+            if (!_firstInteraction)
+            {
+                EventBus.OnNarrationEvent02?.Invoke();
+                _firstInteraction = true;
             }
         }
 

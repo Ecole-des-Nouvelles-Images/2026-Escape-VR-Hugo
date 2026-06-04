@@ -106,7 +106,7 @@ namespace UI
 
             _aiguille.transform.DOLocalRotate(new Vector3(0, 0, angle), 0.3f).SetUpdate(true);
         }
-
+        
         private void SetDefaultDir(Transform t)
         {
             _canClick = false;

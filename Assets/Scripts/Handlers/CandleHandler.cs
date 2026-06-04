@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core;
+using Core.Audio;
+using FMODUnity;
 using Managers;
 using MonoBehiavors;
 using UnityEngine;
@@ -27,7 +29,11 @@ namespace Handlers
         [SerializeField] private GameObject _objectToDrop;
         [SerializeField] private bool _dropedHisObject;
         [SerializeField] private bool _dropedObjectWasInteracted;
-    
+
+        [Header("===== FMOD AUDIO =====")] 
+        [SerializeField] private EventReference _candleIgniteSFX;
+        [SerializeField] private EventReference _candleBlowOutSFX;
+        
         private Vector3 _objectBasePosition;
         private Vector3 _objectBaseRotation;
     
@@ -47,12 +53,21 @@ namespace Handlers
             if (IsFire) return;
             IsFire = true;
             _flameVisual.SetActive(true);
-            for (int i = 0; i < _flameVisual.transform.childCount; i++) { _flameVisual.transform.GetChild(i).gameObject.SetActive(true); }
+            for (int i = 0; i < _flameVisual.transform.childCount; i++)
+            {
+                _flameVisual.transform.GetChild(i).gameObject.SetActive(true);
+            }
+
             float currentTime = ClockTimeManager.Instance.NormalizedCurrentTime;
-        
-            if(!_fireInStart) _temporalRange = new Vector2(currentTime, currentTime + 0.3f);
+
+            if (!_fireInStart) _temporalRange = new Vector2(currentTime, currentTime + 0.3f);
+
+            if (Time.timeSinceLevelLoad > 0.1f)
+            {
+                PlayCandleSound(_candleIgniteSFX);
+            }
         }
-    
+
         [ContextMenu("BlowOut")]
         private void BlowOut()
         {
@@ -61,6 +76,8 @@ namespace Handlers
             //_flameVisual.GetComponent<FlameAnimation>().BlowOut();
             IsFire = false;
             _temporalRange = Vector2.zero;
+            
+            PlayCandleSound(_candleBlowOutSFX);
         }
         
         protected override void TimeBehavior()
@@ -86,7 +103,11 @@ namespace Handlers
             }
             else if (currentTime > _temporalRange.y)
             {
-                if (_flameGameObject.activeSelf) _flameGameObject.SetActive(false);
+                if (_flameGameObject.activeSelf)
+                {
+                    _flameGameObject.SetActive(false);
+                    PlayCandleSound(_candleBlowOutSFX);
+                }
             }
             else
             {
@@ -133,6 +154,15 @@ namespace Handlers
         {
             _dropedObjectWasInteracted = true;
             if (_objectToDrop.CompareTag("Key")) EventBus.OnFirstKeyUnlocked?.Invoke();
+        }
+        
+        private void PlayCandleSound(EventReference sfx)
+        {
+            if (AudioManager.Instance && !sfx.IsNull)
+            {
+                Vector3 soundPosition = _firePoint != null ? _firePoint.position : transform.position;
+                AudioManager.Instance.PlayAtPosition(sfx, soundPosition);
+            }
         }
     }
 }

@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2615777729862742558, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2768902449678648492, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
       propertyPath: m_LocalPosition.z
@@ -254,7 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 2397134750499716765}
     - target: {fileID: 7878778836295200046, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReturnMainMenu
+      value: SpawnTeleport
       objectReference: {fileID: 0}
     - target: {fileID: 7878778836295200046, guid: f227abeaa4fc191428679bc6c8d7ee50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -414,4 +414,5 @@ MonoBehaviour:
   _menu: {fileID: 5682786988415604621}
   _optionPanel: {fileID: 1087354036128302138}
   _exitPanel: {fileID: 4583303054267938611}
+  _spawner: {fileID: 0}
   GameInPause: 0
