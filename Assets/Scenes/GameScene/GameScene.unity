@@ -888,6 +888,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 860232295732067974, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
+      propertyPath: _gearIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818743419348890745, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
+      propertyPath: _gearIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3728388150193368599, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.317
@@ -899,6 +907,10 @@ PrefabInstance:
     - target: {fileID: 4622113530759711326, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
       propertyPath: m_Name
       value: ===== PUZZLE FLOWER =====
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968905800454591070, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
+      propertyPath: _gearIndex
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8059803717006203605, guid: 242f907a96514b843890c1e7d018fe2f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3092,6 +3104,10 @@ PrefabInstance:
       propertyPath: '_lockedGameObjects.Array.data[1]'
       value: 
       objectReference: {fileID: 885334359}
+    - target: {fileID: 6745165124655012171, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: _gearIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8127438190324004219, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.43270004
@@ -4101,6 +4117,10 @@ PrefabInstance:
       propertyPath: '_lockedGameObjects.Array.data[1]'
       value: 
       objectReference: {fileID: 618354670}
+    - target: {fileID: 6745165124655012171, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: _gearIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8127438190324004219, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.68820006
@@ -8860,6 +8880,10 @@ PrefabInstance:
       propertyPath: '_lockedGameObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 822936868}
+    - target: {fileID: 6745165124655012171, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: _gearIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8127438190324004219, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2392
@@ -10636,6 +10660,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.90508306
       objectReference: {fileID: 0}
+    - target: {fileID: 3662673214808040692, guid: 957129afd740ca642849266170357136, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 513
+      objectReference: {fileID: 0}
     - target: {fileID: 4072198852086844097, guid: 957129afd740ca642849266170357136, type: 3}
       propertyPath: m_Name
       value: ===== PUZZLE CANDLE =====
@@ -10711,6 +10739,10 @@ PrefabInstance:
     - target: {fileID: 8335037419369764348, guid: 957129afd740ca642849266170357136, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.7669
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746426276798129914, guid: 957129afd740ca642849266170357136, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13599,6 +13631,10 @@ PrefabInstance:
       propertyPath: '_lockedGameObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 697022360}
+    - target: {fileID: 6745165124655012171, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: _gearIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8127438190324004219, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.882
@@ -14685,7 +14721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1649940513
 Transform:
   m_ObjectHideFlags: 0
@@ -17047,6 +17083,10 @@ PrefabInstance:
       propertyPath: '_lockedGameObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 916737426}
+    - target: {fileID: 6745165124655012171, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
+      propertyPath: _gearIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8127438190324004219, guid: 32e0fedb6f429af4d96b5dba4128c210, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.882
