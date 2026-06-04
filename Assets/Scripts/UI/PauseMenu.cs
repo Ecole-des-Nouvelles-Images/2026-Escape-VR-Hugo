@@ -28,6 +28,7 @@ namespace UI
             _exitPanel.SetActive(false);
             _optionPanel.SetActive(false);
             GameInPause = false;
+            _spawner.SetActive(false);
             Time.timeScale = 1f;
         }
 
