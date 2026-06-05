@@ -31,10 +31,10 @@ namespace Handlers
             //     }
             // }
 
-            if (_globalVolume != null && _globalVolume.profile != null)
+            if (_globalVolume != null && _globalVolume.sharedProfile != null)
             {
                 // On essaie de récupérer le composant existant dans le profil du Volume
-                if (!_globalVolume.profile.TryGet(out _chromaticAberration))
+                if (!_globalVolume.sharedProfile.TryGet(out _chromaticAberration))
                 {
                     Debug.LogWarning("[GraphicsController] Chromatic Aberration manquante dans le profil du Volume.");
                 }

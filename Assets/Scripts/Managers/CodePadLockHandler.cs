@@ -38,7 +38,6 @@ namespace Managers
     
         private bool _bigPadLockSpawned;
 
-        // DISPLAY
         private Sequence _padLockSequence;
         private Transform _bigVisualTransform;
         private Vector3 _bigVisualPos;
@@ -52,6 +51,7 @@ namespace Managers
             _bigVisualRot = _bigVisualTransform.rotation;
             _bigVisualScale = _bigVisualTransform.localScale;
 
+            _currentNumbers.Clear();
             foreach (var gear in _gears)
             {
                 _currentNumbers.Add(0);
@@ -60,7 +60,7 @@ namespace Managers
             
             foreach (var gearInteractable in _gearInteractables)
             {
-                gearInteractable.enabled = false;
+                if (gearInteractable != null) gearInteractable.enabled = false;
             }
         }
 
@@ -68,7 +68,7 @@ namespace Managers
         {
             if (_bigPadLockSpawned)
             {
-                if (Vector3.Distance(Camera.main.gameObject.transform.position, CodePadLock.transform.position) > 1.5f)
+                if (Vector3.Distance(Camera.main.transform.position, CodePadLock.transform.position) > 1.5f)
                 {
                     DespawnBigPadLock();
                 }
@@ -81,7 +81,7 @@ namespace Managers
         {
             for (int i = 0; i < _gears.Count; i++)
             {
-                _gears[i].CodeChanged += SetNumber;
+                if (_gears[i] != null) _gears[i].CodeChanged += SetNumber;
             }
         }
         
@@ -89,7 +89,7 @@ namespace Managers
         {
             for (int i = 0; i < _gears.Count; i++)
             {
-                _gears[i].CodeChanged -= SetNumber;
+                if (_gears[i] != null) _gears[i].CodeChanged -= SetNumber;
             }
         }
 
@@ -107,7 +107,6 @@ namespace Managers
         {
             _bigPadLockSpawned = true;
             
-            // DISPLAY
             if (_padLockSequence != null && _padLockSequence.IsActive())
             {
                 _padLockSequence.Kill();
@@ -115,7 +114,6 @@ namespace Managers
             
             _bigVisualTransform.SetPositionAndRotation(transform.position, transform.rotation);
             CodePadLock.transform.localScale = Vector3.one;
-            
             CodePadLock.SetActive(true);
 
             _padLockSequence = DOTween.Sequence()
@@ -127,7 +125,7 @@ namespace Managers
                 {
                     foreach (var gearInteractable in _gearInteractables)
                     {
-                        gearInteractable.enabled = true;
+                        if (gearInteractable != null) gearInteractable.enabled = true;
                     }
                 });
         }
@@ -136,7 +134,6 @@ namespace Managers
         {
             _bigPadLockSpawned = false;
             
-            // DISPLAY
             if (_padLockSequence != null && _padLockSequence.IsActive())
             {
                 _padLockSequence.Kill();
@@ -144,7 +141,7 @@ namespace Managers
             
             foreach (var gearInteractable in _gearInteractables)
             {
-                gearInteractable.enabled = false;
+                if (gearInteractable != null) gearInteractable.enabled = false;
             }
             
             _padLockSequence = DOTween.Sequence()
@@ -161,7 +158,7 @@ namespace Managers
 
                     if (!IsLock)
                     {
-                        _smallRb.isKinematic = false;
+                        if (_smallRb != null) _smallRb.isKinematic = false;
                         UnityEvent?.Invoke();
                     }
                 });
@@ -171,13 +168,19 @@ namespace Managers
 
         #region ===== PRIVATE METHODS =====
 
-        private void SetNumber(DynamicGear context, int value)
+        // CORRECTION : Plus de .IndexOf(), on reçoit directement l'identifiant propre de la roue
+        private void SetNumber(int gearIndex, int value)
         {
-            int index = _gears.IndexOf(context);
-            _currentNumbers[index] = value;
-            if (AudioManager.Instance && !_gearTickSFX.IsNull)
+            if (gearIndex < 0 || gearIndex >= _currentNumbers.Count) return;
+
+            _currentNumbers[gearIndex] = value;
+
+            if (AudioManager.Instance && !_gearTickSFX.IsNull && gearIndex < _gears.Count)
             {
-                AudioManager.Instance.Play(_gearTickSFX, loop: false, follow: context.gameObject);
+                if (_gears[gearIndex] != null)
+                {
+                    AudioManager.Instance.Play(_gearTickSFX, loop: false, follow: _gears[gearIndex].gameObject);
+                }
             }
             SetCode();
         }
@@ -218,16 +221,19 @@ namespace Managers
 
         private void AnimationUnlock()
         {
-            // BIG
-            Vector3 rotBig =  _lock.transform.rotation.eulerAngles;
-            Vector3 newRotBig = new Vector3(rotBig.x ,rotBig.y, rotBig.z + -30);
-            _lock.transform.DORotate(newRotBig ,1)
-                .OnComplete(DespawnBigPadLock);
-            
-            // SMALL
-            Vector3 rotSmall =  _lockSmall.transform.rotation.eulerAngles;
-            Vector3 newRotSmall = new Vector3(rotSmall.x ,rotSmall.y, rotSmall.z + -30);
-            _lockSmall.transform.DORotate(newRotSmall, 1);
+            if (_lock != null)
+            {
+                Vector3 rotBig = _lock.transform.rotation.eulerAngles;
+                Vector3 newRotBig = new Vector3(rotBig.x, rotBig.y, rotBig.z - 30f);
+                _lock.transform.DORotate(newRotBig, 1f).OnComplete(DespawnBigPadLock);
+            }
+
+            if (_lockSmall != null)
+            {
+                Vector3 rotSmall = _lockSmall.transform.rotation.eulerAngles;
+                Vector3 newRotSmall = new Vector3(rotSmall.x, rotSmall.y, rotSmall.z - 30f);
+                _lockSmall.transform.DORotate(newRotSmall, 1f);
+            }
         }
 
         #endregion
