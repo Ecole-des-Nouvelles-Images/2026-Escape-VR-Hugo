@@ -18,9 +18,9 @@
 
 ![IllustrationLoadingScreen](https://github.com/user-attachments/assets/b61ce06f-cb36-4db6-8d57-cd927de4c64e)
 [![Unity Version](https://img.shields.io/badge/Unity-2022.3.47-blue?style=flat&logo=unity)](https://unity.com/)
-[![GitHub Release](https://img.shields.io/github/release/Ecole-des-Nouvelles-Images/2025-Mobile-Drive-N-Shoot)](https://github.com/Ecole-des-Nouvelles-Images/2025-Mobile-Drive-N-Shoot/releases)
-[![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/2025-Mobile-Drive-N-Shoot)](https://github.com/Ecole-des-Nouvelles-Images/2025-Mobile-Drive-N-Shoot/blob/main/LICENSE)
-[![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/2025-Mobile-Drive-N-Shoot?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/2025-Mobile-Drive-N-Shoot)
+[![GitHub Release](https://img.shields.io/github/release/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo)](https://github.com/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo/releases)
+[![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo)](https://github.com/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo/blob/main/LICENSE)
+[![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo)
 
 **Drive'N'Shoot** is a racing game for mobile devices. The player controls a **pickup truck** to go **as far as possible**.
 
