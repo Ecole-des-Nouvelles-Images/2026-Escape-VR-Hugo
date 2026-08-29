@@ -13,16 +13,16 @@
 </div>
 
 <div align="center">
-  <h1>Drive'N'Shoot</h1>
+  <h1>L'Horloger du Temps</h1>
 </div>
 
-![IllustrationLoadingScreen](https://github.com/user-attachments/assets/b61ce06f-cb36-4db6-8d57-cd927de4c64e)
+![IllustrationLoadingScreen](https://github.com/user-attachments/assets/f688900f-af0a-4d44-9c98-7bf49eb5fc59)
 [![Unity Version](https://img.shields.io/badge/Unity-2022.3.47-blue?style=flat&logo=unity)](https://unity.com/)
 [![GitHub Release](https://img.shields.io/github/release/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo)](https://github.com/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo/releases)
 [![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo)](https://github.com/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo/blob/main/LICENSE)
 [![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo)
 
-**Drive'N'Shoot** is a racing game for mobile devices. The player controls a **pickup truck** to go **as far as possible**.
+**L'Horloger du Temps** is a escape vr game. A watchmaker turned his workshop into a **time vault** before **disappearing**. As his **apprentice**, you'll have to uncover the **secret** behind his disappearance.
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -39,7 +39,7 @@
   <h1>Introduction</h1>
 </div>
 
-**Drive'N'Shoot** is a racing arcade game developed during **five weeks**.  
+**L'Horloger du Temps** is a escape vr game developed during **five weeks**.  
 This project was created as part of **a school project**.  
 The development process included **a preproduction (1 week), production (3 weeks) and a postproduction (1 week)**.
 
@@ -48,7 +48,7 @@ The development process included **a preproduction (1 week), production (3 weeks
   <h1>Universe</h1>
 </div>
 
-The **player** travels along a road at the bottom of a **post-apocalyptic desert canyon** while dodging and destroying **obstacles** and **robotic enemies**.
+Manipulate the flow of time in a mysterious workshop using an **astronomical clock** to harness the light and uncover the secrets of its missing master.
 
 ---
 <div align="center">
@@ -57,10 +57,12 @@ The **player** travels along a road at the bottom of a **post-apocalyptic desert
 
 This game was brought to life by :
 
-**[Léna DE LUCA](https://github.com/Lenaynov)** - ***Lead Artist**, Scrum master, 3D Artist, Environment Artist, Animator, VFX Artist*  
-**[Hugo BARON](https://github.com/Hugoba7)** - *Environment Artist, UI Designer, UI Integrator*  
+**[Calvin OVIDE](https://github.com/CalvinOvide)** - ***Lead Artist**, Scrum master, 3D Artist, Environment Artist, VFX Artist*  
+**[Marion DUBREUIL](https://github.com/Zamelkhia)** - *3D Artist, Environment Artist, Props Artist*  
+**[Maëlys MANICAS](https://github.com/mmanicas)** - *3D Artist, Props Artist, UI Designer*  
 **[Hugo ISAMBART](https://github.com/HIsambart)** - ***Lead Developer**, Scrum Master, Integrator*  
-**[Alexandre RENAUX](https://github.com/sky-ark)** - *Game Developer, Sound Designer, VFX Artist*
+**[Julien DURAND](https://github.com/Iluje)** - *Game Developer, Integrator*  
+**[Alexandre RENAUX](https://github.com/sky-ark)** - *Game Developer, Sound Designer*
 
 ---
 <div align="center">
@@ -83,7 +85,7 @@ There are **3 different items**, each with its own effect :
 </div>
 
 ## Game mechanics
-The player can **move**, **shoot**, use an **item**, and **boost** by shaking the device.
+The player can **move around**, **grab**, **interact** and use **items** to solve the mystery.
 
 https://github.com/user-attachments/assets/9e614298-02dc-400d-a585-b95452e0fe85
 
@@ -92,18 +94,16 @@ https://github.com/user-attachments/assets/9e614298-02dc-400d-a585-b95452e0fe85
   <h1>Release</h1>
 </div>
 
-The game apk is available on Android and here is the link to **[dowload](https://github.com/Ecole-des-Nouvelles-Images/2025-Mobile-Drive-N-Shoot/releases)** it.
-
-This game supports **Android**.
+The game apk is available and here is the link to **[dowload](https://github.com/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo/releases)** it.
 
 ---
 <div align="center">
   <h1>Development</h1>
 </div>
 
-This project is currently **in development**. Future updates might include **new biomes, new skins and bug fixes**.  
+This project is currently **in development**.  
 
-If you encounter any bugs or have suggestions, please open an **[issue ticket](https://github.com/Ecole-des-Nouvelles-Images/2025-Mobile-Drive-N-Shoot/issues/new)**.
+If you encounter any bugs or have suggestions, please open an **[issue ticket](https://github.com/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo/issues/new)**.
 
 ---
 <div align="center">
@@ -117,12 +117,9 @@ We would like to thank our **school** and our **teachers** :
 - **[Jerome CROS](https://fr.linkedin.com/in/crospro)** - *Artist Support*
 - **[Tommy HA PHUOC](https://fr.linkedin.com/in/tommyhaphuoc/en)** - *Gameplay Support*
 
-And our classmate :  
-- **[Jerome DUPRET](https://github.com/jdupretENSI)** - *Github Help*
-
 ---
 <div align="center">
   <h1>Recommendations</h1>
 </div>
 
-For the best experience, we recommend playing on a **tablet**.
+For the best experience, we recommend playing on a **Meta Quest 3**.
