@@ -1,3 +1,5 @@
+
+
 <div align="center">
   <a href="https://github.com/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo/blob/main/README.md">
     <img width="64" height="64" alt="flag_angleterre" src="https://github.com/user-attachments/assets/79223af9-d6d8-48a1-aa17-7355c3c6b444" />
@@ -22,7 +24,7 @@
 [![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo)](https://github.com/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo/blob/main/LICENSE)
 [![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/2026-Escape-VR-Hugo)
 
-**L'Horloger du Temps** is a escape vr game. A watchmaker turned his workshop into a **time vault** before **disappearing**. As his **apprentice**, you'll have to uncover the **secret** behind his disappearance.
+**L'Horloger du Temps** is a VR puzzle game. A watchmaker turned his workshop into a **time vault** before **disappearing**. As his **apprentice**, you'll have to uncover the **secret** behind his disappearance.
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -39,7 +41,7 @@
   <h1>Introduction</h1>
 </div>
 
-**L'Horloger du Temps** is a escape vr game developed during **five weeks**.  
+**L'Horloger du Temps** is a VR puzzle game developed during **five weeks**.  
 This project was created as part of **a school project**.  
 The development process included **a preproduction (1 week), production (3 weeks) and a postproduction (1 week)**.
 
@@ -69,25 +71,18 @@ This game was brought to life by :
   <h1>Gameplay</h1>
 </div>
 
-**Drive'N'Shoot** is a **racing game** where the player must pass through **checkpoints** before time runs out while **shooting** at enemies trying to destroy us.
+*L'Horloger du Temps* is a VR puzzle game in which the player must **uncover** the secret behind their **master’s disappearance** by manipulating time while **solving puzzles** within a mysterious workshop.
 
-The player controls a pickup truck equipped with a turret. A **timer** starts at the beginning of the game, and the goal is to reach the next **checkpoint** before it runs out. At each checkpoint, time is added to the timer.  
-To do this, the player must move around and **dodge** or **kill** enemies who are trying to slow them down and **destroy them** using the turret.  
-Along the way, the player can collect **items** by taking an “alternative” route, which they can use whenever they want.
+The player takes on the role of an apprentice who **physically moves** around a confined space. An **astronomical clock** stands at the center of the room, and the goal is to interact with its hands to **dynamically alter time** and the physical state of the setting. With each manipulation of time, the objects in the room **change state**: flowers wilt, candle wax melts, and beams of light shift.
 
-If the timer reaches **zero** or the vehicle is **destroyed**, the **game is over**.
+To progress, the player must **observe these changes**, analyze the clues, and solve **three interconnected** sets of puzzles—based on flowers, wax, and light—to obtain three unique keys.
 
-## Items
-There are **3 different items**, each with its own effect :
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/86791105-220b-4117-b066-3bf5a70c1599" alt="Exemple d'image" style="max-width: 100%; height: auto;">
-</div>
+If the player manages to unlock the **final trapdoor** by inserting the three keys, they **discover the truth** and inherit the master’s ultimate creation.
 
 ## Game mechanics
 The player can **move around**, **grab**, **interact** and use **items** to solve the mystery.
 
-https://github.com/user-attachments/assets/9e614298-02dc-400d-a585-b95452e0fe85
+https://github.com/user-attachments/assets/c16c3b11-6b20-427c-b284-727f088ed916
 
 ---
 <div align="center">
